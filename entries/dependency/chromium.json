@@ -1,0 +1,66 @@
+{
+  "kind": "dependency",
+  "id": "chromium",
+  "version": "154.0.0",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Chromium headless shell",
+    "zh-CN": "Chromium 无头浏览器"
+  },
+  "description": {
+    "en": "Headless Chromium for rendering and capture, shared by the suites that need it",
+    "zh-CN": "用于渲染与截取的无头 Chromium，供需要它的套件共用"
+  },
+  "source": {
+    "en": "Playwright chromium-headless-shell (amd64: Chrome for Testing 153.0.8010.12; arm64: Chromium build 1243) through the browser download source",
+    "zh-CN": "经浏览器下载源取得的 Playwright chromium-headless-shell（amd64：Chrome for Testing 153.0.8010.12；arm64：Chromium 构建 1243）"
+  },
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "chromium",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "chromium-headless-shell"
+      ],
+      "check": {
+        "command": "chromium-headless-shell",
+        "args": [
+          "--version"
+        ]
+      },
+      "entry": {
+        "amd64": "lib/chrome-headless-shell-linux64/chrome-headless-shell",
+        "arm64": "lib/chrome-linux/headless_shell"
+      },
+      "downloads": [
+        {
+          "source": "browser",
+          "url": {
+            "amd64": "builds/cft/153.0.8010.12/linux64/chrome-headless-shell-linux64.zip",
+            "arm64": "builds/chromium/1243/chromium-headless-shell-linux-arm64.zip"
+          },
+          "sha256": {
+            "amd64": "a9da028861a0cf789ff25c2fed45f5f1aaf969ed9247835b6a7821a4f7af9d1d",
+            "arm64": "3a2bc2c354fb66615ee329c2ab13cd1312b40294798bea04c5dc0053caa6b881"
+          },
+          "target": "chromium.zip",
+          "extract": {
+            "format": "zip",
+            "directory": "lib"
+          },
+          "timeout": {
+            "connectSeconds": 15,
+            "totalSeconds": 900
+          }
+        }
+      ]
+    }
+  ],
+  "contentHash": "215ed2b8d4f346b252adc4ddc550f1044e4165b95c666448a60677f58821daab"
+}

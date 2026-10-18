@@ -1,0 +1,186 @@
+{
+  "kind": "suite",
+  "id": "hyperframes",
+  "version": "2.0.0",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [
+    {
+      "name": "refuse",
+      "params": {
+        "item": "hyperframes-tools",
+        "command": "hyperframes",
+        "subcommands": [
+          "skills",
+          "upgrade"
+        ],
+        "valueArguments": [
+          "--output",
+          "--port",
+          "--composition",
+          "--project",
+          "--input",
+          "--config",
+          "--template",
+          "--format",
+          "--fps",
+          "--width",
+          "--height",
+          "--quality",
+          "--crf",
+          "--duration",
+          "--concurrency",
+          "--browser",
+          "--scale",
+          "--audio",
+          "--name",
+          "--dir"
+        ],
+        "message": "HyperFrames skills and CLI are provided by the platform; this command is disabled."
+      }
+    },
+    {
+      "name": "link-shared-dependency",
+      "params": {
+        "item": "hyperframes-tools",
+        "command": "hyperframes",
+        "dependency": "chromium",
+        "executable": "chromium-headless-shell",
+        "environment": "HYPERFRAMES_BROWSER_PATH",
+        "requireUnlessVersion": true,
+        "missingMessage": "The platform Chromium dependency is unavailable."
+      }
+    },
+    {
+      "name": "fixed-environment",
+      "params": {
+        "item": "hyperframes-tools",
+        "command": "hyperframes",
+        "environment": {
+          "HYPERFRAMES_NO_TELEMETRY": "1",
+          "DO_NOT_TRACK": "1",
+          "HYPERFRAMES_NO_UPDATE_CHECK": "1",
+          "HYPERFRAMES_NO_AUTO_INSTALL": "1",
+          "HYPERFRAMES_SKIP_SKILLS": "1"
+        }
+      }
+    },
+    {
+      "name": "intercept-npx",
+      "params": {
+        "item": "hyperframes-tools",
+        "command": "npx",
+        "packages": [
+          "hyperframes"
+        ],
+        "route": "hyperframes"
+      }
+    }
+  ],
+  "title": {
+    "en": "HyperFrames",
+    "zh-CN": "HyperFrames"
+  },
+  "description": {
+    "en": "Write HTML video compositions and render them to MP4 in the member workspace",
+    "zh-CN": "编写 HTML 视频合成，并在成员工作区渲染成 MP4"
+  },
+  "source": {
+    "en": "npm hyperframes 0.8.167 and 14 skills pinned to heygen-com/hyperframes commit 35b17c3f (v0.8.167)",
+    "zh-CN": "npm hyperframes 0.8.167，14 个技能锁定 heygen-com/hyperframes 提交 35b17c3f（v0.8.167）"
+  },
+  "identity": {
+    "en": "Renders locally in the member workspace with the shared Chromium and FFmpeg; telemetry is off. No HeyGen account is configured, so HeyGen voice, music, avatars and cloud rendering are unavailable unless a member signs in themselves.",
+    "zh-CN": "使用共用的 Chromium 与 FFmpeg 在成员工作区本地渲染，遥测已关闭。平台不配置 HeyGen 账户：HeyGen 配音、配乐、数字人与云渲染不可用，除非成员本人自行登录。"
+  },
+  "dependencies": [
+    "ffmpeg",
+    "chromium"
+  ],
+  "serviceAddresses": [],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "hyperframes-tools",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "hyperframes",
+        "npx"
+      ],
+      "check": {
+        "command": "hyperframes",
+        "args": [
+          "--version"
+        ]
+      },
+      "runner": {
+        "command": "node",
+        "path": "node_modules/hyperframes/bin/hyperframes.mjs"
+      },
+      "downloads": [
+        {
+          "source": "npm",
+          "packages": [
+            "hyperframes@0.8.167"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "skill",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/heygen-com/hyperframes",
+        "commit": "35b17c3fe6cdf7e40d252f1d813b0a2cecec6a94",
+        "path": "skills"
+      },
+      "names": [
+        "general-video",
+        "hyperframes",
+        "hyperframes-animation",
+        "hyperframes-audio",
+        "hyperframes-cli",
+        "hyperframes-core",
+        "hyperframes-creative",
+        "hyperframes-keyframes",
+        "hyperframes-registry",
+        "hyperframes-studio",
+        "media-use",
+        "motion-graphics",
+        "remotion-to-hyperframes",
+        "slideshow"
+      ],
+      "runtimeDependency": "hyperframes-tools",
+      "catalogDependencies": [
+        "ffmpeg",
+        "chromium"
+      ]
+    },
+    {
+      "kind": "skill-pack",
+      "name": "hyperframes-suite",
+      "description": "HyperFrames video skills with the CLI, Chromium and FFmpeg provided by the platform.",
+      "note": "The hyperframes CLI, Chromium and FFmpeg are provided by the platform on PATH, and all HyperFrames skills in this pack are already installed and release-managed. Do not run `npx hyperframes skills update`, `skills check`, `npx skills add`, `hyperframes upgrade`, `browser ensure` or any npm install for HyperFrames; when a skill asks you to install or refresh a workflow, read the bundled skill of that name instead. Use `hyperframes` from PATH, not `npx hyperframes`. Run in the project directory inside the workspace; if `init` reports a permission error, run `chmod -R u+w` on the new project and continue. Workflows not in this pack (captions, talking-head recut, music-to-video, PR and Figma videos) are not provided. Keep the other upstream task instructions.",
+      "skills": [
+        "general-video",
+        "hyperframes",
+        "hyperframes-animation",
+        "hyperframes-audio",
+        "hyperframes-cli",
+        "hyperframes-core",
+        "hyperframes-creative",
+        "hyperframes-keyframes",
+        "hyperframes-registry",
+        "hyperframes-studio",
+        "media-use",
+        "motion-graphics",
+        "remotion-to-hyperframes",
+        "slideshow"
+      ]
+    }
+  ],
+  "contentHash": "97405425d97ee4e728e550a68020f4422c90356931e17f7dcf2e2aef71e79a19"
+}

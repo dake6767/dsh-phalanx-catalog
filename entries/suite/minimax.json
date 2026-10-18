@@ -1,0 +1,169 @@
+{
+  "kind": "suite",
+  "id": "minimax",
+  "version": "2.0.0",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [
+    {
+      "name": "refuse",
+      "params": {
+        "item": "minimax-tools",
+        "command": "mmx",
+        "arguments": [
+          "--base-url",
+          "--verbose",
+          "--region"
+        ],
+        "message": "This option is disabled by the platform."
+      }
+    },
+    {
+      "name": "normalize-arguments",
+      "params": {
+        "item": "minimax-tools",
+        "command": "mmx",
+        "replacements": [
+          {
+            "from": "--yes",
+            "to": "--non-interactive"
+          }
+        ],
+        "valueArguments": [
+          "--prompt",
+          "--message",
+          "--text",
+          "--model",
+          "--system",
+          "--name",
+          "--description",
+          "--title",
+          "--query",
+          "--output",
+          "--file",
+          "--url",
+          "--id",
+          "--seed",
+          "--format",
+          "--language",
+          "--style"
+        ]
+      }
+    },
+    {
+      "name": "credential-argument",
+      "params": {
+        "item": "minimax-tools",
+        "command": "mmx",
+        "variable": "MINIMAX_API_KEY",
+        "argument": "--api-key"
+      }
+    },
+    {
+      "name": "fixed-environment",
+      "params": {
+        "item": "minimax-tools",
+        "command": "mmx",
+        "environment": {
+          "MINIMAX_REGION": "cn"
+        }
+      }
+    }
+  ],
+  "title": {
+    "en": "MiniMax",
+    "zh-CN": "MiniMax"
+  },
+  "description": {
+    "en": "Generate text, images, video and speech with the team MiniMax account",
+    "zh-CN": "使用团队 MiniMax 账户生成文本、图像、视频和语音"
+  },
+  "source": {
+    "en": "npm mmx-cli 1.0.28 and skill pinned to MiniMax-AI/cli commit a965e72c",
+    "zh-CN": "npm mmx-cli 1.0.28，技能锁定 MiniMax-AI/cli 提交 a965e72c"
+  },
+  "identity": {
+    "en": "Uses the team API key through platform delegated execution. The key never enters member workspaces; generation consumes the team quota.",
+    "zh-CN": "经平台代执行使用团队 API key。凭据不进入成员空间，生成会消耗团队额度。"
+  },
+  "dependencies": [],
+  "serviceAddresses": [],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "minimax-tools",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "mmx"
+      ],
+      "check": {
+        "command": "mmx",
+        "args": [
+          "--version"
+        ]
+      },
+      "runner": {
+        "command": "node",
+        "path": "node_modules/mmx-cli/dist/mmx.mjs"
+      },
+      "downloads": [
+        {
+          "source": "npm",
+          "packages": [
+            "mmx-cli@1.0.28"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "skill",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/MiniMax-AI/cli",
+        "commit": "a965e72ce424e465ae65ded102315bf73bef0aa3",
+        "path": "skill"
+      },
+      "names": [
+        "mmx-cli"
+      ]
+    },
+    {
+      "kind": "execution",
+      "skill": "mmx-cli",
+      "runtimeDependency": "minimax-tools",
+      "delegated": [
+        {
+          "command": "mmx",
+          "blocked": [
+            "auth",
+            "config",
+            "agent",
+            "update"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "MINIMAX_API_KEY",
+          "purpose": {
+            "en": "Team MiniMax API key (mainland region)",
+            "zh-CN": "团队 MiniMax API key（中国大陆区域）"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "skill-pack",
+      "name": "minimax",
+      "description": "MiniMax generation with the team key provided by the platform.",
+      "note": "The mmx CLI and its credentials are provided by the platform. Do not run mmx auth, config or update, and do not pass --api-key, --region, --base-url or --verbose. Keep the upstream task instructions. Generation consumes the team quota; save outputs in the workspace.",
+      "skills": [
+        "mmx-cli"
+      ]
+    }
+  ],
+  "contentHash": "c2b2430106a6e45904ac2756c36055e60595b10bcb55c558e93215577028b5ab"
+}

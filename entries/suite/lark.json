@@ -1,0 +1,213 @@
+{
+  "kind": "suite",
+  "id": "lark",
+  "version": "2.0.0",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [
+    {
+      "name": "credential-token",
+      "params": {
+        "item": "feishu-tools",
+        "command": "lark-cli",
+        "request": {
+          "url": "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
+          "method": "POST",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "body": {
+            "app_id": {
+              "env": "LARKSUITE_CLI_APP_ID"
+            },
+            "app_secret": {
+              "env": "LARKSUITE_CLI_APP_SECRET"
+            }
+          }
+        },
+        "responseTokenPath": "tenant_access_token",
+        "environment": "LARKSUITE_CLI_TENANT_ACCESS_TOKEN",
+        "message": "Bot credentials could not be used."
+      }
+    },
+    {
+      "name": "fixed-environment",
+      "params": {
+        "item": "feishu-tools",
+        "command": "lark-cli",
+        "environment": {
+          "LARKSUITE_CLI_BRAND": "feishu",
+          "LARKSUITE_CLI_DEFAULT_AS": "bot",
+          "LARKSUITE_CLI_STRICT_MODE": "bot",
+          "LARKSUITE_CLI_NO_UPDATE_NOTIFIER": "1",
+          "LARKSUITE_CLI_NO_SKILLS_NOTIFIER": "1"
+        }
+      }
+    }
+  ],
+  "title": {
+    "en": "Feishu",
+    "zh-CN": "飞书"
+  },
+  "description": {
+    "en": "Messages, documents, sheets, calendar, approvals and more in Feishu as the team app bot",
+    "zh-CN": "以团队应用机器人身份使用飞书的消息、文档、表格、日程、审批等能力"
+  },
+  "source": {
+    "en": "GitHub release larksuite/cli v1.0.98 and 28 skills pinned to commit ac81f505 (v1.0.98)",
+    "zh-CN": "GitHub Release larksuite/cli v1.0.98，28 个技能锁定提交 ac81f505（v1.0.98）"
+  },
+  "identity": {
+    "en": "Acts as the team Feishu app bot through platform delegated execution. The administrator enters the App ID and App Secret; they never enter member workspaces. Personal member identity (--as user) is not provided in this version.",
+    "zh-CN": "经平台代执行，以团队飞书应用机器人身份操作。App ID 与 App Secret 由管理员填写，不进入成员空间。本版本不提供成员个人身份（--as user）。"
+  },
+  "dependencies": [],
+  "serviceAddresses": [
+    "https://open.feishu.cn"
+  ],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "feishu-tools",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "lark-cli"
+      ],
+      "check": {
+        "command": "lark-cli",
+        "args": [
+          "--version"
+        ]
+      },
+      "runner": {
+        "path": "lib/lark-cli"
+      },
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": "https://github.com/larksuite/cli/releases/download/v1.0.98/lark-cli-1.0.98-linux-{arch}.tar.gz",
+          "sha256": {
+            "amd64": "4a12dcb7a0aab25986d8bcd046cb45b08278531a9aac3a12b53cf3d94738fe80",
+            "arm64": "f798b26ce4b369d70411945e7f66bbe4382c411bc47d81950a662de7b69b41ed"
+          },
+          "target": "lark.tgz",
+          "extract": {
+            "format": "tar",
+            "directory": "lib"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "skill",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/larksuite/cli",
+        "commit": "ac81f5056ab88f37d581d25916f3dab85abfca76",
+        "path": "skills"
+      },
+      "names": [
+        "lark-approval",
+        "lark-apps",
+        "lark-attendance",
+        "lark-base",
+        "lark-calendar",
+        "lark-contact",
+        "lark-doc",
+        "lark-drive",
+        "lark-event",
+        "lark-im",
+        "lark-mail",
+        "lark-markdown",
+        "lark-meeting",
+        "lark-minutes",
+        "lark-note",
+        "lark-okr",
+        "lark-openapi-explorer",
+        "lark-shared",
+        "lark-sheets",
+        "lark-skill-maker",
+        "lark-slides",
+        "lark-task",
+        "lark-vc",
+        "lark-vc-agent",
+        "lark-whiteboard",
+        "lark-wiki",
+        "lark-workflow-meeting-summary",
+        "lark-workflow-standup-report"
+      ]
+    },
+    {
+      "kind": "execution",
+      "skill": "lark-shared",
+      "runtimeDependency": "feishu-tools",
+      "delegated": [
+        {
+          "command": "lark-cli",
+          "blocked": [
+            "config",
+            "auth",
+            "profile",
+            "update"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "LARKSUITE_CLI_APP_ID",
+          "purpose": {
+            "en": "Feishu app ID of the team bot",
+            "zh-CN": "团队机器人的飞书应用 App ID"
+          }
+        },
+        {
+          "name": "LARKSUITE_CLI_APP_SECRET",
+          "purpose": {
+            "en": "Feishu app secret of the team bot",
+            "zh-CN": "团队机器人的飞书应用 App Secret"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "skill-pack",
+      "name": "lark",
+      "description": "Feishu skills with lark-cli run by the platform as the team app bot.",
+      "note": "lark-cli and its app credentials are provided by platform delegated execution as the team app bot. Use `--as bot`; personal identity (`--as user`) is not available. Do not run `lark-cli config`, `auth`, `profile` or `update`, and do not install or upgrade lark-cli. When a command reports missing scopes or `console_url`, show it to the member and ask an administrator to grant the scope. Keep the other upstream task instructions.",
+      "skills": [
+        "lark-approval",
+        "lark-apps",
+        "lark-attendance",
+        "lark-base",
+        "lark-calendar",
+        "lark-contact",
+        "lark-doc",
+        "lark-drive",
+        "lark-event",
+        "lark-im",
+        "lark-mail",
+        "lark-markdown",
+        "lark-meeting",
+        "lark-minutes",
+        "lark-note",
+        "lark-okr",
+        "lark-openapi-explorer",
+        "lark-shared",
+        "lark-sheets",
+        "lark-skill-maker",
+        "lark-slides",
+        "lark-task",
+        "lark-vc",
+        "lark-vc-agent",
+        "lark-whiteboard",
+        "lark-wiki",
+        "lark-workflow-meeting-summary",
+        "lark-workflow-standup-report"
+      ]
+    }
+  ],
+  "contentHash": "194c45f6a474b895437bc03a5e79148bf0d792a4f540dde3f3d606f524883f65"
+}

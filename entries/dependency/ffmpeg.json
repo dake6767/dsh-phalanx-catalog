@@ -1,0 +1,72 @@
+{
+  "kind": "dependency",
+  "id": "ffmpeg",
+  "version": "7.0.3",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [],
+  "title": {
+    "en": "FFmpeg",
+    "zh-CN": "FFmpeg"
+  },
+  "description": {
+    "en": "Audio and video encoding with ffmpeg and ffprobe, shared by the suites that need it",
+    "zh-CN": "音视频编解码工具 ffmpeg 与 ffprobe，供需要它的套件共用"
+  },
+  "source": {
+    "en": "GitHub release eugeneware/ffmpeg-static b6.1.1, ffmpeg 7.0.2 static build (GPL)",
+    "zh-CN": "GitHub Release eugeneware/ffmpeg-static b6.1.1，ffmpeg 7.0.2 静态构建（GPL）"
+  },
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "ffmpeg",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "ffmpeg",
+        "ffprobe"
+      ],
+      "check": {
+        "command": "ffmpeg",
+        "args": [
+          "-hide_banner",
+          "-version"
+        ]
+      },
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-linux-{nodeArch}",
+          "sha256": {
+            "amd64": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+            "arm64": "6bb182d0d75d23028db82e9e4f723ca69b853d055698486e6984ddb2c06fb8ce"
+          },
+          "target": "bin/ffmpeg",
+          "executable": true,
+          "timeout": {
+            "connectSeconds": 15,
+            "totalSeconds": 600
+          }
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffprobe-linux-{nodeArch}",
+          "sha256": {
+            "amd64": "4f231a1960d83e403d08f7971e271707bec278a9ae18e21b8b5b03186668450d",
+            "arm64": "d17ae9b4c297d48e2521ba14e417bb0537c6ff77c584cdbcd6bb0d8d0307a2e8"
+          },
+          "target": "bin/ffprobe",
+          "executable": true,
+          "timeout": {
+            "connectSeconds": 15,
+            "totalSeconds": 600
+          }
+        }
+      ]
+    }
+  ],
+  "contentHash": "6fd7fe93d7b8ffa2301e4d72ce5036720bcd71a4bd4061744443a4d8e5c4a740"
+}

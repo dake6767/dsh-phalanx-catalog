@@ -1,0 +1,119 @@
+name: Catalog
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: catalog-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      platform_commit: ${{ steps.platform.outputs.commit }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - id: platform
+        name: Read pinned platform identity
+        run: |
+          node --input-type=module <<'JS' >> "$GITHUB_OUTPUT"
+          import { readFileSync } from 'node:fs';
+          const p = JSON.parse(readFileSync('platform.json', 'utf8'));
+          if (p.repository !== 'dake6767/dsh-phalanx' || !/^[0-9a-f]{40}$/.test(p.commit) || !/^\d+\.\d+\.\d+$/.test(p.version)) throw new Error('Invalid pinned platform identity');
+          console.log(`commit=${p.commit}`);
+          console.log(`version=${p.version}`);
+          JS
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          repository: dake6767/dsh-phalanx
+          ref: ${{ steps.platform.outputs.commit }}
+          path: platform
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.21.0
+      - name: Frozen platform dependencies
+        working-directory: platform
+        run: |
+          corepack enable
+          corepack pnpm install --frozen-lockfile
+      - name: Assemble and check actual entries
+        env:
+          PLATFORM_VERSION: ${{ steps.platform.outputs.version }}
+        run: |
+          node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs assemble platform catalog.unsigned.json
+          node --import ./platform/node_modules/tsx/dist/loader.mjs platform/scripts/check-suite-catalog.ts catalog.unsigned.json "$PLATFORM_VERSION"
+      - name: Signing and immutability regression tests
+        env:
+          CATALOG_PLATFORM_ROOT: ${{ github.workspace }}/platform
+        run: node --import ./platform/node_modules/tsx/dist/loader.mjs --test scripts/catalog.test.mjs
+      - name: Platform equivalence tests against this publication
+        working-directory: platform
+        env:
+          DSH_PHALANX_CATALOG_TEST_FILE: ${{ github.workspace }}/catalog.unsigned.json
+        run: corepack pnpm exec vitest run tests/suite-catalog-officecli.spec.ts tests/suite-catalog-minimax.spec.ts tests/suite-catalog-lark.spec.ts tests/suite-catalog-hyperframes.spec.ts tests/suite-catalog-wecom.spec.ts --maxWorkers=1
+      - name: Keep checked unsigned document
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unsigned-catalog
+          path: catalog.unsigned.json
+          if-no-files-found: error
+  publish:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: catalog-release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          repository: dake6767/dsh-phalanx
+          ref: ${{ needs.check.outputs.platform_commit }}
+          path: platform
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.21.0
+      - name: Frozen platform dependencies
+        working-directory: platform
+        run: |
+          corepack enable
+          corepack pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: unsigned-catalog
+      - name: Enforce immutable released versions
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          count=$(gh release list --limit 1 --json tagName --jq length)
+          if [ "$count" != 0 ]; then
+            gh release download --pattern catalog.json --output catalog.previous.json
+            node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs immutable platform catalog.previous.json catalog.unsigned.json
+          fi
+      - name: Sign with the release environment secret
+        env:
+          CATALOG_ED25519_PRIVATE_KEY: ${{ secrets.CATALOG_ED25519_PRIVATE_KEY }}
+        run: node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs sign platform catalog.unsigned.json catalog.json
+      - name: Verify signed document
+        run: node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs verify platform catalog.json
+      - name: Publish immutable release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          sha256sum catalog.json > catalog.sha256
+          gh release create "catalog-${GITHUB_RUN_ID}" catalog.json catalog.sha256 --target "$GITHUB_SHA" --title "Catalog ${GITHUB_RUN_ID}" --notes "Signed declarative catalog. Entry acceptance records are in acceptance/. Platform compatibility is pinned in platform.json."

@@ -1,0 +1,118 @@
+{
+  "kind": "suite",
+  "id": "officecli",
+  "version": "2.0.0",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [
+    {
+      "name": "fixed-environment",
+      "params": {
+        "item": "office-tools",
+        "command": "officecli",
+        "environment": {
+          "OFFICECLI_SKIP_UPDATE": "1"
+        }
+      }
+    }
+  ],
+  "title": {
+    "en": "OfficeCLI",
+    "zh-CN": "OfficeCLI"
+  },
+  "description": {
+    "en": "Create and edit .docx, .xlsx and .pptx files in the member workspace",
+    "zh-CN": "在成员工作区创建和编辑 docx、xlsx、pptx 文件"
+  },
+  "source": {
+    "en": "GitHub release iOfficeAI/OfficeCLI v1.0.157 and skills pinned to commit b65272a1",
+    "zh-CN": "GitHub Release iOfficeAI/OfficeCLI v1.0.157，技能锁定提交 b65272a1"
+  },
+  "identity": {
+    "en": "Runs in the member workspace. No credential is required; members keep their own files.",
+    "zh-CN": "在成员工作区内运行。无需凭据，文件归成员自己所有。"
+  },
+  "dependencies": [],
+  "serviceAddresses": [],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "office-tools",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "officecli"
+      ],
+      "check": {
+        "command": "officecli",
+        "args": [
+          "--version"
+        ]
+      },
+      "runner": {
+        "path": "lib/officecli"
+      },
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.157/officecli-linux-{nodeArch}",
+          "sha256": {
+            "amd64": "f8eefe88dbfa7464bee421e5421efe57fc26bc3180b30e56eef58594c8245c94",
+            "arm64": "60db926c8a1371984b9e99622a834777befb02b6f73d0f3fff914ffcc2760d2f"
+          },
+          "target": "lib/officecli",
+          "executable": true,
+          "timeout": {
+            "connectSeconds": 15,
+            "totalSeconds": 180
+          }
+        }
+      ]
+    },
+    {
+      "kind": "skill",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/iOfficeAI/OfficeCLI",
+        "commit": "b65272a18aef891941451705ff93e8a287f3eb72",
+        "path": "skills"
+      },
+      "names": [
+        "morph-ppt",
+        "morph-ppt-3d",
+        "officecli",
+        "officecli-academic-paper",
+        "officecli-data-dashboard",
+        "officecli-docx",
+        "officecli-financial-model",
+        "officecli-pitch-deck",
+        "officecli-pptx",
+        "officecli-word-form",
+        "officecli-xlsx"
+      ],
+      "runtimeDependency": "office-tools"
+    },
+    {
+      "kind": "skill-pack",
+      "name": "officecli-suite",
+      "description": "Office document skills with the officecli CLI provided by the platform.",
+      "note": "The officecli CLI is provided by the platform on PATH. Do not run its install or update instructions. Keep the upstream task instructions.",
+      "skills": [
+        "morph-ppt",
+        "morph-ppt-3d",
+        "officecli",
+        "officecli-academic-paper",
+        "officecli-data-dashboard",
+        "officecli-docx",
+        "officecli-financial-model",
+        "officecli-pitch-deck",
+        "officecli-pptx",
+        "officecli-word-form",
+        "officecli-xlsx"
+      ]
+    }
+  ],
+  "contentHash": "237fd4916ef23767315beec61de852349450f3414a79f431398aa880f1e7569d"
+}

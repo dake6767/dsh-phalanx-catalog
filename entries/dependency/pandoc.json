@@ -1,0 +1,57 @@
+{
+  "kind": "dependency",
+  "id": "pandoc",
+  "version": "3.12.2",
+  "engines": {
+    "platform": ">=0.1.19"
+  },
+  "adapters": [],
+  "title": {
+    "en": "pandoc",
+    "zh-CN": "pandoc"
+  },
+  "description": {
+    "en": "Universal document converter for Markdown, Word, PDF and more",
+    "zh-CN": "通用文档转换器，支持 Markdown、Word、PDF 等格式"
+  },
+  "source": {
+    "en": "GitHub release jgm/pandoc 3.12.1, static build",
+    "zh-CN": "GitHub Release jgm/pandoc 3.12.1 静态构建"
+  },
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "pandoc",
+      "paths": [
+        "bin"
+      ],
+      "commands": [
+        "pandoc"
+      ],
+      "check": {
+        "command": "pandoc",
+        "args": [
+          "--version"
+        ]
+      },
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": "https://github.com/jgm/pandoc/releases/download/3.12.1/pandoc-3.12.1-linux-{arch}.tar.gz",
+          "sha256": {
+            "amd64": "d0c90410e90204c9ca83b8539fac5c7aed01fd537207e4585849f8abc5df20b8",
+            "arm64": "445d96fd08801fe636cab1158b4f017ee320ac3b7446328b4fe2f902117b19b9"
+          },
+          "target": "pandoc.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "bin",
+            "stripComponents": 2,
+            "member": "pandoc-3.12.1/bin/pandoc"
+          }
+        }
+      ]
+    }
+  ],
+  "contentHash": "47eba592a1f0a20db12a11cb8bb41da6549c45a5daf601f7f9002e0158fdbb0a"
+}
