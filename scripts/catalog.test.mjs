@@ -13,6 +13,7 @@ function fixture(run) {
   const root = mkdtempSync(join(tmpdir(), 'catalog-sign-test-'))
   const key = pair()
   writeFileSync(join(root, 'trusted-key.json'), JSON.stringify({ keyId: 'test-only', publicKey: key.publicKey }))
+  writeFileSync(join(root, 'historical-keys.json'), JSON.stringify([{ keyId: 'test-only', publicKey: key.publicKey }]))
   const unsigned = { format: 1, publishedAt: '2026-10-18T00:00:00Z', entries: [{ id: 'tool', version: '1.0.0', contentHash: 'a'.repeat(64) }] }
   writeFileSync(join(root, 'unsigned.json'), JSON.stringify(unsigned))
   const execute = (mode, input, output, privateKey = key.privateKey) => spawnSync(process.execPath, ['--import', join(platform, 'node_modules/tsx/dist/loader.mjs'), script, mode, platform, input, ...output ? [output] : []],
@@ -54,4 +55,16 @@ test('keeps old versions immutable after a newer version replaces them in the la
   const result = execute('immutable', 'history', 'third.json')
   assert.equal(result.status, 1)
   assert.match(result.stderr, /Immutable entry changed: tool@1.0.0/)
+}))
+
+test('verifies archived signatures after the old key is retired from current trust', () => fixture(({ root, execute, unsigned }) => {
+  assert.equal(execute('sign', 'unsigned.json', 'old-signed.json').status, 0)
+  const nextKey = pair()
+  writeFileSync(join(root, 'trusted-key.json'), JSON.stringify({ keyId: 'next-only', publicKey: nextKey.publicKey }))
+  writeFileSync(join(root, 'next.json'), JSON.stringify({ ...unsigned, entries: [{ ...unsigned.entries[0], version: '1.1.0' }] }))
+  assert.equal(execute('sign', 'next.json', 'new-signed.json', nextKey.privateKey).status, 0)
+  assert.equal(execute('verify', 'old-signed.json').status, 1)
+  assert.equal(execute('verify', 'new-signed.json').status, 0)
+  const result = execute('immutable', 'old-signed.json', 'next.json')
+  assert.equal(result.status, 0, result.stderr)
 }))

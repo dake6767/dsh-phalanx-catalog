@@ -32,7 +32,12 @@ The maintainer generates the official pair. Never commit the private key or
 put it into issues, logs, pull requests or test fixtures. Signing checks that the
 secret matches the committed public key before producing an asset.
 
-To rotate, first release a platform trusting both public keys. Then replace the
+Keep every retired public key in `historical-keys.json`; this archive is used
+only to verify historical Release signatures for immutability. It does not
+extend platform trust for the current online catalog.
+
+To rotate, first archive the old public key and release a platform trusting both
+public keys. Then replace the
 publishing secret and public `keyId`, publish a catalog signed by the new key,
 and later retire the old key in a platform release. The publishing job verifies every historical signed catalog and refuses any
 changed content for an already published id and version, even after that version

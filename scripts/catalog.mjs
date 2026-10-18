@@ -22,14 +22,14 @@ if (mode === 'assemble') {
   const trusted = await readJson('trusted-key.json')
   if (mode === 'immutable') {
     if (!output) throw new Error('Immutability check requires the next document')
-    const { officialSuiteCatalogKeys } = await import(pathToFileURL(resolve(platformRoot, 'src/domain/suite-catalog-keys.ts')).href)
+    const historicalKeys = await readJson('historical-keys.json')
     const { verifySuiteCatalogSignature } = await import(pathToFileURL(resolve(platformRoot, 'src/domain/suite-catalog-signature.ts')).href)
     const files = (await stat(input)).isDirectory()
       ? (await readdir(input)).filter(name => name.endsWith('.json')).map(name => resolve(input, name)) : [input]
     const previous = new Map()
     for (const file of files) {
       const document = await readJson(file)
-      if (verifySuiteCatalogSignature(document, [...officialSuiteCatalogKeys, trusted]) !== 'ok') throw new Error('Previous catalog signature verification failed')
+      if (verifySuiteCatalogSignature(document, [...historicalKeys, trusted]) !== 'ok') throw new Error('Previous catalog signature verification failed')
       for (const entry of document.entries) {
         const identity = `${entry.id}@${entry.version}`
         if (previous.has(identity) && previous.get(identity) !== entry.contentHash) throw new Error(`Immutable history conflicts: ${identity}`)
