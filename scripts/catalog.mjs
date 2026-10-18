@@ -1,5 +1,5 @@
 import { createPrivateKey, createPublicKey, sign, verify } from 'node:crypto'
-import { readdir, readFile, writeFile } from 'node:fs/promises'
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -19,15 +19,24 @@ if (mode === 'assemble') {
   const document = { format: 1, publishedAt: new Date().toISOString(), entries }
   await writeFile(input, `${JSON.stringify(document, null, 2)}\n`)
 } else {
-  const document = await readJson(input)
   const trusted = await readJson('trusted-key.json')
   if (mode === 'immutable') {
     if (!output) throw new Error('Immutability check requires the next document')
     const { officialSuiteCatalogKeys } = await import(pathToFileURL(resolve(platformRoot, 'src/domain/suite-catalog-keys.ts')).href)
     const { verifySuiteCatalogSignature } = await import(pathToFileURL(resolve(platformRoot, 'src/domain/suite-catalog-signature.ts')).href)
-    if (verifySuiteCatalogSignature(document, [...officialSuiteCatalogKeys, trusted]) !== 'ok') throw new Error('Previous catalog signature verification failed')
+    const files = (await stat(input)).isDirectory()
+      ? (await readdir(input)).filter(name => name.endsWith('.json')).map(name => resolve(input, name)) : [input]
+    const previous = new Map()
+    for (const file of files) {
+      const document = await readJson(file)
+      if (verifySuiteCatalogSignature(document, [...officialSuiteCatalogKeys, trusted]) !== 'ok') throw new Error('Previous catalog signature verification failed')
+      for (const entry of document.entries) {
+        const identity = `${entry.id}@${entry.version}`
+        if (previous.has(identity) && previous.get(identity) !== entry.contentHash) throw new Error(`Immutable history conflicts: ${identity}`)
+        previous.set(identity, entry.contentHash)
+      }
+    }
     const next = await readJson(output)
-    const previous = new Map(document.entries.map(entry => [`${entry.id}@${entry.version}`, entry.contentHash]))
     for (const entry of next.entries) {
       const hash = previous.get(`${entry.id}@${entry.version}`)
       if (hash !== undefined && hash !== entry.contentHash) throw new Error(`Immutable entry changed: ${entry.id}@${entry.version}`)
@@ -35,6 +44,7 @@ if (mode === 'assemble') {
     console.log('Released entry versions are unchanged.')
     process.exit(0)
   }
+  const document = await readJson(input)
   if (mode === 'sign') {
     if (!output) throw new Error('Signing requires an output path')
     const pem = process.env.CATALOG_ED25519_PRIVATE_KEY

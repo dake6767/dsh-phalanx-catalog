@@ -99,11 +99,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          count=$(gh release list --limit 1 --json tagName --jq length)
-          if [ "$count" != 0 ]; then
-            gh release download --pattern catalog.json --output catalog.previous.json
-            node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs immutable platform catalog.previous.json catalog.unsigned.json
-          fi
+          mkdir catalog.history
+          gh api --paginate "repos/${GH_REPO}/releases?per_page=100" --jq '.[] | select(.draft == false and (.tag_name | startswith("catalog-"))) | .tag_name' > released-tags.txt
+          index=0
+          while IFS= read -r tag; do
+            gh release download "$tag" --pattern catalog.json --output "catalog.history/${index}.json"
+            index=$((index + 1))
+          done < released-tags.txt
+          node --import ./platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs immutable platform catalog.history catalog.unsigned.json
       - name: Sign with the release environment secret
         env:
           CATALOG_ED25519_PRIVATE_KEY: ${{ secrets.CATALOG_ED25519_PRIVATE_KEY }}

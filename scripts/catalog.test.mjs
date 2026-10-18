@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process'
 import { generateKeyPairSync } from 'node:crypto'
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { resolve, join } from 'node:path'
 import { test } from 'node:test'
@@ -43,4 +43,15 @@ test('refuses content drift for an already released id and version', () => fixtu
   assert.match(result.stderr, /Immutable entry changed/)
   writeFileSync(join(root, 'next.json'), JSON.stringify({ ...unsigned, entries: [{ ...entry, version: '1.0.1', contentHash: 'b'.repeat(64) }] }))
   assert.equal(execute('immutable', 'signed.json', 'next.json').status, 0)
+}))
+
+test('keeps old versions immutable after a newer version replaces them in the latest catalog', () => fixture(({ root, execute, unsigned }) => {
+  mkdirSync(join(root, 'history'))
+  assert.equal(execute('sign', 'unsigned.json', 'history/first.json').status, 0)
+  writeFileSync(join(root, 'second.json'), JSON.stringify({ ...unsigned, entries: [{ ...unsigned.entries[0], version: '1.1.0', contentHash: 'b'.repeat(64) }] }))
+  assert.equal(execute('sign', 'second.json', 'history/second.json').status, 0)
+  writeFileSync(join(root, 'third.json'), JSON.stringify({ ...unsigned, entries: [{ ...unsigned.entries[0], contentHash: 'c'.repeat(64) }] }))
+  const result = execute('immutable', 'history', 'third.json')
+  assert.equal(result.status, 1)
+  assert.match(result.stderr, /Immutable entry changed: tool@1.0.0/)
 }))

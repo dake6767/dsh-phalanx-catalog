@@ -34,8 +34,9 @@ secret matches the committed public key before producing an asset.
 
 To rotate, first release a platform trusting both public keys. Then replace the
 publishing secret and public `keyId`, publish a catalog signed by the new key,
-and later retire the old key in a platform release. Preserve published entry
-versions as immutable.
+and later retire the old key in a platform release. The publishing job verifies every historical signed catalog and refuses any
+changed content for an already published id and version, even after that version
+leaves the latest directory. Preserve historical Releases for this check.
 
 ## 本地检查
 
