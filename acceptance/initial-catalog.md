@@ -14,7 +14,7 @@ unsigned publication through `DSH_PHALANX_CATALOG_TEST_FILE`.
 | hyperframes | 2.0.0 | Generated-adapter equivalence checked; fresh member render passed on candidate run-39173900981 |
 
 The prior real-service receipt is
-[platform v0.1.18 acceptance](https://github.com/dake6767/dsh-phalanx/blob/v0.1.18/releases/acceptance/0.1.18.md).
+[platform v0.1.18 acceptance](https://github.com/dake6767/dsh-phalanx/blob/fa0f562ac1e0d46eabb56940ce0f996c8a752496/releases/acceptance/0.1.18.md).
 The initial pandoc, ffmpeg and chromium entries retain the reviewed upstream
 bytes; structural/download checks and generated entry-point checks cover them.
 Release assets identify their publication run and exact catalog hash.
@@ -22,7 +22,7 @@ Release assets identify their publication run and exact catalog hash.
 ## Fresh real-service acceptance
 
 The following checks passed on 2026-10-19 (UTC), using the exact Linux amd64
-platform candidate [run-39173900981](https://github.com/dake6767/dsh-phalanx-candidates/releases/tag/run-39173900981),
+platform candidate [run-39173900981](https://github.com/dake6767/dsh-phalanx/actions/runs/39173900981),
 source commit `5b45ebc2a3eeeffcb29572eb0d627a5c42d1d07d` and image digest
 `sha256:ce4e7f16cb89bdc3a52fd54534da50a8c223d31f62d46fe6ed3650b295b70bda`.
 The test harness commit was `cb7ca149358f5fa722e4c564dc35270319c50374`.
