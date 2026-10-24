@@ -1,0 +1,72 @@
+{
+  "kind": "plugin",
+  "id": "onlyoffice",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.24"
+  },
+  "adapters": [],
+  "title": {
+    "en": "OnlyOffice",
+    "zh-CN": "OnlyOffice"
+  },
+  "description": {
+    "en": "Edit DOCX, XLSX and PPTX in DSH and save to the original file. Prepares a shared read-only SDK; missing assets use the member cache. The plugin and SDK contain AGPL-3.0 software; review upstream license terms before use.",
+    "zh-CN": "在DSH中编辑DOCX、XLSX和PPTX并保存回原文件。预先准备只读共享SDK，缺失资源回退成员缓存。插件和SDK包含AGPL-3.0软件，使用前请阅读上游许可条款。"
+  },
+  "source": {
+    "en": "@dake6767/dsh-onlyoffice 0.1.9; electroluxcode/onlyoffice-web-comp at 99dbe255893b82fba46b82b337c571eb7d41f668",
+    "zh-CN": "@dake6767/dsh-onlyoffice 0.1.9；electroluxcode/onlyoffice-web-comp固定提交99dbe255893b82fba46b82b337c571eb7d41f668"
+  },
+  "dependencies": [],
+  "serviceAddresses": [],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "onlyoffice-sdk",
+      "type": "resource",
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/electroluxcode/onlyoffice-web-comp/archive/99dbe255893b82fba46b82b337c571eb7d41f668.tar.gz",
+            "arm64": "https://github.com/electroluxcode/onlyoffice-web-comp/archive/99dbe255893b82fba46b82b337c571eb7d41f668.tar.gz"
+          },
+          "sha256": {
+            "amd64": "9b710d349543f84bcbe48eab3dca7d89db2e1f9a160029aab761ca98cbec6512",
+            "arm64": "9b710d349543f84bcbe48eab3dca7d89db2e1f9a160029aab761ca98cbec6512"
+          },
+          "target": "sdk.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "sdk",
+            "stripComponents": 4,
+            "member": "onlyoffice-web-comp-99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "plugin",
+      "packageName": "@dake6767/dsh-onlyoffice",
+      "version": "0.1.9",
+      "integrity": "sha512-SWoUvFc8+0gSYD4DnQI5/fDS/xEmXk1r21++NVKGV15lLGrXyumWTwicYLwvNBV9evBPFyJHlrFJW/DpmUTIsA==",
+      "runtimeDependencies": [
+        "onlyoffice-sdk"
+      ],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [
+          {
+            "name": "DSH_ONLYOFFICE_SHARED_CACHE_DIR",
+            "value": "{dependency:onlyoffice-sdk}/sdk"
+          }
+        ],
+        "entriesYaml": "onlyoffice:\n  version: \"9.4.0-develop\"\n"
+      }
+    }
+  ],
+  "contentHash": "484b342b2f6ca81f8aa8b6b9dd514d44cdefe7242beef45382721b5a98e9790f"
+}

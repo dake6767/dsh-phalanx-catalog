@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process'
 import { generateKeyPairSync } from 'node:crypto'
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { resolve, join } from 'node:path'
 import { test } from 'node:test'
@@ -67,4 +67,16 @@ test('verifies archived signatures after the old key is retired from current tru
   assert.equal(execute('verify', 'new-signed.json').status, 0)
   const result = execute('immutable', 'old-signed.json', 'next.json')
   assert.equal(result.status, 0, result.stderr)
+}))
+
+
+test('assembles plugin entries alongside suites and dependencies', () => fixture(({ root, execute }) => {
+  for (const kind of ['suite', 'dependency', 'plugin']) {
+    mkdirSync(join(root, 'entries', kind), { recursive: true })
+    writeFileSync(join(root, 'entries', kind, `${kind}-fixture.json`), JSON.stringify({ kind, id: `${kind}-fixture`, version: '1.0.0', engines: { platform: '>=0.1.24' }, adapters: [], title: { en: 'Fixture', 'zh-CN': '测试' }, description: { en: 'Fixture', 'zh-CN': '测试' }, source: { en: 'Fixture', 'zh-CN': '测试' }, identity: { en: 'Fixture', 'zh-CN': '测试' }, dependencies: [], items: [{ kind: 'plugin', packageName: '@fixture/editor', version: '1.0.0', integrity: 'sha512-' + Buffer.alloc(64, 1).toString('base64'), runtimeDependencies: [], catalogDependencies: [], access: { environment: [], entriesYaml: '' } }] }))
+  }
+  const result = execute('assemble', 'assembled.json')
+  assert.equal(result.status, 0, result.stderr)
+  const document = JSON.parse(readFileSync(join(root, 'assembled.json'), 'utf8'))
+  assert.deepEqual(document.entries.map(entry => entry.kind), ['suite', 'dependency', 'plugin'])
 }))
