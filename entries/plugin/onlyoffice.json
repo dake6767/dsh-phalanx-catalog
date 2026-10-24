@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "onlyoffice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "platform": ">=0.1.24"
   },
@@ -11,8 +11,8 @@
     "zh-CN": "OnlyOffice"
   },
   "description": {
-    "en": "Edit DOCX, XLSX and PPTX in DSH and save to the original file. Prepares a shared read-only SDK; missing assets use the member cache. The plugin and SDK contain AGPL-3.0 software; review upstream license terms before use.",
-    "zh-CN": "在DSH中编辑DOCX、XLSX和PPTX并保存回原文件。预先准备只读共享SDK，缺失资源回退成员缓存。插件和SDK包含AGPL-3.0软件，使用前请阅读上游许可条款。"
+    "en": "Edit DOCX, XLSX and PPTX in DSH and save to the original file. Prepares about 140 MB of shared read-only core resources for the three editors, fonts and conversion; other resources use the member cache. The plugin and SDK contain AGPL-3.0 software; review upstream license terms before use.",
+    "zh-CN": "在DSH中编辑DOCX、XLSX和PPTX并保存回原文件。预备约140MB的三种编辑器核心资源、字体和转换器，共享层只读；其他资源回退成员缓存。插件和SDK包含AGPL-3.0软件，使用前请阅读上游许可条款。"
   },
   "source": {
     "en": "@dake6767/dsh-onlyoffice 0.1.9; electroluxcode/onlyoffice-web-comp at 99dbe255893b82fba46b82b337c571eb7d41f668",
@@ -30,21 +30,1632 @@
       "downloads": [
         {
           "source": "github-assets",
-          "url": {
-            "amd64": "https://github.com/electroluxcode/onlyoffice-web-comp/archive/99dbe255893b82fba46b82b337c571eb7d41f668.tar.gz",
-            "arm64": "https://github.com/electroluxcode/onlyoffice-web-comp/archive/99dbe255893b82fba46b82b337c571eb7d41f668.tar.gz"
-          },
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/LICENSE",
           "sha256": {
-            "amd64": "9b710d349543f84bcbe48eab3dca7d89db2e1f9a160029aab761ca98cbec6512",
-            "arm64": "9b710d349543f84bcbe48eab3dca7d89db2e1f9a160029aab761ca98cbec6512"
+            "amd64": "91b65277959ec273763d28ef002e83a6b3fba57c7a35436c9e5b66536333d720",
+            "arm64": "91b65277959ec273763d28ef002e83a6b3fba57c7a35436c9e5b66536333d720"
           },
-          "target": "sdk.tar.gz",
-          "extract": {
-            "format": "tar",
-            "directory": "sdk",
-            "stripComponents": 4,
-            "member": "onlyoffice-web-comp-99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop"
-          }
+          "target": "sdk/9.4.0-develop/LICENSE"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/000",
+          "sha256": {
+            "amd64": "2a6bc04169fc1e273ede5e55ec7c666eb4ebf6da438202cdf61d415a77f83a69",
+            "arm64": "2a6bc04169fc1e273ede5e55ec7c666eb4ebf6da438202cdf61d415a77f83a69"
+          },
+          "target": "sdk/9.4.0-develop/fonts/000"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/009",
+          "sha256": {
+            "amd64": "fe752189141ef8960edcc295b6d2de29cfe21ca33dbece68634dcf863c699476",
+            "arm64": "fe752189141ef8960edcc295b6d2de29cfe21ca33dbece68634dcf863c699476"
+          },
+          "target": "sdk/9.4.0-develop/fonts/009"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/010",
+          "sha256": {
+            "amd64": "5bc6c3c19748526286dd19e1712d6066c193021b41b61d8681b764121f557011",
+            "arm64": "5bc6c3c19748526286dd19e1712d6066c193021b41b61d8681b764121f557011"
+          },
+          "target": "sdk/9.4.0-develop/fonts/010"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/011",
+          "sha256": {
+            "amd64": "23f3924a9971c00c257b074f07b4bee2a3813b7bb37da164d1b7ef0e6b19d3d8",
+            "arm64": "23f3924a9971c00c257b074f07b4bee2a3813b7bb37da164d1b7ef0e6b19d3d8"
+          },
+          "target": "sdk/9.4.0-develop/fonts/011"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/012",
+          "sha256": {
+            "amd64": "e29100abb1da998fc544c5ae2d522774bcc27138e934e9fb659388a9b6041e9f",
+            "arm64": "e29100abb1da998fc544c5ae2d522774bcc27138e934e9fb659388a9b6041e9f"
+          },
+          "target": "sdk/9.4.0-develop/fonts/012"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/022",
+          "sha256": {
+            "amd64": "eaf9193b24c28d78cdd199638ff395f761fb5951ca31f68d587e84e78cd722f7",
+            "arm64": "eaf9193b24c28d78cdd199638ff395f761fb5951ca31f68d587e84e78cd722f7"
+          },
+          "target": "sdk/9.4.0-develop/fonts/022"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/024",
+          "sha256": {
+            "amd64": "1ae8adccdf71dacda1379fd3a9f83730b8f3cf1894441eaadbff74c5d5c0e2a8",
+            "arm64": "1ae8adccdf71dacda1379fd3a9f83730b8f3cf1894441eaadbff74c5d5c0e2a8"
+          },
+          "target": "sdk/9.4.0-develop/fonts/024"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/025",
+          "sha256": {
+            "amd64": "c23e73a223a6f9756a6fa4d7f42c1446d7fd9845986e87c1e3311c23d86811d1",
+            "arm64": "c23e73a223a6f9756a6fa4d7f42c1446d7fd9845986e87c1e3311c23d86811d1"
+          },
+          "target": "sdk/9.4.0-develop/fonts/025"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/026",
+          "sha256": {
+            "amd64": "ff12f29720b8239f2aa0e8cf6e26f2d7210fce107a959e00e0ecd07e51a7cefe",
+            "arm64": "ff12f29720b8239f2aa0e8cf6e26f2d7210fce107a959e00e0ecd07e51a7cefe"
+          },
+          "target": "sdk/9.4.0-develop/fonts/026"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/029",
+          "sha256": {
+            "amd64": "aada40c3c02e2b8a58cf21d5a63c7ec9ca7856445f252d6a20c5fb29a555d3a1",
+            "arm64": "aada40c3c02e2b8a58cf21d5a63c7ec9ca7856445f252d6a20c5fb29a555d3a1"
+          },
+          "target": "sdk/9.4.0-develop/fonts/029"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/030",
+          "sha256": {
+            "amd64": "7d410427837b84375d6f14957eae118a2a01624a83f31609d1ebb5cba65714cd",
+            "arm64": "7d410427837b84375d6f14957eae118a2a01624a83f31609d1ebb5cba65714cd"
+          },
+          "target": "sdk/9.4.0-develop/fonts/030"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/031",
+          "sha256": {
+            "amd64": "387302bb9e6d61e9a04aab4ce2f656029e6a8ce0c3e243c4fb8228c91679ce72",
+            "arm64": "387302bb9e6d61e9a04aab4ce2f656029e6a8ce0c3e243c4fb8228c91679ce72"
+          },
+          "target": "sdk/9.4.0-develop/fonts/031"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/032",
+          "sha256": {
+            "amd64": "7105f7c22b07c8276c270d243775a5d812f9f03b8eb141f804458fc7c5f0946e",
+            "arm64": "7105f7c22b07c8276c270d243775a5d812f9f03b8eb141f804458fc7c5f0946e"
+          },
+          "target": "sdk/9.4.0-develop/fonts/032"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/038",
+          "sha256": {
+            "amd64": "bdf5f7041c4e70de7f31743629fe263de51862c9f003831a0ff75be0e61e513b",
+            "arm64": "bdf5f7041c4e70de7f31743629fe263de51862c9f003831a0ff75be0e61e513b"
+          },
+          "target": "sdk/9.4.0-develop/fonts/038"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/039",
+          "sha256": {
+            "amd64": "ccaf835ca461cd27a949eb50d65c9065cd8d5c6082fb32531049ad85defb77b6",
+            "arm64": "ccaf835ca461cd27a949eb50d65c9065cd8d5c6082fb32531049ad85defb77b6"
+          },
+          "target": "sdk/9.4.0-develop/fonts/039"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/040",
+          "sha256": {
+            "amd64": "e02eacf20cf07e0a589b93da818acdabba0bcb98c80e4324f75ca5789696eeb7",
+            "arm64": "e02eacf20cf07e0a589b93da818acdabba0bcb98c80e4324f75ca5789696eeb7"
+          },
+          "target": "sdk/9.4.0-develop/fonts/040"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/041",
+          "sha256": {
+            "amd64": "d19cbf5fe219c92808581fa981ed29d4d3ee00af9141fcd4e480538e0d72b6d0",
+            "arm64": "d19cbf5fe219c92808581fa981ed29d4d3ee00af9141fcd4e480538e0d72b6d0"
+          },
+          "target": "sdk/9.4.0-develop/fonts/041"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/050",
+          "sha256": {
+            "amd64": "9b320cec0feae25f23c43e42bd3b3252116e187fc831da30d2c328111ba9f6b6",
+            "arm64": "9b320cec0feae25f23c43e42bd3b3252116e187fc831da30d2c328111ba9f6b6"
+          },
+          "target": "sdk/9.4.0-develop/fonts/050"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/056",
+          "sha256": {
+            "amd64": "3a4df6f08a828ffaa1d2cbca2d6a6bde3ef96bf73b68263f70cdb5e6f835c1f6",
+            "arm64": "3a4df6f08a828ffaa1d2cbca2d6a6bde3ef96bf73b68263f70cdb5e6f835c1f6"
+          },
+          "target": "sdk/9.4.0-develop/fonts/056"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/057",
+          "sha256": {
+            "amd64": "0adae1054b1c6823e3dc77108727b2bea3344734826f8574791e8b093cf299f4",
+            "arm64": "0adae1054b1c6823e3dc77108727b2bea3344734826f8574791e8b093cf299f4"
+          },
+          "target": "sdk/9.4.0-develop/fonts/057"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/058",
+          "sha256": {
+            "amd64": "da623a9e0d04754010b4201f5233569e15c8cef1c4bce1d8b3ed751cc3211f6f",
+            "arm64": "da623a9e0d04754010b4201f5233569e15c8cef1c4bce1d8b3ed751cc3211f6f"
+          },
+          "target": "sdk/9.4.0-develop/fonts/058"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/059",
+          "sha256": {
+            "amd64": "defb20806037410a951363907c58f18bf58fd4a28ea9f9493154047a633c753f",
+            "arm64": "defb20806037410a951363907c58f18bf58fd4a28ea9f9493154047a633c753f"
+          },
+          "target": "sdk/9.4.0-develop/fonts/059"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/060",
+          "sha256": {
+            "amd64": "03a236a0b3c3a4da6ac2f9d0b5d962f38d2f5ceb14246d66ca1eedd79f97e030",
+            "arm64": "03a236a0b3c3a4da6ac2f9d0b5d962f38d2f5ceb14246d66ca1eedd79f97e030"
+          },
+          "target": "sdk/9.4.0-develop/fonts/060"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/061",
+          "sha256": {
+            "amd64": "b46d10175c700494bf992a3a81949f34a5c176abf09e09b36a9f55becfd2f560",
+            "arm64": "b46d10175c700494bf992a3a81949f34a5c176abf09e09b36a9f55becfd2f560"
+          },
+          "target": "sdk/9.4.0-develop/fonts/061"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/062",
+          "sha256": {
+            "amd64": "7fa3a6a42852c755fbb1f344f2e025634670acecd26dd69a6688a0d3cd44b539",
+            "arm64": "7fa3a6a42852c755fbb1f344f2e025634670acecd26dd69a6688a0d3cd44b539"
+          },
+          "target": "sdk/9.4.0-develop/fonts/062"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/063",
+          "sha256": {
+            "amd64": "c97db17e503495edd158fdc84ed11d32a95f60e70305521488414e328c1c999e",
+            "arm64": "c97db17e503495edd158fdc84ed11d32a95f60e70305521488414e328c1c999e"
+          },
+          "target": "sdk/9.4.0-develop/fonts/063"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/065",
+          "sha256": {
+            "amd64": "fa3dc387c3ea526ddf19973d3af1b6f5078e63ca205b5057d09d0e5e4e17d9a3",
+            "arm64": "fa3dc387c3ea526ddf19973d3af1b6f5078e63ca205b5057d09d0e5e4e17d9a3"
+          },
+          "target": "sdk/9.4.0-develop/fonts/065"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/067",
+          "sha256": {
+            "amd64": "c084576f782f212b64624afb15655cc3892904f3a563ed50e3eee63196ff77d0",
+            "arm64": "c084576f782f212b64624afb15655cc3892904f3a563ed50e3eee63196ff77d0"
+          },
+          "target": "sdk/9.4.0-develop/fonts/067"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/068",
+          "sha256": {
+            "amd64": "c2a820482cd6dca5057a75ecd2d91cf4579d0f075a64048041a65042ab26c718",
+            "arm64": "c2a820482cd6dca5057a75ecd2d91cf4579d0f075a64048041a65042ab26c718"
+          },
+          "target": "sdk/9.4.0-develop/fonts/068"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/081",
+          "sha256": {
+            "amd64": "857e60287a1282664494b76a115291deb75ae59090ec43aa8100fb5facefca36",
+            "arm64": "857e60287a1282664494b76a115291deb75ae59090ec43aa8100fb5facefca36"
+          },
+          "target": "sdk/9.4.0-develop/fonts/081"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/1002",
+          "sha256": {
+            "amd64": "9542f38ac382d5355c3942768fd92110d0afa75db74970dc68da5068690c4f5c",
+            "arm64": "9542f38ac382d5355c3942768fd92110d0afa75db74970dc68da5068690c4f5c"
+          },
+          "target": "sdk/9.4.0-develop/fonts/1002"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/1003",
+          "sha256": {
+            "amd64": "1879f6d89eb6320d5bd40034802a1a3e006d85aea0bb0b9d1bb98abefd8e7552",
+            "arm64": "1879f6d89eb6320d5bd40034802a1a3e006d85aea0bb0b9d1bb98abefd8e7552"
+          },
+          "target": "sdk/9.4.0-develop/fonts/1003"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/1004",
+          "sha256": {
+            "amd64": "ee54cbd19bb8451038e42679807030e2051fb6e97ba048003c965cbefe7d1c80",
+            "arm64": "ee54cbd19bb8451038e42679807030e2051fb6e97ba048003c965cbefe7d1c80"
+          },
+          "target": "sdk/9.4.0-develop/fonts/1004"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/1005",
+          "sha256": {
+            "amd64": "0b5b8e66882efd8c9b4613f995d0dc4b75cd03015953db61a2e55274ad558a5f",
+            "arm64": "0b5b8e66882efd8c9b4613f995d0dc4b75cd03015953db61a2e55274ad558a5f"
+          },
+          "target": "sdk/9.4.0-develop/fonts/1005"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/134",
+          "sha256": {
+            "amd64": "1ccd17b3a3a63bb8ac4dd49fd3dd45fc549bcc9cec08d02e6af59c8e3ab82fba",
+            "arm64": "1ccd17b3a3a63bb8ac4dd49fd3dd45fc549bcc9cec08d02e6af59c8e3ab82fba"
+          },
+          "target": "sdk/9.4.0-develop/fonts/134"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/135",
+          "sha256": {
+            "amd64": "0e051194266362ea5280e62f98a05c31e63dd7a19cc3940c61b358757c0d388e",
+            "arm64": "0e051194266362ea5280e62f98a05c31e63dd7a19cc3940c61b358757c0d388e"
+          },
+          "target": "sdk/9.4.0-develop/fonts/135"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/179",
+          "sha256": {
+            "amd64": "d2d873004870d06a4ae424760123101759d8dd120950f60b9fbb9e2f5e9cc625",
+            "arm64": "d2d873004870d06a4ae424760123101759d8dd120950f60b9fbb9e2f5e9cc625"
+          },
+          "target": "sdk/9.4.0-develop/fonts/179"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/182",
+          "sha256": {
+            "amd64": "e77f99283a59fe095973d338a8f6e73af95a59300b9527c850f8db543b86d3f6",
+            "arm64": "e77f99283a59fe095973d338a8f6e73af95a59300b9527c850f8db543b86d3f6"
+          },
+          "target": "sdk/9.4.0-develop/fonts/182"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/184",
+          "sha256": {
+            "amd64": "8a6011e92ec9ba3375c4d4e8552706c9d3dd2aa93a5d227c811688c12878b2a1",
+            "arm64": "8a6011e92ec9ba3375c4d4e8552706c9d3dd2aa93a5d227c811688c12878b2a1"
+          },
+          "target": "sdk/9.4.0-develop/fonts/184"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/fonts/217",
+          "sha256": {
+            "amd64": "81e1ed1dd0c83d6c2b7debecd4af482057f0d7eb376471a2d5ed8c54be287f73",
+            "arm64": "81e1ed1dd0c83d6c2b7debecd4af482057f0d7eb376471a2d5ed8c54be287f73"
+          },
+          "target": "sdk/9.4.0-develop/fonts/217"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/plugins.json",
+          "sha256": {
+            "amd64": "2f504d3fac15950e33b12208d139462beeb5aeb1265461f5c5397e66e24ee295",
+            "arm64": "2f504d3fac15950e33b12208d139462beeb5aeb1265461f5c5397e66e24ee295"
+          },
+          "target": "sdk/9.4.0-develop/plugins.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/cell/css/main.css",
+          "sha256": {
+            "amd64": "0bc08883c50bc6e473eb28c3cabd2aca96778c0cbf34046e34d04b69ca81b7d8",
+            "arm64": "0bc08883c50bc6e473eb28c3cabd2aca96778c0cbf34046e34d04b69ca81b7d8"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/cell/css/main.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/cell/sdk-all-min.js",
+          "sha256": {
+            "amd64": "fd7fccd146a4926bae9ee0bd0a7fc331013c309de9aa801ff61b3ee26a39fdac",
+            "arm64": "fd7fccd146a4926bae9ee0bd0a7fc331013c309de9aa801ff61b3ee26a39fdac"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/cell/sdk-all-min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/cell/sdk-all.js",
+          "sha256": {
+            "amd64": "13a1b63813a475460ecfb88bb590eee2c7d2b0d18960888ed84153b08000e810",
+            "arm64": "13a1b63813a475460ecfb88bb590eee2c7d2b0d18960888ed84153b08000e810"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/cell/sdk-all.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/AllFonts.js",
+          "sha256": {
+            "amd64": "d33b707cfc29ec97f2bf0605ab23aa8ec31bfcb36d4950a9a8677acd395f7dc5",
+            "arm64": "d33b707cfc29ec97f2bf0605ab23aa8ec31bfcb36d4950a9a8677acd395f7dc5"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/AllFonts.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Charts/ChartStyles.js",
+          "sha256": {
+            "amd64": "3842f5c3ffc5343b4273988cf6641f17ad3825d30834cb0d4481cdaf1e106ca1",
+            "arm64": "3842f5c3ffc5343b4273988cf6641f17ad3825d30834cb0d4481cdaf1e106ca1"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Charts/ChartStyles.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/img.png",
+          "sha256": {
+            "amd64": "7afc3246721d3bd4b9c452869fec9051ef022bdeef25d4b001440176891835d3",
+            "arm64": "7afc3246721d3bd4b9c452869fec9051ef022bdeef25d4b001440176891835d3"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/img.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/img@2x.png",
+          "sha256": {
+            "amd64": "3bf5862fd5af94249b075fe75f6313f7f805312cd19e82514a76a27a49f22a0b",
+            "arm64": "3bf5862fd5af94249b075fe75f6313f7f805312cd19e82514a76a27a49f22a0b"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/img@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/img_active.png",
+          "sha256": {
+            "amd64": "a3735d3b569d871d6ef04187437340b66c384edc3890fe0060d72fbf400dfc11",
+            "arm64": "a3735d3b569d871d6ef04187437340b66c384edc3890fe0060d72fbf400dfc11"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/img_active.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/img_active@2x.png",
+          "sha256": {
+            "amd64": "ae0b448134ee846820683aa8b180308ff0885c6113afc75af001d94f3c199f12",
+            "arm64": "ae0b448134ee846820683aa8b180308ff0885c6113afc75af001d94f3c199f12"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/img_active@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/signature.png",
+          "sha256": {
+            "amd64": "b137f32b3fe5ff2f7953e129cd21534c98d34241197d72e2976dbb753c91d08d",
+            "arm64": "b137f32b3fe5ff2f7953e129cd21534c98d34241197d72e2976dbb753c91d08d"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/signature.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/signature@2x.png",
+          "sha256": {
+            "amd64": "b04c38c33cc8c43952a40d593f836caee772aabea32bc3c57b8c8d049db2b0dc",
+            "arm64": "b04c38c33cc8c43952a40d593f836caee772aabea32bc3c57b8c8d049db2b0dc"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/signature@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/toc.png",
+          "sha256": {
+            "amd64": "fc5dbc6a67c5ec1bedf6313ce6c0fd10bc57bc33fd8702fd705418bec91b6541",
+            "arm64": "fc5dbc6a67c5ec1bedf6313ce6c0fd10bc57bc33fd8702fd705418bec91b6541"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/toc.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/toc@2x.png",
+          "sha256": {
+            "amd64": "3c67c9a131a9bf14fbca67727fb122f80d4370bf016cb2c2997e1ef1b6e49605",
+            "arm64": "3c67c9a131a9bf14fbca67727fb122f80d4370bf016cb2c2997e1ef1b6e49605"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/toc@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/toc_active.png",
+          "sha256": {
+            "amd64": "753160296321d3d64d8cb4cd6ed8fde38e0ec017e54e791565c6f02df67be3ff",
+            "arm64": "753160296321d3d64d8cb4cd6ed8fde38e0ec017e54e791565c6f02df67be3ff"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/toc_active.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/content_controls/toc_active@2x.png",
+          "sha256": {
+            "amd64": "53ee80b0ceaf3e7c1f4b91bd1d02f4203a373a775cca248f5dac50345bfe8251",
+            "arm64": "53ee80b0ceaf3e7c1f4b91bd1d02f4203a373a775cca248f5dac50345bfe8251"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/content_controls/toc_active@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/cursors/svg.json",
+          "sha256": {
+            "amd64": "7e4b7f0315da635d60c97bf4735a7985610b69a608971788522a821a0825386c",
+            "arm64": "7e4b7f0315da635d60c97bf4735a7985610b69a608971788522a821a0825386c"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/cursors/svg.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/fonts_thumbnail_ea.png.bin",
+          "sha256": {
+            "amd64": "145545bdce16a144718d59f8354d022fb3a46f46adf0641348745be05f279bd3",
+            "arm64": "145545bdce16a144718d59f8354d022fb3a46f46adf0641348745be05f279bd3"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/fonts_thumbnail_ea.png.bin"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/fonts_thumbnail_ea@2x.png.bin",
+          "sha256": {
+            "amd64": "519a2aa139f0025e2b0b76bb558ff26ce21ecb1d23ddb72b48a794567db0ab44",
+            "arm64": "519a2aa139f0025e2b0b76bb558ff26ce21ecb1d23ddb72b48a794567db0ab44"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/fonts_thumbnail_ea@2x.png.bin"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/icons/anchor.png",
+          "sha256": {
+            "amd64": "9a5ecd2e1d8df10ccdee27f2a86894a85c33829e295355961909b5cdaa726567",
+            "arm64": "9a5ecd2e1d8df10ccdee27f2a86894a85c33829e295355961909b5cdaa726567"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/icons/anchor.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/icons/anchor@2x.png",
+          "sha256": {
+            "amd64": "617c0b73a56acb6b37f937e4d32070c7cfea027b9371a2e2ba3ac9b43ba53c5f",
+            "arm64": "617c0b73a56acb6b37f937e4d32070c7cfea027b9371a2e2ba3ac9b43ba53c5f"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/icons/anchor@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/audio.png",
+          "sha256": {
+            "amd64": "c1d5616e02dc31061fe4777db992c715b6ce33e62fec6acbc5582e752760dcf2",
+            "arm64": "c1d5616e02dc31061fe4777db992c715b6ce33e62fec6acbc5582e752760dcf2"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/audio.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/audio@2x.png",
+          "sha256": {
+            "amd64": "fe24ed629f44a5acfa500b6eac4aff1742568d1c77260e85283de711bad9bbdd",
+            "arm64": "fe24ed629f44a5acfa500b6eac4aff1742568d1c77260e85283de711bad9bbdd"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/audio@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/chart.png",
+          "sha256": {
+            "amd64": "e7ec2d8fb9674e4f7ba1b13d1ff76530da856ead7d14fff60ae977113afcb394",
+            "arm64": "e7ec2d8fb9674e4f7ba1b13d1ff76530da856ead7d14fff60ae977113afcb394"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/chart.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/chart@2x.png",
+          "sha256": {
+            "amd64": "bd2941f0159a08137a3f7898510eab837ca77950b74885404c9a137cf60cb207",
+            "arm64": "bd2941f0159a08137a3f7898510eab837ca77950b74885404c9a137cf60cb207"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/chart@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/chart_active.png",
+          "sha256": {
+            "amd64": "ab22ad3bb3b7d92b0f5feddd35ea807c9a2fff8e1b23048675eb89e56cf83431",
+            "arm64": "ab22ad3bb3b7d92b0f5feddd35ea807c9a2fff8e1b23048675eb89e56cf83431"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/chart_active.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/chart_active@2x.png",
+          "sha256": {
+            "amd64": "5b4403f5f237df6252da75644db15247c7005e42e75ed5edc75a0ec6753d15f0",
+            "arm64": "5b4403f5f237df6252da75644db15247c7005e42e75ed5edc75a0ec6753d15f0"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/chart_active@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/image.png",
+          "sha256": {
+            "amd64": "b3ca6aba515bdd47b41da77340f79e3bd7ced82cac21e313c35fe7438ab1da8c",
+            "arm64": "b3ca6aba515bdd47b41da77340f79e3bd7ced82cac21e313c35fe7438ab1da8c"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/image.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/image@2x.png",
+          "sha256": {
+            "amd64": "18bdcd62455d4c010c302e755ee5af2070758f239c81ed3a4f8615dc174155b3",
+            "arm64": "18bdcd62455d4c010c302e755ee5af2070758f239c81ed3a4f8615dc174155b3"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/image@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/image_url.png",
+          "sha256": {
+            "amd64": "2d6f223726101e44a12b23fdaaaec242a2e116e27cf2f39d046d1b9d83a3a2c3",
+            "arm64": "2d6f223726101e44a12b23fdaaaec242a2e116e27cf2f39d046d1b9d83a3a2c3"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/image_url.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/image_url@2x.png",
+          "sha256": {
+            "amd64": "a52b65ad6b2e587333a37cb4a5602370e7fdc4c0380e03618bff7f71f8a76c37",
+            "arm64": "a52b65ad6b2e587333a37cb4a5602370e7fdc4c0380e03618bff7f71f8a76c37"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/image_url@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/smartart.png",
+          "sha256": {
+            "amd64": "e13917fabe3a00ba49370ac7c76a50bf92f30ca322f660fd0c37e1764b1d500b",
+            "arm64": "e13917fabe3a00ba49370ac7c76a50bf92f30ca322f660fd0c37e1764b1d500b"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/smartart.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/smartart@2x.png",
+          "sha256": {
+            "amd64": "0f56328ecaf0288b13760d5831c0e88f44a7519cd245e7bc74da4a7b1b9cbe21",
+            "arm64": "0f56328ecaf0288b13760d5831c0e88f44a7519cd245e7bc74da4a7b1b9cbe21"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/smartart@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/smartart_active.png",
+          "sha256": {
+            "amd64": "449013bd8e43442140322fe44a22ddc0334d4cfd355dfa19644e1b0677269b99",
+            "arm64": "449013bd8e43442140322fe44a22ddc0334d4cfd355dfa19644e1b0677269b99"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/smartart_active.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/smartart_active@2x.png",
+          "sha256": {
+            "amd64": "593e3a570bebf950bfe180913e8dcdc1409002786746512a4b20683bfc7f4327",
+            "arm64": "593e3a570bebf950bfe180913e8dcdc1409002786746512a4b20683bfc7f4327"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/smartart_active@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/table.png",
+          "sha256": {
+            "amd64": "b317e67fec67ffe5785cd261535d637c36c70b912a8dbb1e478e22f5052f14e9",
+            "arm64": "b317e67fec67ffe5785cd261535d637c36c70b912a8dbb1e478e22f5052f14e9"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/table.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/table@2x.png",
+          "sha256": {
+            "amd64": "28d1c4c875d530b5d63cedb5683b9bc278942b1ae6fff1a847d1066b719e7a71",
+            "arm64": "28d1c4c875d530b5d63cedb5683b9bc278942b1ae6fff1a847d1066b719e7a71"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/table@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/table_active.png",
+          "sha256": {
+            "amd64": "ef6ad41d9e7a4ea91933ec0190def6d60d53548c13f754a28d53207a0101dc96",
+            "arm64": "ef6ad41d9e7a4ea91933ec0190def6d60d53548c13f754a28d53207a0101dc96"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/table_active.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/table_active@2x.png",
+          "sha256": {
+            "amd64": "608c534f4f2c304dfd600cb8a8cb9483d553b1418ac16773a0f575477765dad9",
+            "arm64": "608c534f4f2c304dfd600cb8a8cb9483d553b1418ac16773a0f575477765dad9"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/table_active@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/video.png",
+          "sha256": {
+            "amd64": "fd6c8020c39eb651ab6c400613d14262909b4500dc0e12d1bf1ca47c25ae7727",
+            "arm64": "fd6c8020c39eb651ab6c400613d14262909b4500dc0e12d1bf1ca47c25ae7727"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/video.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/Images/placeholders/video@2x.png",
+          "sha256": {
+            "amd64": "93a7a2ca4ded75c3ea2b4c619368bfe755b7343c692502af4a885af6907eabef",
+            "arm64": "93a7a2ca4ded75c3ea2b4c619368bfe755b7343c692502af4a885af6907eabef"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/Images/placeholders/video@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/libfont/engine/fonts.js",
+          "sha256": {
+            "amd64": "6d6e5e74a33fe6d9d7b004d1bf7fa7f20f7cc3205d4992c43e071655ca06cc9a",
+            "arm64": "6d6e5e74a33fe6d9d7b004d1bf7fa7f20f7cc3205d4992c43e071655ca06cc9a"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/libfont/engine/fonts.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/libfont/engine/fonts.wasm",
+          "sha256": {
+            "amd64": "6b27107256a1df72419ac2b4894c65f9f6f0585ac303b8f3158dc441281e4482",
+            "arm64": "6b27107256a1df72419ac2b4894c65f9f6f0585ac303b8f3158dc441281e4482"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/libfont/engine/fonts.wasm"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/spell/spell/spell.js",
+          "sha256": {
+            "amd64": "cddd187fe4ed098f3a9b5ab679e030ae0b1d6f8c8f9113d626a568d99c9b10cb",
+            "arm64": "cddd187fe4ed098f3a9b5ab679e030ae0b1d6f8c8f9113d626a568d99c9b10cb"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/spell/spell/spell.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/common/spell/spell/spell.wasm",
+          "sha256": {
+            "amd64": "9c5c4b4a6329db55b52558962e9625b83194e7d6a085b67d05554d3ec2240984",
+            "arm64": "9c5c4b4a6329db55b52558962e9625b83194e7d6a085b67d05554d3ec2240984"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/common/spell/spell/spell.wasm"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/slide/sdk-all-min.js",
+          "sha256": {
+            "amd64": "cdb7c2dcb218fb94aabf558d632ff954f36504075c2534f3c7a69f3260004f23",
+            "arm64": "cdb7c2dcb218fb94aabf558d632ff954f36504075c2534f3c7a69f3260004f23"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/slide/sdk-all-min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/slide/sdk-all.js",
+          "sha256": {
+            "amd64": "4292a791c353455947d6dc0269693219685002bc4d583144a3b58ab2780ac447",
+            "arm64": "4292a791c353455947d6dc0269693219685002bc4d583144a3b58ab2780ac447"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/slide/sdk-all.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/slide/themes/themes.js",
+          "sha256": {
+            "amd64": "5e6d7896a1393c90fcc6f41462d4419014fe2bfa77c1d567b2561a0b03fbf211",
+            "arm64": "5e6d7896a1393c90fcc6f41462d4419014fe2bfa77c1d567b2561a0b03fbf211"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/slide/themes/themes.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/word/sdk-all-min.js",
+          "sha256": {
+            "amd64": "9605250d45617717ee93b5f6f49aee0f2cb37be3cf3b6184e24c92859569f628",
+            "arm64": "9605250d45617717ee93b5f6f49aee0f2cb37be3cf3b6184e24c92859569f628"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/word/sdk-all-min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/sdkjs/word/sdk-all.js",
+          "sha256": {
+            "amd64": "3c1af5da0509414a767822d32a21d71cf0240459af91326658f21db399f84822",
+            "arm64": "3c1af5da0509414a767822d32a21d71cf0240459af91326658f21db399f84822"
+          },
+          "target": "sdk/9.4.0-develop/sdkjs/word/sdk-all.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/themes.json",
+          "sha256": {
+            "amd64": "1a97a258bbb545a5d95dcfb1cd90f343f2ac106f43031dd6657d61a5e6b0298c",
+            "arm64": "1a97a258bbb545a5d95dcfb1cd90f343f2ac106f43031dd6657d61a5e6b0298c"
+          },
+          "target": "sdk/9.4.0-develop/themes.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/api/documents/api.js",
+          "sha256": {
+            "amd64": "4988defa015993a6afa2de3c5632b24b43f3ba7654e77ee61e27fb46d971234d",
+            "arm64": "4988defa015993a6afa2de3c5632b24b43f3ba7654e77ee61e27fb46d971234d"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/api/documents/api.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/api/documents/preload.html",
+          "sha256": {
+            "amd64": "e2689ca9e64c7a9aa57310763db3fe208e22412f3ea18f0ca80fddb31262f2c6",
+            "arm64": "e2689ca9e64c7a9aa57310763db3fe208e22412f3ea18f0ca80fddb31262f2c6"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/api/documents/preload.html"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/alphabetletters/alphabetletters.json",
+          "sha256": {
+            "amd64": "d531f454a9d717c8aebf01272ceab833527e7ddfd26925b631bca5b2ef5e0259",
+            "arm64": "d531f454a9d717c8aebf01272ceab833527e7ddfd26925b631bca5b2ef5e0259"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/alphabetletters/alphabetletters.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/alphabetletters/qwertyletters.json",
+          "sha256": {
+            "amd64": "614ba4f10019d797af3cf25e01992d3ab16c185e8f1d6965b004534d33a42547",
+            "arm64": "614ba4f10019d797af3cf25e01992d3ab16c185e8f1d6965b004534d33a42547"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/alphabetletters/qwertyletters.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/help/editor.css",
+          "sha256": {
+            "amd64": "2c819cda059151df4d97d580c524134fd99b525ace75e813adf7cf10fa27b257",
+            "arm64": "2c819cda059151df4d97d580c524134fd99b525ace75e813adf7cf10fa27b257"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/help/editor.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/help/images/symbols.css",
+          "sha256": {
+            "amd64": "3351d4310088e8adc9fe86bb1b35936ba53035c2e7543a991e223890383a9a27",
+            "arm64": "3351d4310088e8adc9fe86bb1b35936ba53035c2e7543a991e223890383a9a27"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/help/images/symbols.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/help/search/js/page-search.js",
+          "sha256": {
+            "amd64": "b404c99b03f9409941f37e910e8470c32452f7850ea772585ac8b3f963354b98",
+            "arm64": "b404c99b03f9409941f37e910e8470c32452f7850ea772585ac8b3f963354b98"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/help/search/js/page-search.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/controls/warnings_s.svg",
+          "sha256": {
+            "amd64": "9acd6d67ece39e0b9ea92357a49d977f80cdaecc5bad4ad2d564036073253cef",
+            "arm64": "9acd6d67ece39e0b9ea92357a49d977f80cdaecc5bad4ad2d564036073253cef"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/controls/warnings_s.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/formats@2.5x.svg",
+          "sha256": {
+            "amd64": "1a6f0012cd5290b2af4958a5a69cacb01d11802ed4c9f5194e5b1c820a741cb6",
+            "arm64": "1a6f0012cd5290b2af4958a5a69cacb01d11802ed4c9f5194e5b1c820a741cb6"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/formats@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/docx.svg",
+          "sha256": {
+            "amd64": "10f249e3ee55f088011d313d5da2f07b9d7f7e14a9d21047d0a1814cded01ebb",
+            "arm64": "10f249e3ee55f088011d313d5da2f07b9d7f7e14a9d21047d0a1814cded01ebb"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/docx.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/dotx.svg",
+          "sha256": {
+            "amd64": "6db90e8aee50699edab43b778eba59322f79020ec457315a902dee5f4c1168b6",
+            "arm64": "6db90e8aee50699edab43b778eba59322f79020ec457315a902dee5f4c1168b6"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/dotx.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/epub.svg",
+          "sha256": {
+            "amd64": "69a01464d711e95890a243f7683165547f6f1f4283e6525d8deac9da1bd0ef45",
+            "arm64": "69a01464d711e95890a243f7683165547f6f1f4283e6525d8deac9da1bd0ef45"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/epub.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/fb2.svg",
+          "sha256": {
+            "amd64": "6887aabba8ea1a16f0b75f59cf5754eaa39e3187609b274adf1a722196d82b28",
+            "arm64": "6887aabba8ea1a16f0b75f59cf5754eaa39e3187609b274adf1a722196d82b28"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/fb2.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/html.svg",
+          "sha256": {
+            "amd64": "3955fe398e9e7689253cc8d395d0fed9b2e661f4151dbe9f8fb0047d6c87d5e3",
+            "arm64": "3955fe398e9e7689253cc8d395d0fed9b2e661f4151dbe9f8fb0047d6c87d5e3"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/html.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/jpg.svg",
+          "sha256": {
+            "amd64": "11471f820f4b097f1538196c2f3a748b3c5c888fb37919ba7431974a8091cb7f",
+            "arm64": "11471f820f4b097f1538196c2f3a748b3c5c888fb37919ba7431974a8091cb7f"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/jpg.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/md.svg",
+          "sha256": {
+            "amd64": "59b3e956ed596f489c488119e6811bb10a0605fb89692d3406ed222c2c983a38",
+            "arm64": "59b3e956ed596f489c488119e6811bb10a0605fb89692d3406ed222c2c983a38"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/md.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/odt.svg",
+          "sha256": {
+            "amd64": "0db6bbedfd2d3db49203a7f1ec2fea20ce256a02ed3f01ec18990786f96d09d8",
+            "arm64": "0db6bbedfd2d3db49203a7f1ec2fea20ce256a02ed3f01ec18990786f96d09d8"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/odt.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/ott.svg",
+          "sha256": {
+            "amd64": "7642874178f7c8cf7685ad790c1f5bdc5a5fdedd1081092be2a329a4216618ed",
+            "arm64": "7642874178f7c8cf7685ad790c1f5bdc5a5fdedd1081092be2a329a4216618ed"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/ott.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/pdf.svg",
+          "sha256": {
+            "amd64": "f780fe9b6e8270e3a0334c5313f931b80fe983ce839fddc0b0830494045c4582",
+            "arm64": "f780fe9b6e8270e3a0334c5313f931b80fe983ce839fddc0b0830494045c4582"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/pdf.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/pdfa.svg",
+          "sha256": {
+            "amd64": "be1e8c7483e7c7e50e2edbd0b6dfa3e1b48f2155a6df07702c35be7c13ca70f1",
+            "arm64": "be1e8c7483e7c7e50e2edbd0b6dfa3e1b48f2155a6df07702c35be7c13ca70f1"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/pdfa.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/png.svg",
+          "sha256": {
+            "amd64": "aebe59076d49342b044afd435a499623512aa94771d45c6553de588f7500af4c",
+            "arm64": "aebe59076d49342b044afd435a499623512aa94771d45c6553de588f7500af4c"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/png.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/rtf.svg",
+          "sha256": {
+            "amd64": "3dcf5c86b4183bc989cad6cf0acb17c15e99665bd84ba1155bc5a93a8ceba23f",
+            "arm64": "3dcf5c86b4183bc989cad6cf0acb17c15e99665bd84ba1155bc5a93a8ceba23f"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/rtf.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/txt.svg",
+          "sha256": {
+            "amd64": "4126aa1561bc0903d22575122a988422e34335c21ed2de4f5944a16fdb47bc67",
+            "arm64": "4126aa1561bc0903d22575122a988422e34335c21ed2de4f5944a16fdb47bc67"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/doc-formats/large/txt.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/common/main/resources/img/header/dark-logo_s.svg",
+          "sha256": {
+            "amd64": "bb2227a743a9a4a5d84edeb799615c0e30d63edacd362f2c33a6b07eab9a9471",
+            "arm64": "bb2227a743a9a4a5d84edeb799615c0e30d63edacd362f2c33a6b07eab9a9471"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/common/main/resources/img/header/dark-logo_s.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/app.js",
+          "sha256": {
+            "amd64": "207c8c1d917b09ff0ded7eaba13acf18a216892839512f64981dd3fc7af83941",
+            "arm64": "207c8c1d917b09ff0ded7eaba13acf18a216892839512f64981dd3fc7af83941"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/app.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/code.js",
+          "sha256": {
+            "amd64": "936233f8707a345f26c03f0cec9f6a4c4254f07da79d65f4c2ee083e2faebde1",
+            "arm64": "936233f8707a345f26c03f0cec9f6a4c4254f07da79d65f4c2ee083e2faebde1"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/code.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/index.html",
+          "sha256": {
+            "amd64": "a4c6dc84b84dba157ed1aca0a58ad1e3cc75af24224b8742a2e64e33a6dc18ea",
+            "arm64": "a4c6dc84b84dba157ed1aca0a58ad1e3cc75af24224b8742a2e64e33a6dc18ea"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/index.html"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/locale/en.json",
+          "sha256": {
+            "amd64": "8275dbb1ff13850896d97dc34adb2f6d67a11bd5b94298559630b79c3b095725",
+            "arm64": "8275dbb1ff13850896d97dc34adb2f6d67a11bd5b94298559630b79c3b095725"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/locale/en.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/locale/zh.json",
+          "sha256": {
+            "amd64": "d0a6d28d5f7b320ecd06fcd1bee45118a8680ec822f0afaab9b9d474042fe9d0",
+            "arm64": "d0a6d28d5f7b320ecd06fcd1bee45118a8680ec822f0afaab9b9d474042fe9d0"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/locale/zh.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/css/app.css",
+          "sha256": {
+            "amd64": "e27acda9ce016069b4a2573d87c19022078be9ec9dad1c10eb82477dc825ffff",
+            "arm64": "e27acda9ce016069b4a2573d87c19022078be9ec9dad1c10eb82477dc825ffff"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/css/app.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/Contents.json",
+          "sha256": {
+            "amd64": "6f91d34370ad9df1dbef60915ea1fbd969b743aaa22c892d93011b7388c3bd92",
+            "arm64": "6f91d34370ad9df1dbef60915ea1fbd969b743aaa22c892d93011b7388c3bd92"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/Contents.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/ProgramInterface.htm",
+          "sha256": {
+            "amd64": "c6bd4c33796ec1a1b6a43cc2d3d9908629d9eb49f7d9774f08f199a1ba293367",
+            "arm64": "c6bd4c33796ec1a1b6a43cc2d3d9908629d9eb49f7d9774f08f199a1ba293367"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/ProgramInterface.htm"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/callback.js",
+          "sha256": {
+            "amd64": "ee993dec2059e3e2efde68a538fb5e86a19a32bf780db5656e2eb1ca599d8b9d",
+            "arm64": "ee993dec2059e3e2efde68a538fb5e86a19a32bf780db5656e2eb1ca599d8b9d"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/callback.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_editorwindow.png",
+          "sha256": {
+            "amd64": "a75c786b411a384fdfa8c9377f0ba46b269869be8b1a57695d083ea21f1fc7ab",
+            "arm64": "a75c786b411a384fdfa8c9377f0ba46b269869be8b1a57695d083ea21f1fc7ab"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_editorwindow.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/editorwindow.png",
+          "sha256": {
+            "amd64": "c19fdd90cc8cedb482941df3b03b1e162b0f701d4a6a8a7afa1d83c02b9028c5",
+            "arm64": "c19fdd90cc8cedb482941df3b03b1e162b0f701d4a6a8a7afa1d83c02b9028c5"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/editorwindow.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/leftpart.png",
+          "sha256": {
+            "amd64": "f6093714d8e8bbb8f5e1929c2d080a0b1d5af8fa8ea58915ba96314356d17aca",
+            "arm64": "f6093714d8e8bbb8f5e1929c2d080a0b1d5af8fa8ea58915ba96314356d17aca"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/en/images/interface/leftpart.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/images/sprite.css",
+          "sha256": {
+            "amd64": "d94ce38ac5e61001fcb7617d6528fc554321742f9d3877fbe851c08baa86a11a",
+            "arm64": "d94ce38ac5e61001fcb7617d6528fc554321742f9d3877fbe851c08baa86a11a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/help/images/sprite.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/iconssmall.png",
+          "sha256": {
+            "amd64": "aa57c3e0f53e0ca7c8552198f3b6e7bca268ff6bd630cf5cb5ad8c72b1f67256",
+            "arm64": "aa57c3e0f53e0ca7c8552198f3b6e7bca268ff6bd630cf5cb5ad8c72b1f67256"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "da426272aaf37af280a86fc4e498862e770807a9c3df9476fa4ed519664296fc",
+            "arm64": "da426272aaf37af280a86fc4e498862e770807a9c3df9476fa4ed519664296fc"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig.png",
+          "sha256": {
+            "amd64": "c1dce5eca3a50b2a33371bc8ce79a7bc743f70ab43e686d05029b9dfc5aed117",
+            "arm64": "c1dce5eca3a50b2a33371bc8ce79a7bc743f70ab43e686d05029b9dfc5aed117"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig@2.5x.svg",
+          "sha256": {
+            "amd64": "8850ba025938826a90de927b6e90222d85125c9dfe370808fa1695030b78b0ba",
+            "arm64": "8850ba025938826a90de927b6e90222d85125c9dfe370808fa1695030b78b0ba"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig@2x.png",
+          "sha256": {
+            "amd64": "a288502e92898a2eeaeeb0cb39a26f909bc71b60c7c0906ec054dce0ecddc653",
+            "arm64": "a288502e92898a2eeaeeb0cb39a26f909bc71b60c7c0906ec054dce0ecddc653"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconsbig@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconshuge@2.5x.svg",
+          "sha256": {
+            "amd64": "710976065ff52ef2c5fad00dd649e97f0415b89cd61a2ba8ff9a22714fdc5120",
+            "arm64": "710976065ff52ef2c5fad00dd649e97f0415b89cd61a2ba8ff9a22714fdc5120"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconshuge@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall.png",
+          "sha256": {
+            "amd64": "377387fc5b9afb43665b4308b841c00b9bb91d2e56e276a6a65d6d8e3918887a",
+            "arm64": "377387fc5b9afb43665b4308b841c00b9bb91d2e56e276a6a65d6d8e3918887a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall@2.5x.svg",
+          "sha256": {
+            "amd64": "914d72701ab3f1b3d03e046cdc823cc055964f374e3fd829b55a78a47310d625",
+            "arm64": "914d72701ab3f1b3d03e046cdc823cc055964f374e3fd829b55a78a47310d625"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "add90f931903997ba8bc12fdb098854c49d1f245334dc3ec71718e1aabca8f73",
+            "arm64": "add90f931903997ba8bc12fdb098854c49d1f245334dc3ec71718e1aabca8f73"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/img/v2/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/numbering/multilevel-lists.json",
+          "sha256": {
+            "amd64": "0a7b7fee0e1ba0c8725da8e75213370132325080b3058284a550f945d02b9ee2",
+            "arm64": "0a7b7fee0e1ba0c8725da8e75213370132325080b3058284a550f945d02b9ee2"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/numbering/multilevel-lists.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/documenteditor/main/resources/numbering/numbering-lists.json",
+          "sha256": {
+            "amd64": "645f17c928f77570dd397d050456fb5b777692bba01be118a17baf419e0c4840",
+            "arm64": "645f17c928f77570dd397d050456fb5b777692bba01be118a17baf419e0c4840"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/documenteditor/main/resources/numbering/numbering-lists.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/app.js",
+          "sha256": {
+            "amd64": "433271581b013e8a86f504f1799d7ea2d82c36f47dc4ab9491424a6a98c41504",
+            "arm64": "433271581b013e8a86f504f1799d7ea2d82c36f47dc4ab9491424a6a98c41504"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/app.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/code.js",
+          "sha256": {
+            "amd64": "6984c483bf6d7610efe882c5b0b7add0aabc5622e110aeb02b2182ec25de9ad1",
+            "arm64": "6984c483bf6d7610efe882c5b0b7add0aabc5622e110aeb02b2182ec25de9ad1"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/code.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/index.html",
+          "sha256": {
+            "amd64": "b80a6e092b06395967b9ad3c901e8a6037861972213cbee80d7fe5cb5eab29b0",
+            "arm64": "b80a6e092b06395967b9ad3c901e8a6037861972213cbee80d7fe5cb5eab29b0"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/index.html"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/locale/en.json",
+          "sha256": {
+            "amd64": "62082ff038aa240d9d5619014b1e5ad56c19bbb457067e28681b8023cefda3ad",
+            "arm64": "62082ff038aa240d9d5619014b1e5ad56c19bbb457067e28681b8023cefda3ad"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/locale/en.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/locale/zh.json",
+          "sha256": {
+            "amd64": "08958f667efd8e5764556271e38cc866e2faa2d3c484cbb8748dbecfd441bc9e",
+            "arm64": "08958f667efd8e5764556271e38cc866e2faa2d3c484cbb8748dbecfd441bc9e"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/locale/zh.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/css/app.css",
+          "sha256": {
+            "amd64": "d7063c25442989b74399c829744b923e5931c066d4ec98cb14bcbb3438c81a5a",
+            "arm64": "d7063c25442989b74399c829744b923e5931c066d4ec98cb14bcbb3438c81a5a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/css/app.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/iconssmall.png",
+          "sha256": {
+            "amd64": "673f28654f17a265a587e981f8f6136f0b42a1f1b4dc1c912820da15efed952e",
+            "arm64": "673f28654f17a265a587e981f8f6136f0b42a1f1b4dc1c912820da15efed952e"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "7f4c2f2c607f1f9336a9b8a79c4b060b870bcaf42377defcdedda4da0e4a56f9",
+            "arm64": "7f4c2f2c607f1f9336a9b8a79c4b060b870bcaf42377defcdedda4da0e4a56f9"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig.png",
+          "sha256": {
+            "amd64": "45e180606c4f6063c4dabf863e13e91fdc13fd0e4fb24867996d7c619e75a659",
+            "arm64": "45e180606c4f6063c4dabf863e13e91fdc13fd0e4fb24867996d7c619e75a659"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig@2.5x.svg",
+          "sha256": {
+            "amd64": "fe99cecd00334332a35eaced27984e5836a726727523302f82391c24e15a72b1",
+            "arm64": "fe99cecd00334332a35eaced27984e5836a726727523302f82391c24e15a72b1"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig@2x.png",
+          "sha256": {
+            "amd64": "56adb9e6915eff3cb5835283f42f82a2c63492e7b61f69467ace6a61c26e33e8",
+            "arm64": "56adb9e6915eff3cb5835283f42f82a2c63492e7b61f69467ace6a61c26e33e8"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconsbig@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconshuge@2.5x.svg",
+          "sha256": {
+            "amd64": "efddebe768ce76210f7b09f6d37c37de7c34af761e7d1fa69a04933aad1bc0fb",
+            "arm64": "efddebe768ce76210f7b09f6d37c37de7c34af761e7d1fa69a04933aad1bc0fb"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconshuge@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall.png",
+          "sha256": {
+            "amd64": "d157d8556f56d719b6b02cc9a164c24ce8c3cc389c9d23a90cc3e59ca170d5bd",
+            "arm64": "d157d8556f56d719b6b02cc9a164c24ce8c3cc389c9d23a90cc3e59ca170d5bd"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2.5x.svg",
+          "sha256": {
+            "amd64": "651608981928806c159e5273a08bb2e6e2654c0b59737d28452d7129f44db89c",
+            "arm64": "651608981928806c159e5273a08bb2e6e2654c0b59737d28452d7129f44db89c"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "b0de1bc10d051b2f53b2d893544b84ede9dd7675b9ef38174419cb1e13b5c695",
+            "arm64": "b0de1bc10d051b2f53b2d893544b84ede9dd7675b9ef38174419cb1e13b5c695"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/app.js",
+          "sha256": {
+            "amd64": "766a94f0bc9f462a36fda2a78b2fa235bb5efc450feddb662a99df5a71895d73",
+            "arm64": "766a94f0bc9f462a36fda2a78b2fa235bb5efc450feddb662a99df5a71895d73"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/app.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/code.js",
+          "sha256": {
+            "amd64": "516e6a5c2989a2801ee38405332ab5488dd86f28f6460045dc482fdaecae85ad",
+            "arm64": "516e6a5c2989a2801ee38405332ab5488dd86f28f6460045dc482fdaecae85ad"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/code.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/index.html",
+          "sha256": {
+            "amd64": "6d358557bf0db38e7e6b8572dc917aaf84d08e5566fe53c6e77b167982fd87f0",
+            "arm64": "6d358557bf0db38e7e6b8572dc917aaf84d08e5566fe53c6e77b167982fd87f0"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/index.html"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/locale/en.json",
+          "sha256": {
+            "amd64": "e6ef3e611ab43b3e191346d9e45cd53f3592e41cb93c35ed38766e9354e34e9e",
+            "arm64": "e6ef3e611ab43b3e191346d9e45cd53f3592e41cb93c35ed38766e9354e34e9e"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/locale/en.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/locale/zh.json",
+          "sha256": {
+            "amd64": "051e180905bec37f8a5ff5a820c8dac9407940a6e4dd1bdfd619ce54ee52509a",
+            "arm64": "051e180905bec37f8a5ff5a820c8dac9407940a6e4dd1bdfd619ce54ee52509a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/locale/zh.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/css/app.css",
+          "sha256": {
+            "amd64": "6dd996376a4d450064e61b89cc4c9e989801d3335b9771bb86264d095edf2dbc",
+            "arm64": "6dd996376a4d450064e61b89cc4c9e989801d3335b9771bb86264d095edf2dbc"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/css/app.css"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/en.json",
+          "sha256": {
+            "amd64": "04e81d063ec19e846e3da097842af777328d4dae990b767afa2dc53f266e376a",
+            "arm64": "04e81d063ec19e846e3da097842af777328d4dae990b767afa2dc53f266e376a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/en.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/en_desc.json",
+          "sha256": {
+            "amd64": "c03f6994972c09864458d90b7ba8efdc28a6e6259a0bf17147fee234347e7641",
+            "arm64": "c03f6994972c09864458d90b7ba8efdc28a6e6259a0bf17147fee234347e7641"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/en_desc.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/zh.json",
+          "sha256": {
+            "amd64": "2e42d2cf2076c8fc5cfbeab7d5f46c2f92efa64f9e668014351afa6a2085a79a",
+            "arm64": "2e42d2cf2076c8fc5cfbeab7d5f46c2f92efa64f9e668014351afa6a2085a79a"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/zh.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/zh_desc.json",
+          "sha256": {
+            "amd64": "828205e636f3bdee1a758407bd2ef58bed62e498a1e6fbdc17f8ceb3646082fb",
+            "arm64": "828205e636f3bdee1a758407bd2ef58bed62e498a1e6fbdc17f8ceb3646082fb"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/formula-lang/zh_desc.json"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/iconssmall.png",
+          "sha256": {
+            "amd64": "fc55d7257e55e8a075b13c9647feaa58143b0db25756f39847d9d25f1639dae6",
+            "arm64": "fc55d7257e55e8a075b13c9647feaa58143b0db25756f39847d9d25f1639dae6"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "85dd686fc014ebd520db5ea4a672b9cd7c8fe97a75831c5c5513b05ee5b68437",
+            "arm64": "85dd686fc014ebd520db5ea4a672b9cd7c8fe97a75831c5c5513b05ee5b68437"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig.png",
+          "sha256": {
+            "amd64": "6dd3fd275fb289680af2b083e7eb0537ce17f26201d688130c2d5ed613a429cb",
+            "arm64": "6dd3fd275fb289680af2b083e7eb0537ce17f26201d688130c2d5ed613a429cb"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig@2.5x.svg",
+          "sha256": {
+            "amd64": "8bf1cbf07809d90fb80d909b91a781d62978840a2f61b502321481589888d7df",
+            "arm64": "8bf1cbf07809d90fb80d909b91a781d62978840a2f61b502321481589888d7df"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig@2x.png",
+          "sha256": {
+            "amd64": "eabc6b68e46647ce7829f3c0b69e6d367f27efbcef763a1c8aad703b2b2c64bd",
+            "arm64": "eabc6b68e46647ce7829f3c0b69e6d367f27efbcef763a1c8aad703b2b2c64bd"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconsbig@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconshuge@2.5x.svg",
+          "sha256": {
+            "amd64": "bcc593c2bf25f16bef6d516916ac2c1d28160a94afa5e494f5408d5d49363bf0",
+            "arm64": "bcc593c2bf25f16bef6d516916ac2c1d28160a94afa5e494f5408d5d49363bf0"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconshuge@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall.png",
+          "sha256": {
+            "amd64": "8406f842378cd8dfdba717f1cbaecd311bb6e24fd60851388f8f64b8c6e11862",
+            "arm64": "8406f842378cd8dfdba717f1cbaecd311bb6e24fd60851388f8f64b8c6e11862"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2.5x.svg",
+          "sha256": {
+            "amd64": "0201c724775c4c6c7d98800f32308cfd5202b414ea48234c0b1ea25c7ab7917e",
+            "arm64": "0201c724775c4c6c7d98800f32308cfd5202b414ea48234c0b1ea25c7ab7917e"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2.5x.svg"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2x.png",
+          "sha256": {
+            "amd64": "fcb13c7e73c869bf78d6736b9eaeafd402f5ea735c6c1d986a5821555b393d9c",
+            "arm64": "fcb13c7e73c869bf78d6736b9eaeafd402f5ea735c6c1d986a5821555b393d9c"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2x.png"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/vendor/jquery/jquery.min.js",
+          "sha256": {
+            "amd64": "39a546ea9ad97f8bfaf5d3e0e8f8556adb415e470e59007ada9759dce472adaa",
+            "arm64": "39a546ea9ad97f8bfaf5d3e0e8f8556adb415e470e59007ada9759dce472adaa"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/vendor/jquery/jquery.min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/vendor/onlyoffice-cross-origin-bridge.js",
+          "sha256": {
+            "amd64": "8c3c71771c1342eb757876b4b3487d73a74f0d2fa4fb18c48f61d5f34eaebfc8",
+            "arm64": "8c3c71771c1342eb757876b4b3487d73a74f0d2fa4fb18c48f61d5f34eaebfc8"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/vendor/onlyoffice-cross-origin-bridge.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/vendor/requirejs/require.js",
+          "sha256": {
+            "amd64": "628089ff01cdbac7b451709d968099c74bd437a33ba74893d6fa0b6143550001",
+            "arm64": "628089ff01cdbac7b451709d968099c74bd437a33ba74893d6fa0b6143550001"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/vendor/requirejs/require.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/vendor/socketio/socket.io.min.js",
+          "sha256": {
+            "amd64": "80c29bbcd246b9a03a968b9418e616f227f730c95b781e69fe5fee539ef51882",
+            "arm64": "80c29bbcd246b9a03a968b9418e616f227f730c95b781e69fe5fee539ef51882"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/vendor/socketio/socket.io.min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/web-apps/vendor/xregexp/xregexp-all-min.js",
+          "sha256": {
+            "amd64": "ad8b04fd8e59beabc616851cd6a820784884c68bb1ea75993e694b21344bd136",
+            "arm64": "ad8b04fd8e59beabc616851cd6a820784884c68bb1ea75993e694b21344bd136"
+          },
+          "target": "sdk/9.4.0-develop/web-apps/vendor/xregexp/xregexp-all-min.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/x2t/x2t.js",
+          "sha256": {
+            "amd64": "fe04bdfa43c1bb150bf0ec4f2a063893733a0b919801ba6054ad25b53635955e",
+            "arm64": "fe04bdfa43c1bb150bf0ec4f2a063893733a0b919801ba6054ad25b53635955e"
+          },
+          "target": "sdk/9.4.0-develop/x2t/x2t.js"
+        },
+        {
+          "source": "github-assets",
+          "url": "https://github.com/electroluxcode/onlyoffice-web-comp/raw/99dbe255893b82fba46b82b337c571eb7d41f668/public/packages/onlyoffice/9.4.0-develop/x2t/x2t.wasm",
+          "sha256": {
+            "amd64": "b15914a9cad355734503417a3b1e313971de73760ec34f5e698104250cbd023a",
+            "arm64": "b15914a9cad355734503417a3b1e313971de73760ec34f5e698104250cbd023a"
+          },
+          "target": "sdk/9.4.0-develop/x2t/x2t.wasm"
         }
       ]
     },
@@ -68,5 +1679,5 @@
       }
     }
   ],
-  "contentHash": "484b342b2f6ca81f8aa8b6b9dd514d44cdefe7242beef45382721b5a98e9790f"
+  "contentHash": "8b7b991518a8c3241a90f83d8ed3eebd7c14d900a1b55758acc990813866c798"
 }
