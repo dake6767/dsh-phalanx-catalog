@@ -168,7 +168,16 @@
           "command": "ppt-master-cloud-audio",
           "source": "scripts/notes_to_audio.py",
           "memberPath": "scripts/cloud_notes_to_audio.py",
-          "blocked": []
+          "blocked": [],
+          "blockedOptions": [
+            "--minimax-base-url",
+            "--qwen-base-url",
+            "--cosyvoice-base-url",
+            "--elevenlabs-api-key-env",
+            "--minimax-api-key-env",
+            "--qwen-api-key-env",
+            "--cosyvoice-api-key-env"
+          ]
         }
       ],
       "variables": [
@@ -648,5 +657,5 @@
       ]
     }
   ],
-  "contentHash": "8f75c409c008592acdb8457b9dae1c7a3f4e1bb932cb30ac9397c9262c6b764e"
+  "contentHash": "c5d6cbed8e673feaef68c21c2e7bf9513833d3665ea9453b7297dacb2c777f3c"
 }
