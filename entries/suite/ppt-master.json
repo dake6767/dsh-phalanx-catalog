@@ -1,0 +1,661 @@
+{
+  "kind": "suite",
+  "id": "ppt-master",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.24"
+  },
+  "adapters": [],
+  "title": {
+    "en": "PPT Master",
+    "zh-CN": "PPT Master"
+  },
+  "description": {
+    "en": "Create editable PPTX presentations with local document tools and optional platform image generation and cloud narration. Includes PyMuPDF (AGPL), downloaded from upstream at deployment.",
+    "zh-CN": "生成可编辑PPTX，文档工具在成员实例运行，生图与云端旁白可选地由平台代执行。包含部署时从上游下载的PyMuPDF（AGPL）。"
+  },
+  "source": {
+    "en": "hugohe3/ppt-master 6.7.3 at 622bf0148bca4f697b0184322c7e2aa2a04520a2; exact 88-package Python lock; pandoc",
+    "zh-CN": "hugohe3/ppt-master 6.7.3，固定提交622bf0148bca4f697b0184322c7e2aa2a04520a2；88项Python精确版本锁；pandoc"
+  },
+  "identity": {
+    "en": "Documents, Edge narration and image search run in the member workspace. Optional images and cloud narration use platform-held provider credentials; keys never enter the member instance. Provider calls consume the team quota.",
+    "zh-CN": "文档、Edge旁白与图库搜索在成员空间运行。可选生图与云端旁白使用平台保存的后端凭据，key不进入成员实例，调用消耗团队额度。"
+  },
+  "dependencies": [
+    "pandoc"
+  ],
+  "serviceAddresses": [],
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "name": "ppt-master-python",
+      "type": "python-library",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [
+        "venv/bin"
+      ],
+      "commands": [
+        "python3"
+      ],
+      "downloads": [
+        {
+          "source": "pypi",
+          "packages": [
+            "aiohappyeyeballs==2.7.1",
+            "aiohttp==3.14.5",
+            "aiosignal==1.4.0",
+            "annotated-types==0.8.0",
+            "anyio==4.15.1",
+            "attrs==26.1.0",
+            "beautifulsoup4==4.15.0",
+            "bleach==6.4.0",
+            "certifi==2026.10.19",
+            "cffi==2.1.1",
+            "charset-normalizer==3.5.2",
+            "cobble==0.1.4",
+            "cryptography==50.0.2",
+            "curl_cffi==0.16.3",
+            "defusedxml==0.7.1",
+            "distro==1.9.0",
+            "EbookLib==0.20",
+            "edge-tts==7.3.1",
+            "et_xmlfile==2.0.0",
+            "fastjsonschema==2.22.2",
+            "flatbuffers==25.12.19",
+            "frozenlist==1.8.0",
+            "google-auth==2.62.0",
+            "google-genai==2.33.0",
+            "h11==0.16.0",
+            "httpcore==1.0.9",
+            "httpx==0.28.1",
+            "idna==3.20",
+            "Jinja2==3.1.6",
+            "jsonschema==4.26.0",
+            "jsonschema-specifications==2025.9.1",
+            "jupyter_client==8.10.0",
+            "jupyter_core==5.9.1",
+            "jupyterlab_pygments==0.3.0",
+            "lxml==6.1.3",
+            "mammoth==1.13.0",
+            "markdownify==1.2.3",
+            "MarkupSafe==3.0.4",
+            "mistune==3.4.0",
+            "multidict==7.1.0",
+            "nbclient==0.11.0",
+            "nbconvert==7.17.2",
+            "nbformat==5.11.1",
+            "networkx==3.6.1",
+            "numpy==2.4.6",
+            "onnxruntime==1.31.0",
+            "openpyxl==3.1.5",
+            "packaging==26.3",
+            "pandocfilters==1.5.1",
+            "pillow==13.0.0",
+            "platformdirs==4.13.5",
+            "propcache==0.5.4",
+            "protobuf==7.36.2",
+            "psutil==7.2.2",
+            "pyasn1==0.6.4",
+            "pyasn1_modules==0.4.2",
+            "pycparser==3.12",
+            "pydantic==2.14.1",
+            "pydantic_core==2.50.1",
+            "Pygments==2.21.0",
+            "pymupdf==2.0",
+            "pymupdf4llm==2.0",
+            "pymupdf_layout==2.0",
+            "python-dateutil==3.0.0",
+            "python-pptx==1.0.2",
+            "PyYAML==6.0.3",
+            "pyzmq==27.2.0",
+            "referencing==0.37.0",
+            "requests==2.34.2",
+            "rpds-py==2026.9.1",
+            "six==1.17.0",
+            "skia-pathops==0.9.2",
+            "sniffio==1.3.1",
+            "soupsieve==2.10",
+            "tabulate==0.10.0",
+            "tenacity==9.1.4",
+            "tinycss2==1.5.1",
+            "tornado==6.6",
+            "traitlets==5.16.1",
+            "typing-inspection==0.4.4",
+            "typing_extensions==4.16.0",
+            "tzdata==2026.5",
+            "uharfbuzz==0.56.4",
+            "urllib3==2.8.0",
+            "webencodings==0.6.1",
+            "websockets==17.3",
+            "xlsxwriter==3.3.0",
+            "yarl==1.25.1"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "skill",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/hugohe3/ppt-master",
+        "commit": "622bf0148bca4f697b0184322c7e2aa2a04520a2",
+        "path": "skills"
+      },
+      "names": [
+        "ppt-master"
+      ],
+      "runtimeDependency": "ppt-master-python",
+      "catalogDependencies": [
+        "pandoc"
+      ]
+    },
+    {
+      "kind": "execution",
+      "skill": "ppt-master",
+      "runtimeDependency": "ppt-master-python",
+      "delegated": [
+        {
+          "command": "ppt-master-image",
+          "source": "scripts/image_gen.py",
+          "memberPath": "scripts/image_gen.py",
+          "blocked": []
+        },
+        {
+          "command": "ppt-master-cloud-audio",
+          "source": "scripts/notes_to_audio.py",
+          "memberPath": "scripts/cloud_notes_to_audio.py",
+          "blocked": [],
+          "blockedOptions": [
+            "--minimax-base-url",
+            "--qwen-base-url",
+            "--cosyvoice-base-url",
+            "--elevenlabs-api-key-env",
+            "--minimax-api-key-env",
+            "--qwen-api-key-env",
+            "--cosyvoice-api-key-env"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "ARK_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "BFL_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "BFL_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "BFL_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "BIGMODEL_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "COSYVOICE_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "COSYVOICE_TTS_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "DASHSCOPE_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "ELEVENLABS_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "FAL_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "FAL_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "FAL_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "FAL_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "GEMINI_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "GEMINI_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "GEMINI_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "IDEOGRAM_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "IDEOGRAM_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "IDEOGRAM_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "IMAGE_BACKEND",
+          "optional": true,
+          "purpose": {
+            "en": "Select the image backend (for example minimax); leave all fields blank to disable delegated execution.",
+            "zh-CN": "选择生图后端（例如minimax）；全部留空可关闭代执行。"
+          }
+        },
+        {
+          "name": "LAS_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MINIMAX_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MINIMAX_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MINIMAX_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MINIMAX_TTS_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MODELSCOPE_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MODELSCOPE_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "MODELSCOPE_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENAI_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENAI_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENROUTER_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENROUTER_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "OPENROUTER_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "QWEN_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "QWEN_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "QWEN_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "QWEN_TTS_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "REPLICATE_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "REPLICATE_API_TOKEN",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "REPLICATE_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "REPLICATE_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "SILICONFLOW_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "SILICONFLOW_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "SILICONFLOW_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "STABILITY_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "STABILITY_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "STABILITY_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "TENCENT_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "TENCENT_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "TENCENT_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "TOKENHUB_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "VOLCENGINE_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "VOLCENGINE_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "VOLCENGINE_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "ZHIPU_API_KEY",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "ZHIPU_BASE_URL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        },
+        {
+          "name": "ZHIPU_MODEL",
+          "optional": true,
+          "purpose": {
+            "en": "Optional provider setting. Fill only the backend you use; other providers can stay blank.",
+            "zh-CN": "可选后端设置，仅填写所用后端，其余留空。"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "skill-pack",
+      "name": "ppt-master-tools",
+      "description": "Editable presentations with platform-provided Python libraries and optional delegated media.",
+      "note": "Follow the upstream ppt-master workflow and keep all outputs in the member project. The platform provides the locked Python libraries through python3 and pandoc on PATH; do not install or update them. Local preview, confirmation, annotation and specification-review web pages are unavailable. Use generated files and command-line checks instead.\nImage generation: invoke python3 \"$SKILL_DIR/scripts/image_gen.py\" from the project directory. The platform forwards this script to delegated execution. Configure IMAGE_BACKEND and only that provider's key, with optional model/base URL overrides, in the catalog wizard. All backend fields can be skipped. Never put the team key in member environment variables or .env files. A disabled/unavailable execution (exit 125) means use image_search.py or finish with native shapes/text and no generated images. Member-owned OPENAI_* variables remain member-owned; they are never the platform key. Start with 512px, one image per call; for manifests use concurrency=1 and split into small batches within the existing time limit.\nCloud narration: use python3 \"$SKILL_DIR/scripts/cloud_notes_to_audio.py\" with an explicit --provider elevenlabs|minimax|qwen|cosyvoice and that provider's variables configured in the wizard. This alias delegates the unchanged notes_to_audio.py source. No cloud key is required for local Edge narration: use the original python3 \"$SKILL_DIR/scripts/notes_to_audio.py\" --provider edge in the member instance. image_search.py also stays local. Cloud providers still validate their own required settings; leaving unrelated backend fields empty is supported.\nProduce editable PPTX using the upstream native/SVG workflow, not slide screenshots. PyMuPDF (including its associated packages) is AGPL software. These Python dependencies are downloaded from upstream at deployment; the catalog and platform do not redistribute their package bytes. Review the upstream license before use.",
+      "skills": [
+        "ppt-master"
+      ]
+    }
+  ],
+  "contentHash": "c5d6cbed8e673feaef68c21c2e7bf9513833d3665ea9453b7297dacb2c777f3c"
+}
