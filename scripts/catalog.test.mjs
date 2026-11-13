@@ -80,3 +80,15 @@ test('assembles plugin entries alongside suites and dependencies', () => fixture
   const document = JSON.parse(readFileSync(join(root, 'assembled.json'), 'utf8'))
   assert.deepEqual(document.entries.map(entry => entry.kind), ['suite', 'dependency', 'plugin'])
 }))
+
+test('preserves a locked dependency pin when it reappears after an omitted release', () => fixture(({ root, execute, unsigned }) => {
+  const entry = { ...unsigned.entries[0], kind: 'dependency', locked: true }
+  writeFileSync(join(root, 'locked.json'), JSON.stringify({ ...unsigned, entries: [entry] }))
+  assert.equal(execute('sign', 'locked.json', 'signed.json').status, 0)
+  for (const [entries, expected] of [[[], 0], [[entry], 0], [[{ ...entry, locked: undefined }], 1], [[{ ...entry, version: '2.0.0' }], 1]]) {
+    writeFileSync(join(root, 'next.json'), JSON.stringify({ ...unsigned, entries }))
+    const result = execute('immutable', 'signed.json', 'next.json')
+    assert.equal(result.status, expected, result.stderr)
+    if (expected) assert.match(result.stderr, /Locked entry changed: tool/)
+  }
+}))

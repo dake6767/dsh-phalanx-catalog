@@ -1,9 +1,9 @@
 {
   "kind": "suite",
   "id": "lark",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "engines": {
-    "platform": ">=0.1.19"
+    "platform": ">=0.1.35"
   },
   "adapters": [
     {
@@ -169,6 +169,39 @@
             "en": "Feishu app secret of the team bot",
             "zh-CN": "团队机器人的飞书应用 App Secret"
           }
+        }
+      ],
+      "serviceSlots": [
+        {
+          "id": "team-bot",
+          "label": {
+            "en": "Team bot",
+            "zh-CN": "团队机器人"
+          },
+          "commands": [
+            "lark-cli"
+          ],
+          "backends": [
+            {
+              "id": "feishu",
+              "label": {
+                "en": "Feishu",
+                "zh-CN": "Feishu"
+              },
+              "fields": [
+                {
+                  "name": "LARKSUITE_CLI_APP_ID",
+                  "type": "secret",
+                  "required": true
+                },
+                {
+                  "name": "LARKSUITE_CLI_APP_SECRET",
+                  "type": "secret",
+                  "required": true
+                }
+              ]
+            }
+          ]
         }
       ]
     },

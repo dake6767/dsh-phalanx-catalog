@@ -1,0 +1,215 @@
+{
+  "kind": "plugin",
+  "id": "qiaomu-cover-design",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Qiaomu Cover Design",
+    "zh-CN": "乔木封面"
+  },
+  "description": {
+    "en": "Cover designer",
+    "zh-CN": "封面设计"
+  },
+  "source": {
+    "en": "GitHub Release",
+    "zh-CN": "GitHub 发布"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "qiaomu-cover-design-dsh",
+      "version": "0.1.3",
+      "integrity": "sha512-Lq31kbA5Dv3HijBh9jgTxvXYL7nwb0/vVHh7kSdC9mL6dP1FL8iwcPG0UQqUHIzUUzh+8sRHko+kbCXVQ51Yxw==",
+      "archive": {
+        "url": "https://github.com/joeseesun/qiaomu-cover-design-dsh/releases/download/v0.1.3/qiaomu-cover-design-dsh-0.1.3.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      },
+      "serviceSlots": [
+        {
+          "id": "chat",
+          "label": {
+            "en": "chat",
+            "zh-CN": "chat"
+          },
+          "binding": {
+            "kind": "revisioned-rpc",
+            "service": "qiaomuCoverDesign",
+            "active": [
+              "settings",
+              "ai"
+            ],
+            "selection": [
+              "settings",
+              "ai",
+              "chatId"
+            ],
+            "profiles": [
+              "settings",
+              "ai",
+              "chats"
+            ],
+            "idKey": "id",
+            "snapshotKey": "snap",
+            "fields": {
+              "endpoint": "baseUrl",
+              "key": "apiKey",
+              "model": "model",
+              "mode": "protocol"
+            }
+          },
+          "backends": [
+            {
+              "id": "openai",
+              "label": {
+                "en": "openai",
+                "zh-CN": "openai"
+              },
+              "protocol": "openai-chat",
+              "mode": "openai",
+              "profile": {
+                "preset": "custom",
+                "chatAlias": "Platform"
+              },
+              "upstream": {
+                "endpoint": "endpoint",
+                "key": "key",
+                "model": "model"
+              },
+              "fields": [
+                {
+                  "name": "endpoint",
+                  "type": "url",
+                  "required": true
+                },
+                {
+                  "name": "key",
+                  "type": "secret",
+                  "required": true
+                },
+                {
+                  "name": "model",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "label": {
+            "en": "image",
+            "zh-CN": "image"
+          },
+          "binding": {
+            "kind": "revisioned-rpc",
+            "service": "qiaomuCoverDesign",
+            "active": [
+              "settings",
+              "ai"
+            ],
+            "selection": [
+              "settings",
+              "ai",
+              "imageId"
+            ],
+            "profiles": [
+              "settings",
+              "ai",
+              "images"
+            ],
+            "idKey": "id",
+            "snapshotKey": "snap",
+            "fields": {
+              "endpoint": "imageBaseUrl",
+              "key": "imageKey",
+              "model": "imageModel",
+              "mode": "imageEngine",
+              "enabled": "imageOn"
+            }
+          },
+          "backends": [
+            {
+              "id": "openai",
+              "label": {
+                "en": "openai",
+                "zh-CN": "openai"
+              },
+              "protocol": "openai-image",
+              "mode": "api",
+              "profile": {
+                "imageAlias": "Platform"
+              },
+              "upstream": {
+                "endpoint": "endpoint",
+                "key": "key",
+                "model": "model"
+              },
+              "fields": [
+                {
+                  "name": "endpoint",
+                  "type": "url",
+                  "required": true
+                },
+                {
+                  "name": "key",
+                  "type": "secret",
+                  "required": true
+                },
+                {
+                  "name": "model",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "id": "seedream",
+              "label": {
+                "en": "seedream",
+                "zh-CN": "seedream"
+              },
+              "protocol": "seedream-image",
+              "mode": "ark",
+              "profile": {
+                "imageAlias": "Platform Seedream"
+              },
+              "upstream": {
+                "endpoint": "endpoint",
+                "key": "key",
+                "model": "model"
+              },
+              "fields": [
+                {
+                  "name": "endpoint",
+                  "type": "url",
+                  "required": true
+                },
+                {
+                  "name": "key",
+                  "type": "secret",
+                  "required": true
+                },
+                {
+                  "name": "model",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

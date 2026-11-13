@@ -1,0 +1,69 @@
+{
+  "kind": "dependency",
+  "id": "drawai-demo",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "drawai-demo",
+    "zh-CN": "drawai-demo"
+  },
+  "description": {
+    "en": "drawai-demo",
+    "zh-CN": "drawai-demo"
+  },
+  "source": {
+    "en": "Checksum-verified Linux artifact",
+    "zh-CN": "Checksum-verified Linux artifact"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "drawai-demo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/amd64-drawai-demo.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/arm64-drawai-demo.tar.gz"
+          },
+          "sha256": {
+            "amd64": "7cbfe341c07a9097bf96a4c4e2348b4b58599c9701b448f935650b3866f7e5da",
+            "arm64": "9417fce966d4add2ece80f43136f625111f0cbf32b2e46cf69c30f81079e6d69"
+          },
+          "target": "archive.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/.ready.json",
+          "sha256": {
+            "amd64": "dc35ecdda0b971a0b378c3352d0cdfb49c775fde95799464a002dad34edbfb98",
+            "arm64": "dc35ecdda0b971a0b378c3352d0cdfb49c775fde95799464a002dad34edbfb98"
+          }
+        },
+        {
+          "path": "assets/demos/22-hud/assets/land-50m.json",
+          "sha256": {
+            "amd64": "619477ff690c086885e45cb91707d783805561bd75ae8e437b7d4694b0204e0f",
+            "arm64": "619477ff690c086885e45cb91707d783805561bd75ae8e437b7d4694b0204e0f"
+          }
+        }
+      ]
+    }
+  ]
+}

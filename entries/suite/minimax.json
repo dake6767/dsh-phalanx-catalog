@@ -1,9 +1,9 @@
 {
   "kind": "suite",
   "id": "minimax",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "engines": {
-    "platform": ">=0.1.19"
+    "platform": ">=0.1.35"
   },
   "adapters": [
     {
@@ -152,6 +152,34 @@
             "en": "Team MiniMax API key (mainland region)",
             "zh-CN": "团队 MiniMax API key（中国大陆区域）"
           }
+        }
+      ],
+      "serviceSlots": [
+        {
+          "id": "team-api",
+          "label": {
+            "en": "Team API",
+            "zh-CN": "团队 API"
+          },
+          "commands": [
+            "mmx"
+          ],
+          "backends": [
+            {
+              "id": "minimax",
+              "label": {
+                "en": "MiniMax",
+                "zh-CN": "MiniMax"
+              },
+              "fields": [
+                {
+                  "name": "MINIMAX_API_KEY",
+                  "type": "secret",
+                  "required": true
+                }
+              ]
+            }
+          ]
         }
       ]
     },
