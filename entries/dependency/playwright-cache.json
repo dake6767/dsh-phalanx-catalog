@@ -1,0 +1,63 @@
+{
+  "kind": "dependency",
+  "id": "playwright-cache",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "playwright-cache",
+    "zh-CN": "playwright-cache"
+  },
+  "description": {
+    "en": "playwright-cache",
+    "zh-CN": "playwright-cache"
+  },
+  "source": {
+    "en": "Checksum-verified Linux artifact",
+    "zh-CN": "Checksum-verified Linux artifact"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "playwright-cache",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/amd64-playwright-cache.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/arm64-playwright-cache.tar.gz"
+          },
+          "sha256": {
+            "amd64": "9901133cb6237e9533ce12feea48f84a544442f321ac05b51ab020cf4ea11722",
+            "arm64": "15383630b0df0c2819c16c341d7212bfb03cde1373776018905d9462d48e4814"
+          },
+          "target": "archive.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/dsh-chromium",
+          "sha256": {
+            "amd64": "5ae7d6f374857afb40a01d3d3f7c4f2721a1f2c5a23f8c4f812cb39db400679b",
+            "arm64": "e8d8f07f3417945c326ae72d8b94e6a619b1fc3bd3d82256f40c42cb2f828839"
+          },
+          "executable": true
+        }
+      ]
+    }
+  ]
+}

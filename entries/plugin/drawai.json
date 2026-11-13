@@ -1,0 +1,125 @@
+{
+  "kind": "plugin",
+  "id": "drawai",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "DrawAI",
+    "zh-CN": "DrawAI"
+  },
+  "description": {
+    "en": "DrawAI",
+    "zh-CN": "DrawAI"
+  },
+  "source": {
+    "en": "Checksum-verified Linux artifact",
+    "zh-CN": "Checksum-verified Linux artifact"
+  },
+  "dependencies": [
+    "drawai-assets",
+    "drawai-demo",
+    "drawai-runtime",
+    "huashu-tools",
+    "playwright-cache",
+    "native-seed"
+  ],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-drawai",
+      "version": "0.4.4",
+      "integrity": "sha512-wAJ5E0M6EDcxItZ3H5+wIgZpOksQ2FAsGx3sS3lBOFVqXcQoxo/ANLNQFZAUCvvValdOvLt/A/xfIqa+TXqmEA==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [
+        "drawai-assets",
+        "drawai-demo",
+        "drawai-runtime",
+        "huashu-tools",
+        "playwright-cache",
+        "native-seed"
+      ],
+      "resourceBindings": [
+        {
+          "dependency": "drawai-assets",
+          "kind": "environment",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "174b82e25e2c1fe47e18378035cba18db696e124083f3e3978786623ce35ada6",
+          "name": "DRAWAI_ASSETS_DIR"
+        },
+        {
+          "dependency": "drawai-demo",
+          "kind": "environment",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "cf91096d8f1a33d2287f70debd8f0591f40beebb6c1b6f84050dc7a19b9fa02d",
+          "name": "DRAWAI_DEMO_ASSETS_DIR"
+        },
+        {
+          "dependency": "drawai-runtime",
+          "kind": "environment",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "21ff71fe8d412d33b99d5f7f130196ab7bcc3e637434c5595c2e78a06499361d",
+          "name": "DRAWAI_VIDEO_RUNTIME_DIR"
+        },
+        {
+          "dependency": "huashu-tools",
+          "kind": "environment",
+          "path": "assets/bin/ffmpeg",
+          "version": "1.0.0",
+          "contentHash": "eeab5aa36bedf91f50b860c15ad68bc0ea6256ef2beade4604611daeb68cd57d",
+          "name": "DRAWAI_FFMPEG_PATH"
+        },
+        {
+          "dependency": "playwright-cache",
+          "kind": "environment",
+          "path": "assets/dsh-chromium",
+          "version": "1.0.0",
+          "contentHash": "4eedd3893ed5d17a0815b1aeabb4826d0478ce0a0576a9b2d8bd489a1f5b8b9c",
+          "name": "DRAWAI_CHROME_PATH"
+        },
+        {
+          "dependency": "native-seed",
+          "kind": "native-package-cache",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "66bd8a6c73ac9c641cbc86e12ac9186fb130b6a4aaea11e1c6454de61ebd9bf2",
+          "packages": [
+            {
+              "packageName": "@babel/parser",
+              "version": "7.28.5"
+            },
+            {
+              "packageName": "@babel/traverse",
+              "version": "7.28.5"
+            },
+            {
+              "packageName": "@resvg/resvg-js",
+              "version": "2.6.2"
+            },
+            {
+              "packageName": "parse5",
+              "version": "7.3.0"
+            },
+            {
+              "packageName": "postcss",
+              "version": "8.5.32"
+            },
+            {
+              "packageName": "npm",
+              "version": "10.9.4"
+            }
+          ]
+        }
+      ],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}

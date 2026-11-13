@@ -1,0 +1,69 @@
+{
+  "kind": "dependency",
+  "id": "native-seed",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "native-seed",
+    "zh-CN": "native-seed"
+  },
+  "description": {
+    "en": "native-seed",
+    "zh-CN": "native-seed"
+  },
+  "source": {
+    "en": "Checksum-verified Linux artifact",
+    "zh-CN": "Checksum-verified Linux artifact"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "native-seed",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/amd64-native-seed.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/arm64-native-seed.tar.gz"
+          },
+          "sha256": {
+            "amd64": "f790f28b1f9678cd708a5a83df46f93cfaa78ab06d3e55860bbd0a7d38a4a313",
+            "arm64": "6993413827793dee05555d20dfe048bb9835fda15300cab7a9ce18ab5e129e22"
+          },
+          "target": "archive.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/metadata/.ready.sha256",
+          "sha256": {
+            "amd64": "9644592ca54cbc4aa1840935a95445bcb20b2974d1fd9804e5e95e89544a3f93",
+            "arm64": "bbc783df10766113de36c14d884bd6bc1a9b8af0b6502425ccc813f4c44ee172"
+          }
+        },
+        {
+          "path": "assets/store/v11/index.db",
+          "sha256": {
+            "amd64": "911e29926cd050a837ac898ec70adc5faa52c6192020f9b02822e3321b1c7f8a",
+            "arm64": "799b58eec2cc24434b70e9a86bbf650a30123a04af1efe1c243c526907e079a4"
+          }
+        }
+      ]
+    }
+  ]
+}

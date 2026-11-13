@@ -1,0 +1,90 @@
+{
+  "kind": "plugin",
+  "id": "huashu-design",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.35"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Huashu Design",
+    "zh-CN": "Huashu Design"
+  },
+  "description": {
+    "en": "Huashu Design",
+    "zh-CN": "Huashu Design"
+  },
+  "source": {
+    "en": "Checksum-verified Linux artifact",
+    "zh-CN": "Checksum-verified Linux artifact"
+  },
+  "dependencies": [
+    "huashu-tools",
+    "playwright-cache",
+    "native-seed"
+  ],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "huashu-design",
+      "version": "3.3.0",
+      "integrity": "sha512-NLMyZNs/t8nfezVEtA1p6YnmYtYsUTgmFVM/LAlxN5D7jsD5eJgvFJmaG/+FyIb1GhOhjOLk41LfnDtU3z/zbQ==",
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/huashu-design-3.3.0.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [
+        "huashu-tools",
+        "playwright-cache",
+        "native-seed"
+      ],
+      "resourceBindings": [
+        {
+          "dependency": "huashu-tools",
+          "kind": "command-path",
+          "path": "assets/bin",
+          "version": "1.0.0",
+          "contentHash": "eeab5aa36bedf91f50b860c15ad68bc0ea6256ef2beade4604611daeb68cd57d",
+          "commands": [
+            "python3",
+            "ffmpeg",
+            "ffprobe"
+          ]
+        },
+        {
+          "dependency": "playwright-cache",
+          "kind": "environment",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "4eedd3893ed5d17a0815b1aeabb4826d0478ce0a0576a9b2d8bd489a1f5b8b9c",
+          "name": "PLAYWRIGHT_BROWSERS_PATH"
+        },
+        {
+          "dependency": "native-seed",
+          "kind": "native-package-cache",
+          "path": "assets",
+          "version": "1.0.0",
+          "contentHash": "66bd8a6c73ac9c641cbc86e12ac9186fb130b6a4aaea11e1c6454de61ebd9bf2",
+          "packages": [
+            {
+              "packageName": "playwright",
+              "version": "1.59.1"
+            },
+            {
+              "packageName": "pdf-lib",
+              "version": "1.17.1"
+            },
+            {
+              "packageName": "pptxgenjs",
+              "version": "4.0.1"
+            }
+          ]
+        }
+      ],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
