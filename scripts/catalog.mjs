@@ -27,6 +27,7 @@ if (mode === 'assemble') {
     const files = (await stat(input)).isDirectory()
       ? (await readdir(input)).filter(name => name.endsWith('.json')).map(name => resolve(input, name)) : [input]
     const previous = new Map()
+    const locked = new Map()
     for (const file of files) {
       const document = await readJson(file)
       if (verifySuiteCatalogSignature(document, [...historicalKeys, trusted]) !== 'ok') throw new Error('Previous catalog signature verification failed')
@@ -34,12 +35,21 @@ if (mode === 'assemble') {
         const identity = `${entry.id}@${entry.version}`
         if (previous.has(identity) && previous.get(identity) !== entry.contentHash) throw new Error(`Immutable history conflicts: ${identity}`)
         previous.set(identity, entry.contentHash)
+        if (entry.locked === true) {
+          const pin = JSON.stringify([entry.version, entry.contentHash])
+          if (locked.has(entry.id) && locked.get(entry.id) !== pin) throw new Error(`Locked entry history conflicts: ${entry.id}`)
+          locked.set(entry.id, pin)
+        }
       }
     }
     const next = await readJson(output)
     for (const entry of next.entries) {
       const hash = previous.get(`${entry.id}@${entry.version}`)
       if (hash !== undefined && hash !== entry.contentHash) throw new Error(`Immutable entry changed: ${entry.id}@${entry.version}`)
+      const pin = locked.get(entry.id)
+      if (pin !== undefined && (entry.locked !== true || pin !== JSON.stringify([entry.version, entry.contentHash]))) {
+        throw new Error(`Locked entry changed: ${entry.id}`)
+      }
     }
     console.log('Released entry versions are unchanged.')
     process.exit(0)
