@@ -168,6 +168,11 @@
           ],
           "blockedShortOptions": [
             "-b"
+          ],
+          "shortOptionsWithValue": [
+            "-o",
+            "-f",
+            "-m"
           ]
         },
         {
