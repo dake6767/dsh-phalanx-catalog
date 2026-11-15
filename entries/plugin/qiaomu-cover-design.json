@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "qiaomu-cover-design",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "platform": ">=0.1.35"
   },
@@ -23,10 +23,10 @@
     {
       "kind": "plugin",
       "packageName": "qiaomu-cover-design-dsh",
-      "version": "0.1.3",
-      "integrity": "sha512-Lq31kbA5Dv3HijBh9jgTxvXYL7nwb0/vVHh7kSdC9mL6dP1FL8iwcPG0UQqUHIzUUzh+8sRHko+kbCXVQ51Yxw==",
+      "version": "0.1.5",
+      "integrity": "sha512-d3GQLq3Db0s+BwuHZO8lu/Q+7XQoKGfKnKcMoaJc9cVGdLaidxaXtYpFXWGsohOftOPeWpNLMedxbD+l9Nu8IA==",
       "archive": {
-        "url": "https://github.com/joeseesun/qiaomu-cover-design-dsh/releases/download/v0.1.3/qiaomu-cover-design-dsh-0.1.3.tgz"
+        "url": "https://github.com/joeseesun/qiaomu-cover-design-dsh/releases/download/v0.1.5/qiaomu-cover-design-dsh-0.1.5.tgz"
       },
       "runtimeDependencies": [],
       "catalogDependencies": [],
@@ -38,8 +38,8 @@
         {
           "id": "chat",
           "label": {
-            "en": "chat",
-            "zh-CN": "chat"
+            "en": "Conversation",
+            "zh-CN": "对话"
           },
           "binding": {
             "kind": "revisioned-rpc",
@@ -71,8 +71,8 @@
             {
               "id": "openai",
               "label": {
-                "en": "openai",
-                "zh-CN": "openai"
+                "en": "OpenAI-compatible",
+                "zh-CN": "OpenAI 兼容"
               },
               "protocol": "openai-chat",
               "mode": "openai",
@@ -108,8 +108,8 @@
         {
           "id": "image",
           "label": {
-            "en": "image",
-            "zh-CN": "image"
+            "en": "Image generation",
+            "zh-CN": "生图"
           },
           "binding": {
             "kind": "revisioned-rpc",
@@ -142,8 +142,8 @@
             {
               "id": "openai",
               "label": {
-                "en": "openai",
-                "zh-CN": "openai"
+                "en": "OpenAI-compatible",
+                "zh-CN": "OpenAI 兼容"
               },
               "protocol": "openai-image",
               "mode": "api",
@@ -176,8 +176,8 @@
             {
               "id": "seedream",
               "label": {
-                "en": "seedream",
-                "zh-CN": "seedream"
+                "en": "Volcengine Seedream",
+                "zh-CN": "火山引擎 Seedream"
               },
               "protocol": "seedream-image",
               "mode": "ark",
@@ -208,6 +208,89 @@
               ]
             }
           ]
+        }
+      ],
+      "serviceFieldLabels": [
+        {
+          "slot": "chat",
+          "backend": "openai",
+          "field": "endpoint",
+          "label": {
+            "en": "Base URL",
+            "zh-CN": "接口地址"
+          }
+        },
+        {
+          "slot": "chat",
+          "backend": "openai",
+          "field": "key",
+          "label": {
+            "en": "API key",
+            "zh-CN": "API 密钥"
+          }
+        },
+        {
+          "slot": "chat",
+          "backend": "openai",
+          "field": "model",
+          "label": {
+            "en": "Model name",
+            "zh-CN": "模型名称"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "openai",
+          "field": "endpoint",
+          "label": {
+            "en": "Base URL",
+            "zh-CN": "接口地址"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "openai",
+          "field": "key",
+          "label": {
+            "en": "API key",
+            "zh-CN": "API 密钥"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "openai",
+          "field": "model",
+          "label": {
+            "en": "Model name",
+            "zh-CN": "模型名称"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "seedream",
+          "field": "endpoint",
+          "label": {
+            "en": "Base URL",
+            "zh-CN": "接口地址"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "seedream",
+          "field": "key",
+          "label": {
+            "en": "API key",
+            "zh-CN": "API 密钥"
+          }
+        },
+        {
+          "slot": "image",
+          "backend": "seedream",
+          "field": "model",
+          "label": {
+            "en": "Model name",
+            "zh-CN": "模型名称"
+          }
         }
       ]
     }

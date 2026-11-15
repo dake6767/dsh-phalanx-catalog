@@ -1,0 +1,125 @@
+{
+  "kind": "plugin",
+  "id": "dsh-media-desk",
+  "version": "2.7.1",
+  "engines": {
+    "platform": ">=0.1.36"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Media Desk",
+    "zh-CN": "自媒体工作台"
+  },
+  "description": {
+    "en": "Capture ideas and produce articles, covers, and storyboards.",
+    "zh-CN": "记录灵感，生成文案、封面和分镜。"
+  },
+  "identity": {
+    "en": "Media Desk",
+    "zh-CN": "自媒体工作台"
+  },
+  "source": {
+    "en": "npm",
+    "zh-CN": "npm"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-media-desk",
+      "version": "2.7.1",
+      "integrity": "sha512-1OtskslKgbKjV9Pa0lJjs6Em1rDnT2yFjXXNJpnTYaDNsFRXfbK82Or91Bj1k8ueQVsHQtL7hex54OP5Z+rFPQ==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      },
+      "serviceSlots": [
+        {
+          "id": "image",
+          "label": {
+            "en": "Image generation",
+            "zh-CN": "生图"
+          },
+          "binding": {
+            "kind": "json-settings",
+            "file": "media-desk/settings.json",
+            "upstream": "image-provider",
+            "fields": [
+              {
+                "path": [
+                  "image",
+                  "source"
+                ],
+                "source": "literal",
+                "value": "http"
+              },
+              {
+                "path": [
+                  "image",
+                  "protocol"
+                ],
+                "source": "literal",
+                "value": "openai"
+              },
+              {
+                "path": [
+                  "image",
+                  "baseUrl"
+                ],
+                "source": "gateway-url"
+              },
+              {
+                "path": [
+                  "image",
+                  "model"
+                ],
+                "source": "model"
+              },
+              {
+                "path": [
+                  "image",
+                  "apiKey"
+                ],
+                "source": "service-token"
+              }
+            ]
+          },
+          "backends": [
+            {
+              "id": "openai",
+              "label": {
+                "en": "OpenAI-compatible",
+                "zh-CN": "OpenAI 兼容"
+              },
+              "protocol": "openai-image",
+              "mode": "api",
+              "upstream": {
+                "model": "MODEL"
+              },
+              "fields": [
+                {
+                  "name": "MODEL",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "serviceFieldLabels": [
+        {
+          "slot": "image",
+          "backend": "openai",
+          "field": "MODEL",
+          "label": {
+            "en": "Model name",
+            "zh-CN": "模型名称"
+          }
+        }
+      ]
+    }
+  ]
+}
