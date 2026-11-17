@@ -11,8 +11,8 @@ built-in adapters. The latest Release publishes `catalog.json`.
 1. Edit an entry or add one named after its `id`. Pin upstream versions, file
    SHA-256 values and Git commits. Declare services and dependencies. Increase
    the catalog entry version whenever its content changes.
-2. Set `engines.platform` to a compatible range; entries using the current
-   adapters require `>=0.1.19`. New adapter behavior needs a platform release.
+2. Set `engines.platform` to the range supported by the entry’s adapters.
+   New adapter behavior needs a supporting platform release.
 3. Open a pull request. CI checks the document using the exact platform commit
    in `platform.json`, and runs the platform's equivalence tests against these
    actual entries. Catalog changes do not require a platform release.
@@ -39,7 +39,8 @@ and versions intact.
 
 For an adapter introduced by a new platform, pin the public candidate commit
 in `platform.json` and run the catalog PR's checks against that commit before
-publishing. Phalanx 0.1.36 skips MCP entries and continues to use the other
+publishing. Record equivalence to an existing local adapter when migrating its
+initial declarations. Phalanx 0.1.36 skips MCP entries and continues to use the other
 compatible entries. Keep superseded signed releases. If an entry must be
 withdrawn, publish new signed catalog content through the same workflow.
 Already-installed MCP services continue to use their saved configuration.
@@ -73,7 +74,8 @@ leaves the latest directory. Preserve historical Releases for this check.
 
 ```bash
 node --import ../platform/node_modules/tsx/dist/loader.mjs scripts/catalog.mjs assemble ../platform catalog.unsigned.json
-node --import ../platform/node_modules/tsx/dist/loader.mjs ../platform/scripts/check-suite-catalog.ts catalog.unsigned.json 0.1.19
+platform_version=$(node -p "require('./platform.json').version")
+node --import ../platform/node_modules/tsx/dist/loader.mjs ../platform/scripts/check-suite-catalog.ts catalog.unsigned.json "$platform_version"
 ```
 
 实际目录由独立的发布工作流检查、签名并发布；私钥只进入发布环境的
