@@ -96,6 +96,15 @@ test('assembles all entry kinds and signs gallery metadata without resealing ent
   assert.notEqual(execute('verify', 'tampered.json').status, 0)
 }))
 
+test('assembles and signs a catalog after withdrawing all MCP entries', () => fixture(({ root, execute }) => {
+  for (const kind of ['suite', 'dependency', 'plugin']) mkdirSync(join(root, 'entries', kind), { recursive: true })
+  const assembled = execute('assemble', 'without-mcp.json')
+  assert.equal(assembled.status, 0, assembled.stderr)
+  assert.deepEqual(JSON.parse(readFileSync(join(root, 'without-mcp.json'), 'utf8')).entries, [])
+  assert.equal(execute('sign', 'without-mcp.json', 'signed-without-mcp.json').status, 0)
+  assert.equal(execute('verify', 'signed-without-mcp.json').status, 0)
+}))
+
 test('preserves a locked dependency pin when it reappears after an omitted release', () => fixture(({ root, execute, unsigned }) => {
   const entry = { ...unsigned.entries[0], kind: 'dependency', locked: true }
   writeFileSync(join(root, 'locked.json'), JSON.stringify({ ...unsigned, entries: [entry] }))
