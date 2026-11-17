@@ -9,7 +9,7 @@ const { suiteCatalogSignedPayload, withSuiteCatalogContentHash } = await import(
 const readJson = async path => JSON.parse(await readFile(path, 'utf8'))
 if (mode === 'assemble') {
   const entries = []
-  for (const kind of ['suite', 'dependency', 'plugin']) {
+  for (const kind of ['suite', 'dependency', 'plugin', 'mcp']) {
     for (const name of (await readdir(`entries/${kind}`)).filter(name => name.endsWith('.json')).sort()) {
       const entry = await readJson(`entries/${kind}/${name}`)
       if (entry.kind !== kind || `${entry.id}.json` !== name) throw new Error(`Entry path does not match kind/id: ${kind}/${name}`)
@@ -17,6 +17,11 @@ if (mode === 'assemble') {
     }
   }
   const document = { format: 1, publishedAt: new Date().toISOString(), entries }
+  try {
+    document.galleryTags = await readJson('gallery-tags.json')
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error
+  }
   await writeFile(input, `${JSON.stringify(document, null, 2)}\n`)
 } else {
   const trusted = await readJson('trusted-key.json')

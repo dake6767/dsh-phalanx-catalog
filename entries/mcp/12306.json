@@ -1,0 +1,32 @@
+{
+  "kind": "mcp",
+  "id": "12306",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.37"
+  },
+  "title": {
+    "en": "12306",
+    "zh-CN": "12306"
+  },
+  "description": {
+    "en": "Train schedules, stations and available tickets",
+    "zh-CN": "列车时刻、车站与余票查询"
+  },
+  "documentation": "https://github.com/Joooook/12306-mcp",
+  "adapters": [
+    {
+      "name": "mcp-shared-node",
+      "params": {
+        "repository": "Joooook/12306-mcp",
+        "commit": "2ea7a601a2af0e1cc48b8235e65fa11f1af55aaf",
+        "sha256": "50b59dfb73fceb28fd3c688ae861cb9f6f73a91cb7ee23c5048cae75bdb994bc",
+        "script": "build/index.js"
+      }
+    }
+  ],
+  "source": {
+    "en": "12306",
+    "zh-CN": "12306"
+  }
+}

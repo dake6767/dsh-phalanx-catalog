@@ -1,7 +1,8 @@
 # dsh-phalanx catalog
 
-Signed declarative catalogs for dsh-phalanx. Suite and shared dependency entries
-live under `entries/suite/` and `entries/dependency/`. Catalog JSON contains data,
+Signed declarative catalog for dsh-phalanx. Suites, shared dependencies,
+plugins and MCP services live under `entries/suite/`, `entries/dependency/`,
+`entries/plugin/` and `entries/mcp/`. Catalog JSON contains data,
 never executable preparation scripts. The platform generates commands using its
 built-in adapters. The latest Release publishes `catalog.json`.
 
@@ -19,6 +20,29 @@ built-in adapters. The latest Release publishes `catalog.json`.
    platform commit, test result and reused evidence. Never include credentials.
 5. Merge, then dispatch **Catalog** on `main` to sign and publish a Release.
    Release publication is available only through this workflow.
+
+## MCP entries and gallery tags
+
+MCP entries require platform `>=0.1.37`. Each entry declares one adapter,
+`mcp-remote-http` for HTTPS endpoints or `mcp-shared-node` for Node.js runners
+from pinned GitHub source archives. A remote entry may bind one administrator
+credential to a header or query parameter. Declare the binding and the
+`{credential}` placeholder without storing a credential. A shared entry declares
+the repository, full Git commit, archive SHA-256 and relative entry point. The
+platform generates its preparation command.
+
+The optional `gallery-tags.json` contains a `tags` array with stable IDs and
+bilingual labels, and an `assignments` array naming a kind, entry ID and tag IDs.
+Use `suite`, `plugin` or `mcp` as the kind. The assembled document signs that
+metadata as `galleryTags`. Classification changes leave existing entry hashes
+and versions intact.
+
+For an adapter introduced by a new platform, pin the public candidate commit
+in `platform.json` and run the catalog PR's checks against that commit before
+publishing. Phalanx 0.1.36 skips MCP entries and continues to use the other
+compatible entries. Keep superseded signed releases. If an entry must be
+withdrawn, publish new signed catalog content through the same workflow.
+Already-installed MCP services continue to use their saved configuration.
 
 ## Signing and rotation
 

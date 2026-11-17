@@ -1,0 +1,38 @@
+{
+  "kind": "mcp",
+  "id": "amap",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.37"
+  },
+  "title": {
+    "en": "Amap",
+    "zh-CN": "高德地图"
+  },
+  "description": {
+    "en": "Maps, routes and weather",
+    "zh-CN": "地点搜索、路线规划与天气查询"
+  },
+  "documentation": "https://lbs.amap.com/api/mcp-server/gettingstarted",
+  "adapters": [
+    {
+      "name": "mcp-remote-http",
+      "params": {
+        "url": "https://mcp.amap.com/mcp",
+        "credential": {
+          "label": {
+            "en": "Amap Web Service Key",
+            "zh-CN": "高德 Web 服务 Key"
+          },
+          "in": "query",
+          "name": "key",
+          "template": "{credential}"
+        }
+      }
+    }
+  ],
+  "source": {
+    "en": "Amap",
+    "zh-CN": "高德地图"
+  }
+}

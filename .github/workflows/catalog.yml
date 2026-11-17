@@ -58,7 +58,7 @@ jobs:
         working-directory: platform
         env:
           DSH_PHALANX_CATALOG_TEST_FILE: ${{ github.workspace }}/catalog.unsigned.json
-        run: corepack pnpm exec vitest run tests/suite-catalog-officecli.spec.ts tests/suite-catalog-minimax.spec.ts tests/suite-catalog-lark.spec.ts tests/suite-catalog-hyperframes.spec.ts tests/suite-catalog-wecom.spec.ts --maxWorkers=1
+        run: corepack pnpm exec vitest run tests/suite-catalog-officecli.spec.ts tests/suite-catalog-minimax.spec.ts tests/suite-catalog-lark.spec.ts tests/suite-catalog-hyperframes.spec.ts tests/suite-catalog-wecom.spec.ts tests/mcp-catalog-equivalence.spec.ts --maxWorkers=1
       - name: Keep checked unsigned document
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

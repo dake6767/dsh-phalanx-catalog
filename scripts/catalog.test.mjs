@@ -70,15 +70,30 @@ test('verifies archived signatures after the old key is retired from current tru
 }))
 
 
-test('assembles plugin entries alongside suites and dependencies', () => fixture(({ root, execute }) => {
-  for (const kind of ['suite', 'dependency', 'plugin']) {
+test('assembles all entry kinds and signs gallery metadata without resealing entries', () => fixture(({ root, execute }) => {
+  for (const kind of ['suite', 'dependency', 'plugin', 'mcp']) {
     mkdirSync(join(root, 'entries', kind), { recursive: true })
     writeFileSync(join(root, 'entries', kind, `${kind}-fixture.json`), JSON.stringify({ kind, id: `${kind}-fixture`, version: '1.0.0', engines: { platform: '>=0.1.24' }, adapters: [], title: { en: 'Fixture', 'zh-CN': '测试' }, description: { en: 'Fixture', 'zh-CN': '测试' }, source: { en: 'Fixture', 'zh-CN': '测试' }, identity: { en: 'Fixture', 'zh-CN': '测试' }, dependencies: [], items: [{ kind: 'plugin', packageName: '@fixture/editor', version: '1.0.0', integrity: 'sha512-' + Buffer.alloc(64, 1).toString('base64'), runtimeDependencies: [], catalogDependencies: [], access: { environment: [], entriesYaml: '' } }] }))
   }
+  const metadata = { tags: [{ id: 'example', label: { en: 'Example', 'zh-CN': '示例' } }], assignments: [{ kind: 'mcp', id: 'mcp-fixture', tags: ['example'] }] }
+  writeFileSync(join(root, 'gallery-tags.json'), JSON.stringify(metadata))
   const result = execute('assemble', 'assembled.json')
   assert.equal(result.status, 0, result.stderr)
   const document = JSON.parse(readFileSync(join(root, 'assembled.json'), 'utf8'))
-  assert.deepEqual(document.entries.map(entry => entry.kind), ['suite', 'dependency', 'plugin'])
+  assert.deepEqual(document.entries.map(entry => entry.kind), ['suite', 'dependency', 'plugin', 'mcp'])
+  assert.deepEqual(document.galleryTags, metadata)
+  const signResult = execute('sign', 'assembled.json', 'signature.json')
+  assert.equal(signResult.status, 0, signResult.stderr)
+  metadata.tags[0].label.en = 'Renamed'
+  writeFileSync(join(root, 'gallery-tags.json'), JSON.stringify(metadata))
+  const renamedResult = execute('assemble', 'renamed.json')
+  assert.equal(renamedResult.status, 0, renamedResult.stderr)
+  const renamed = JSON.parse(readFileSync(join(root, 'renamed.json'), 'utf8'))
+  assert.deepEqual(renamed.entries, document.entries)
+  assert.equal(execute('immutable', 'signature.json', 'renamed.json').status, 0)
+  const signed = JSON.parse(readFileSync(join(root, 'signature.json'), 'utf8'))
+  writeFileSync(join(root, 'tampered.json'), JSON.stringify({ ...signed, galleryTags: metadata }))
+  assert.notEqual(execute('verify', 'tampered.json').status, 0)
 }))
 
 test('preserves a locked dependency pin when it reappears after an omitted release', () => fixture(({ root, execute, unsigned }) => {
