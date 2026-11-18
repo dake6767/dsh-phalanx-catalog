@@ -1,0 +1,156 @@
+{
+  "tags": [
+    {
+      "id": "documents-sheets",
+      "label": {
+        "en": "Documents & Spreadsheets",
+        "zh-CN": "文档表格"
+      }
+    },
+    {
+      "id": "presentations",
+      "label": {
+        "en": "Presentations",
+        "zh-CN": "演示文稿"
+      }
+    },
+    {
+      "id": "team-collaboration",
+      "label": {
+        "en": "Team Collaboration",
+        "zh-CN": "团队协作"
+      }
+    },
+    {
+      "id": "writing",
+      "label": {
+        "en": "Writing",
+        "zh-CN": "文案写作"
+      }
+    },
+    {
+      "id": "visual-design",
+      "label": {
+        "en": "Images & Design",
+        "zh-CN": "图像设计"
+      }
+    },
+    {
+      "id": "audio-video",
+      "label": {
+        "en": "Audio & Video",
+        "zh-CN": "音视频制作"
+      }
+    },
+    {
+      "id": "everyday-tools",
+      "label": {
+        "en": "Everyday Tools",
+        "zh-CN": "生活工具"
+      }
+    }
+  ],
+  "assignments": [
+    {
+      "kind": "plugin",
+      "id": "drawai",
+      "tags": [
+        "visual-design",
+        "audio-video"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "dsh-media-desk",
+      "tags": [
+        "writing",
+        "visual-design"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "huashu-design",
+      "tags": [
+        "visual-design",
+        "presentations",
+        "audio-video"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "onlyoffice",
+      "tags": [
+        "documents-sheets",
+        "presentations"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "qiaomu-cover-design",
+      "tags": [
+        "visual-design"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "hyperframes",
+      "tags": [
+        "audio-video"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "lark",
+      "tags": [
+        "team-collaboration",
+        "documents-sheets"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "minimax",
+      "tags": [
+        "writing",
+        "visual-design",
+        "audio-video"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "officecli",
+      "tags": [
+        "documents-sheets",
+        "presentations"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "ppt-master",
+      "tags": [
+        "presentations"
+      ]
+    },
+    {
+      "kind": "suite",
+      "id": "wecom",
+      "tags": [
+        "team-collaboration",
+        "documents-sheets"
+      ]
+    },
+    {
+      "kind": "mcp",
+      "id": "12306",
+      "tags": [
+        "everyday-tools"
+      ]
+    },
+    {
+      "kind": "mcp",
+      "id": "amap",
+      "tags": [
+        "everyday-tools"
+      ]
+    }
+  ]
+}
