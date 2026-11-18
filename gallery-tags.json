@@ -71,8 +71,8 @@
       "kind": "plugin",
       "id": "huashu-design",
       "tags": [
-        "presentations",
         "visual-design",
+        "presentations",
         "audio-video"
       ]
     },
@@ -102,8 +102,8 @@
       "kind": "suite",
       "id": "lark",
       "tags": [
-        "documents-sheets",
-        "team-collaboration"
+        "team-collaboration",
+        "documents-sheets"
       ]
     },
     {
@@ -134,8 +134,8 @@
       "kind": "suite",
       "id": "wecom",
       "tags": [
-        "documents-sheets",
-        "team-collaboration"
+        "team-collaboration",
+        "documents-sheets"
       ]
     },
     {
