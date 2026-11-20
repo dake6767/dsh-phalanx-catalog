@@ -1,0 +1,88 @@
+{
+  "kind": "plugin",
+  "id": "dsh-guizang-design",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.39"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Guizang Design",
+    "zh-CN": "歸藏设计"
+  },
+  "description": {
+    "en": "Browse your designs in DSH, render cards, and export pages as PDFs or long images.",
+    "zh-CN": "在 DSH 浏览自己的作品、渲染卡片，将网页导出为 PDF 或长图。"
+  },
+  "source": {
+    "en": "op7418/dsh-guizang-design 0.1.4 with the proposed base-path fix (upstream PR #7)",
+    "zh-CN": "基于 op7418/dsh-guizang-design 0.1.4，含上游 PR #7 的挂载路径兼容补丁"
+  },
+  "dependencies": [
+    "playwright-chromium-1248",
+    "guizang-native-seed"
+  ],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-guizang-design",
+      "version": "0.1.5-phalanx.1",
+      "integrity": "sha512-slG/jE/EOq+kU3tfpjatzAtp2tBsbie1LxoSPZpNym0CZc0AonDnvHL0VDWZjnqh5dlPmovNwh2AIt89rYgmlA==",
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-guizang-design/releases/download/v0.1.5-phalanx.1/dsh-guizang-design-0.1.5-phalanx.1.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [
+        "playwright-chromium-1248",
+        "guizang-native-seed"
+      ],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      },
+      "resourceBindings": [
+        {
+          "dependency": "playwright-chromium-1248",
+          "version": "1.0.0",
+          "contentHash": "d83eaedd1ba9be5e26dbb2a0376ff9e2d9f2f1fceb39ed398495f3551bea0885",
+          "kind": "playwright-browser",
+          "path": "assets",
+          "playwrightVersion": "1.64.1",
+          "chromiumBuild": "1248",
+          "directories": [
+            "chromium_headless_shell-1248"
+          ]
+        },
+        {
+          "dependency": "playwright-chromium-1248",
+          "version": "1.0.0",
+          "contentHash": "d83eaedd1ba9be5e26dbb2a0376ff9e2d9f2f1fceb39ed398495f3551bea0885",
+          "kind": "environment",
+          "name": "CHROME_PATH",
+          "path": "assets/chromium_headless_shell-1248/dsh-chromium"
+        },
+        {
+          "dependency": "guizang-native-seed",
+          "version": "1.0.0",
+          "contentHash": "3c48665ab83936b6f3d8e4f7c318f077a7c26138da1a1283e640282eb83f2001",
+          "kind": "native-package-cache",
+          "path": "assets",
+          "packages": [
+            {
+              "packageName": "playwright",
+              "version": "1.64.1"
+            },
+            {
+              "packageName": "puppeteer-core",
+              "version": "24.43.1"
+            },
+            {
+              "packageName": "subset-font",
+              "version": "2.9.0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

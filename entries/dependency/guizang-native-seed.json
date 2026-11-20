@@ -1,0 +1,69 @@
+{
+  "kind": "dependency",
+  "id": "guizang-native-seed",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.39"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Guizang Design package cache",
+    "zh-CN": "歸藏设计软件包缓存"
+  },
+  "description": {
+    "en": "Pinned npm packages for offline member installation.",
+    "zh-CN": "供成员离线安装使用的锁定 npm 依赖。"
+  },
+  "source": {
+    "en": "Checksum-verified archive",
+    "zh-CN": "摘要校验的归档"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "guizang-native-seed",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed.tar.gz"
+          },
+          "sha256": {
+            "amd64": "8d71beb893f703401a2be91e2a74c9112397a8cdec4cf60f1e780db2b58f593d",
+            "arm64": "8d71beb893f703401a2be91e2a74c9112397a8cdec4cf60f1e780db2b58f593d"
+          },
+          "target": "archive.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/metadata/.ready.sha256",
+          "sha256": {
+            "amd64": "a2f87f56cc169b71285cc76922875f26c88e05b27ee2718e48a9fc4748e9bde8",
+            "arm64": "a2f87f56cc169b71285cc76922875f26c88e05b27ee2718e48a9fc4748e9bde8"
+          }
+        },
+        {
+          "path": "assets/store/v11/index.db",
+          "sha256": {
+            "amd64": "ef5c985b302b586f9796fa579edf5f090e960062b2293707b32d18fcba2e56af",
+            "arm64": "ef5c985b302b586f9796fa579edf5f090e960062b2293707b32d18fcba2e56af"
+          }
+        }
+      ]
+    }
+  ]
+}
