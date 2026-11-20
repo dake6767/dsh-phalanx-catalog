@@ -1,0 +1,36 @@
+{
+  "kind": "plugin",
+  "id": "dsh-context",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.38"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Context Insights",
+    "zh-CN": "上下文洞察"
+  },
+  "description": {
+    "en": "Inspect context composition, token history and agent activity in DSH.",
+    "zh-CN": "在 DSH 中查看上下文组成、Token 使用趋势和 Agent 活动。"
+  },
+  "source": {
+    "en": "npm: dsh-context 0.86.0",
+    "zh-CN": "npm：dsh-context 0.86.0"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-context",
+      "version": "0.86.0",
+      "integrity": "sha512-91eeDDjzuEfOw6WquAhSj+gGfTP/Q8ZOI9TX8sesWM0fugEBIwjI+f0A7vGDNfmGSlzVMm7rHbEosaxWfCOH7w==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}

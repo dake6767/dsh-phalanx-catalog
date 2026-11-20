@@ -1,0 +1,36 @@
+{
+  "kind": "plugin",
+  "id": "dsh-better-sidebar",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.38"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Better Sidebar",
+    "zh-CN": "Better Sidebar"
+  },
+  "description": {
+    "en": "Use files, Git, terminal and agent tasks from the DSH sidebar.",
+    "zh-CN": "在 DSH 侧栏查看文件、Git、终端和 Agent 任务。"
+  },
+  "source": {
+    "en": "npm: dsh-better-sidebar 0.32.1",
+    "zh-CN": "npm：dsh-better-sidebar 0.32.1"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-better-sidebar",
+      "version": "0.32.1",
+      "integrity": "sha512-UcIEAkLuZXz0SkNDwMtycCoO59yCasowG6DqhxkG+jAjQfofF0BbXIOctfjqsU8WyaP6XoSvi4LgMFhEfinBsw==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
