@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "dsh-mnemon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "platform": ">=0.1.38"
   },
@@ -11,12 +11,12 @@
     "zh-CN": "Mnemon 记忆"
   },
   "description": {
-    "en": "Organize session memory, project documents and local long-term memory. Includes the shared Mnemon CLI.",
-    "zh-CN": "管理会话记忆、项目文档与本地长期记忆，自动准备共享 Mnemon CLI。"
+    "en": "Organize session memory, project documents and local long-term memory. Includes the shared Mnemon CLI. Enables web management for signed-in members.",
+    "zh-CN": "管理会话记忆、项目文档与本地长期记忆，自动准备共享 Mnemon CLI。 已登录成员可在网页管理记忆。"
   },
   "source": {
-    "en": "dake6767/dsh-mnemon v0.5.50-phalanx.1; upstream Mnemon CLI 0.2.14",
-    "zh-CN": "dake6767/dsh-mnemon v0.5.50-phalanx.1；上游 Mnemon CLI 0.2.14"
+    "en": "dake6767/dsh-mnemon v0.5.50-phalanx.2; upstream Mnemon CLI 0.2.14",
+    "zh-CN": "dake6767/dsh-mnemon v0.5.50-phalanx.2；上游 Mnemon CLI 0.2.14"
   },
   "dependencies": [
     "mnemon-cli-0-2-14"
@@ -25,8 +25,8 @@
     {
       "kind": "plugin",
       "packageName": "dsh-mnemon",
-      "version": "0.5.50-phalanx.1",
-      "integrity": "sha512-U+G+bYjPbfqldj3ZFc/xKYI64V5d5SCqG/hn7ZmAMJ6ta6mr3vTi9c9klCbL+T/3xnX+VpSl0DV7IDKo9ZZPoA==",
+      "version": "0.5.50-phalanx.2",
+      "integrity": "sha512-TqGlY9rXBDB2HXnIf9Ppy0dIM2LOGYiOeG1cVKjsY4H+lInpe+QfqIIEHnYKZspK29jMXJS0vbFeFRd7ttpKWw==",
       "runtimeDependencies": [],
       "catalogDependencies": [
         "mnemon-cli-0-2-14"
@@ -46,7 +46,7 @@
         "entriesYaml": ""
       },
       "archive": {
-        "url": "https://github.com/dake6767/dsh-mnemon/releases/download/v0.5.50-phalanx.1/dsh-mnemon-0.5.50-phalanx.1.tgz"
+        "url": "https://github.com/dake6767/dsh-mnemon/releases/download/v0.5.50-phalanx.2/dsh-mnemon-0.5.50-phalanx.2.tgz"
       }
     }
   ]
