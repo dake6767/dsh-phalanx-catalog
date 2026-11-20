@@ -14,3 +14,9 @@ Catalog entry `dsh-mnemon@1.0.1` selects `dsh-mnemon@0.5.50-phalanx.1` at fork c
 - A real DSH rc.5 loader reproduced the original expression failure under managed entry IDs. The replacement passed native and managed activation, explicit boolean disabling and expression-based disabling.
 - On Linux arm64 with the Phalanx v0.1.38 image and DSH rc.3, archive integrity verification, installation with lifecycle scripts disabled, managed bundle preparation, and offline DSH activation with plugin inventory and service checks passed.
 - The matching Mnemon CLI 0.2.14 executable reported its version from a read-only mount in the same image. Member-facing memory write and recall remain pending.
+
+## Authenticated web management
+
+Catalog entry `dsh-mnemon@1.0.2` pins fork package `0.5.50-phalanx.2` at `0d21bef5cc42ce93a4d280e5153ffe2a83b6cf6a`. This build sets the plugin's existing `remoteAccess` policy to `trusted-host` at startup. It uses the existing DSH gateway authentication and the same shared Mnemon CLI.
+
+Real DSH rc.3 and rc.5 instances on macOS accepted a write from an authenticated browser session and read back the sample from runtime memory. Requests with no browser session could not write. The native profiles also reported writable Mnemon settings. The managed profiles passed the activation and service inventory checks with their runtime paths mapped to the local DSH install.
