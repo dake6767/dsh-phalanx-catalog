@@ -53,6 +53,13 @@
   "assignments": [
     {
       "kind": "plugin",
+      "id": "answer-me-with-html",
+      "tags": [
+        "writing"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "drawai",
       "tags": [
         "visual-design",

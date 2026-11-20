@@ -1,0 +1,39 @@
+{
+  "kind": "plugin",
+  "id": "answer-me-with-html",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.38"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Answer me with HTML",
+    "zh-CN": "Answer me with HTML"
+  },
+  "description": {
+    "en": "Turn a Markdown draft into a standalone HTML explainer in your workspace.",
+    "zh-CN": "把 Markdown 草稿渲染为工作区中的独立 HTML 说明页。"
+  },
+  "source": {
+    "en": "QingYunA/answer-me-with-html v0.6.2 (997479b6f34c8a5141c61b03f144e821c8f99f2d)",
+    "zh-CN": "QingYunA/answer-me-with-html v0.6.2 (997479b6f34c8a5141c61b03f144e821c8f99f2d)"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "answer-me-with-html",
+      "version": "0.6.2",
+      "integrity": "sha512-IQWWYrcQN4uDgcPnGYkYDzJ1jpksgH8T7CYrwXSO419hpDJvIKyUoYpEXIqe/AyULousyzYFA11Ex6QoBTWy+A==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      },
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/answer-me-with-html-0.6.2-assets/answer-me-with-html-0.6.2.tgz"
+      }
+    }
+  ]
+}
