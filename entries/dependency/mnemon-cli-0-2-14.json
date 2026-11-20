@@ -1,0 +1,63 @@
+{
+  "kind": "dependency",
+  "id": "mnemon-cli-0-2-14",
+  "version": "0.2.14",
+  "engines": {
+    "platform": ">=0.1.38"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Mnemon CLI 0.2.14",
+    "zh-CN": "Mnemon CLI 0.2.14"
+  },
+  "description": {
+    "en": "Shared native executable for local Mnemon memory spaces.",
+    "zh-CN": "供 Mnemon 本地记忆空间使用的共享 CLI。"
+  },
+  "source": {
+    "en": "Official mnemon-dev/mnemon Linux archives v0.2.14",
+    "zh-CN": "mnemon-dev/mnemon v0.2.14 官方 Linux 归档"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "mnemon-cli-0-2-14",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/mnemon-dev/mnemon/releases/download/v0.2.14/mnemon_0.2.14_linux_amd64.tar.gz",
+            "arm64": "https://github.com/mnemon-dev/mnemon/releases/download/v0.2.14/mnemon_0.2.14_linux_arm64.tar.gz"
+          },
+          "sha256": {
+            "amd64": "707be7d44044d397bea0bfc59442b2bea3fe449b4f12c756ebf0b451469a26b6",
+            "arm64": "df85a44bb7704b40aa37050f578ef9256068eda167804ac602dbc43401ac36b1"
+          },
+          "target": "mnemon.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/mnemon",
+          "sha256": {
+            "amd64": "5cb22ef57ce8656f211c7d605fdf8ed399786bf79b1385698c72fcaa12b1b841",
+            "arm64": "8d2a335f818a98e30412e7165854980a55e795c7164d6d718a20ae7889d144b9"
+          },
+          "executable": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "plugin",
+  "id": "dsh-mnemon",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.38"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Mnemon",
+    "zh-CN": "Mnemon 记忆"
+  },
+  "description": {
+    "en": "Organize session memory, project documents and local long-term memory. Includes the shared Mnemon CLI.",
+    "zh-CN": "管理会话记忆、项目文档与本地长期记忆，自动准备共享 Mnemon CLI。"
+  },
+  "source": {
+    "en": "npm: dsh-mnemon 0.5.50; upstream Mnemon CLI 0.2.14",
+    "zh-CN": "npm：dsh-mnemon 0.5.50；上游 Mnemon CLI 0.2.14"
+  },
+  "dependencies": [
+    "mnemon-cli-0-2-14"
+  ],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-mnemon",
+      "version": "0.5.50",
+      "integrity": "sha512-0vMdl0RQsk+ixKBXnt66zgX1/20vlPvETJ3T1eEr9s2H/VF6mjnzi5WF+140aGOQ0250TOT4sDWDTU+CIo7DoA==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [
+        "mnemon-cli-0-2-14"
+      ],
+      "resourceBindings": [
+        {
+          "dependency": "mnemon-cli-0-2-14",
+          "kind": "environment",
+          "name": "MNEMON_CLI_PATH",
+          "path": "assets/mnemon",
+          "version": "0.2.14",
+          "contentHash": "f3da493192997a6d85e58f156ee192ab3d2b54f3bb5a2960158a3493f05b0a93"
+        }
+      ],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
