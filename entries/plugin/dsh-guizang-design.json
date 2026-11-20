@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "dsh-guizang-design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "platform": ">=0.1.39"
   },
@@ -63,8 +63,8 @@
         },
         {
           "dependency": "guizang-native-seed",
-          "version": "1.0.0",
-          "contentHash": "3c48665ab83936b6f3d8e4f7c318f077a7c26138da1a1283e640282eb83f2001",
+          "version": "1.0.1",
+          "contentHash": "89ccd6a925e47927a70768f6c01268dd05dde6a87cd8e6644b96eabb3616a434",
           "kind": "native-package-cache",
           "path": "assets",
           "packages": [

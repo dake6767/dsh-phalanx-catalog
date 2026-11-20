@@ -1,7 +1,7 @@
 {
   "kind": "dependency",
   "id": "guizang-native-seed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "platform": ">=0.1.39"
   },
@@ -34,12 +34,12 @@
         {
           "source": "github-assets",
           "url": {
-            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed.tar.gz",
-            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed.tar.gz"
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed-v1.0.1.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/guizang-native-seed-v1.0.1.tar.gz"
           },
           "sha256": {
-            "amd64": "8d71beb893f703401a2be91e2a74c9112397a8cdec4cf60f1e780db2b58f593d",
-            "arm64": "8d71beb893f703401a2be91e2a74c9112397a8cdec4cf60f1e780db2b58f593d"
+            "amd64": "4882b910a36257832a1a1333713bdb46a499d9d631d7574152839c22740e6e68",
+            "arm64": "4882b910a36257832a1a1333713bdb46a499d9d631d7574152839c22740e6e68"
           },
           "target": "archive.tar.gz",
           "extract": {
@@ -52,8 +52,8 @@
         {
           "path": "assets/metadata/.ready.sha256",
           "sha256": {
-            "amd64": "a2f87f56cc169b71285cc76922875f26c88e05b27ee2718e48a9fc4748e9bde8",
-            "arm64": "a2f87f56cc169b71285cc76922875f26c88e05b27ee2718e48a9fc4748e9bde8"
+            "amd64": "e91e63b553033b86fe76ea34c5fd97a64af87de70956febe7e9991aa2650139f",
+            "arm64": "e91e63b553033b86fe76ea34c5fd97a64af87de70956febe7e9991aa2650139f"
           }
         },
         {
