@@ -1,0 +1,63 @@
+{
+  "kind": "dependency",
+  "id": "playwright-chromium-1248",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.39"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Playwright Chromium 1248",
+    "zh-CN": "Playwright Chromium 1248"
+  },
+  "description": {
+    "en": "Chrome for Testing headless shell 156.0.8078.4 for Playwright 1.64.1.",
+    "zh-CN": "供 Playwright 1.64.1 使用的 Chrome for Testing 无头浏览器 156.0.8078.4。"
+  },
+  "source": {
+    "en": "Checksum-verified archive",
+    "zh-CN": "摘要校验的归档"
+  },
+  "locked": true,
+  "items": [
+    {
+      "kind": "runtime-dependency",
+      "type": "resource",
+      "name": "playwright-chromium-1248",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [],
+      "commands": [],
+      "downloads": [
+        {
+          "source": "github-assets",
+          "url": {
+            "amd64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/amd64-chromium-headless-shell-1248.tar.gz",
+            "arm64": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-guizang-assets/arm64-chromium-headless-shell-1248.tar.gz"
+          },
+          "sha256": {
+            "amd64": "99dedad6f62ace0c371aed5ee6fec7583ad1ea619aaef2794ca6b8461a1c61c4",
+            "arm64": "d769e13c3aaeb0a01da1b1d888f3fa41a0e0d3dad4ba70308c3b427fef9043fd"
+          },
+          "target": "archive.tar.gz",
+          "extract": {
+            "format": "tar",
+            "directory": "assets"
+          }
+        }
+      ],
+      "requiredFiles": [
+        {
+          "path": "assets/chromium_headless_shell-1248/dsh-chromium",
+          "sha256": {
+            "amd64": "223e041e61ba2a457f5869ac4a207194e001d34df44ce0f66d42240776c25f72",
+            "arm64": "4e8e2d54b651791697c0fbe0faf05af6cc2557e27d2bcb5750deb8c9a8742593"
+          },
+          "executable": true
+        }
+      ]
+    }
+  ]
+}

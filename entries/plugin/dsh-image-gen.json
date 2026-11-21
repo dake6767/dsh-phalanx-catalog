@@ -1,0 +1,99 @@
+{
+  "kind": "plugin",
+  "id": "dsh-image-gen",
+  "version": "1.0.0",
+  "title": {
+    "en": "Image Generation",
+    "zh-CN": "图像生成"
+  },
+  "description": {
+    "en": "Generate and edit images in conversations, the gallery, and the image workbench.",
+    "zh-CN": "在对话、图库和图像工作台中生成和编辑图片。"
+  },
+  "source": {
+    "en": "shanliuling/dsh-image-gen 0.11.4 with an image upstream and mount-path compatibility patch.",
+    "zh-CN": "基于 shanliuling/dsh-image-gen 0.11.4，含生图上游和挂载路径兼容补丁。"
+  },
+  "identity": {
+    "en": "Image Generation",
+    "zh-CN": "图像生成"
+  },
+  "adapters": [],
+  "engines": {
+    "platform": ">=0.1.39"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-image-gen",
+      "version": "0.11.4-phalanx.2",
+      "integrity": "sha512-5keUGlCGWlZqyqi/NtHuOPoGkIxzI+eud4IBf2ZMK4rnReWHPpCDq7GWApbAUoU4jYfwBpv5VjZTfLncrwqf1w==",
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-image-gen-assets/dsh-image-gen-0.11.4-phalanx.2.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      },
+      "serviceSlots": [
+        {
+          "id": "image",
+          "label": {
+            "en": "OpenAI-compatible image provider",
+            "zh-CN": "OpenAI 兼容生图上游"
+          },
+          "binding": {
+            "kind": "json-settings",
+            "file": "image-gen-platform-upstream.json",
+            "upstream": "openai-compatible",
+            "deferredUpstream": true,
+            "fields": [
+              {
+                "path": [
+                  "endpoint"
+                ],
+                "source": "gateway-url"
+              },
+              {
+                "path": [
+                  "model"
+                ],
+                "source": "model"
+              },
+              {
+                "path": [
+                  "token"
+                ],
+                "source": "service-token"
+              }
+            ]
+          },
+          "backends": [
+            {
+              "id": "openai",
+              "label": {
+                "en": "OpenAI-compatible image provider",
+                "zh-CN": "OpenAI 兼容生图上游"
+              },
+              "fields": [
+                {
+                  "name": "model",
+                  "required": true,
+                  "type": "text"
+                }
+              ],
+              "protocol": "openai-image",
+              "mode": "openai",
+              "upstream": {
+                "model": "model"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

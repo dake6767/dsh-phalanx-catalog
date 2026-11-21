@@ -68,6 +68,22 @@
     },
     {
       "kind": "plugin",
+      "id": "dsh-guizang-design",
+      "tags": [
+        "visual-design",
+        "presentations",
+        "writing"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "dsh-image-gen",
+      "tags": [
+        "visual-design"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "dsh-media-desk",
       "tags": [
         "writing",
