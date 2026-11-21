@@ -77,6 +77,13 @@
     },
     {
       "kind": "plugin",
+      "id": "dsh-image-gen",
+      "tags": [
+        "visual-design"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "dsh-media-desk",
       "tags": [
         "writing",
