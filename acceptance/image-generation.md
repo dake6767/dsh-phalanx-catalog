@@ -9,3 +9,5 @@ The 2026-11-20 ARM64 verification used the DSH rc.5 revision `9c2670d3bce5275e0d
 - A member who installed the package from App Center edited the generated image through `POST /v1/images/edits` with `multipart/form-data` and received a different 1024×1024 PNG.
 - Directory adoption, replay and an update of the same bundle preserved the platform's upstream configuration. A member without a native delivery could not use the configured image upstream through the other plugin gateway, and the member grant failed when used with another identity.
 - The run used an isolated signing key and the configured `gpt-image-2.5-flare` model. The acceptance receipt SHA-256 is `f9621d3fa221aaa68e2e8a6c156cfc85c91d20369df185a20fbcd0c8386930bb`.
+
+Catalog entry `1.0.1` uses the same plugin archive and SHA-512 from the compatibility release in the [plugin fork](https://github.com/dake6767/dsh-image-gen/releases/tag/v0.11.4-phalanx.2). Entry `1.0.0` remains available through the catalog history.
