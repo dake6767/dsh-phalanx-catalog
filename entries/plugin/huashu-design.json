@@ -1,9 +1,9 @@
 {
   "kind": "plugin",
   "id": "huashu-design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
-    "platform": ">=0.1.35"
+    "platform": ">=0.1.39"
   },
   "adapters": [],
   "title": {
@@ -11,12 +11,12 @@
     "zh-CN": "Huashu Design"
   },
   "description": {
-    "en": "Huashu Design",
-    "zh-CN": "Huashu Design"
+    "en": "Create interactive prototypes and App Store graphics, generate images with a configured provider, and export PDF, editable PowerPoint or video.",
+    "zh-CN": "制作交互原型与 App Store 宣传图，使用已配置的服务生成素材，并导出 PDF、可编辑 PPTX 或视频。"
   },
   "source": {
-    "en": "Checksum-verified Linux artifact",
-    "zh-CN": "Checksum-verified Linux artifact"
+    "en": "Huashu Design v3.4.2 with DSH image service support",
+    "zh-CN": "Huashu Design v3.4.2（支持 DSH 生图服务）"
   },
   "dependencies": [
     "huashu-tools",
@@ -25,14 +25,43 @@
   ],
   "items": [
     {
+      "kind": "runtime-dependency",
+      "name": "huashu-python",
+      "type": "python-library",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "paths": [
+        "venv/bin"
+      ],
+      "commands": [
+        "python3"
+      ],
+      "downloads": [
+        {
+          "source": "pypi",
+          "packages": [
+            "greenlet==3.5.6",
+            "pillow==13.0.0",
+            "playwright==1.59.0",
+            "pyee==13.0.1",
+            "typing-extensions==4.16.0"
+          ]
+        }
+      ]
+    },
+    {
       "kind": "plugin",
       "packageName": "huashu-design",
-      "version": "3.3.0",
-      "integrity": "sha512-NLMyZNs/t8nfezVEtA1p6YnmYtYsUTgmFVM/LAlxN5D7jsD5eJgvFJmaG/+FyIb1GhOhjOLk41LfnDtU3z/zbQ==",
+      "version": "3.4.2",
+      "integrity": "sha512-Wggv+wwSOz5lYHeKClzBOn4OC27VX2LcqMmezlMBbhoQ4oEax+MzpMSTtPdjCoQXCIVxolXuWNbtU9ZJiuZ8pw==",
       "archive": {
-        "url": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.35-design-assets/huashu-design-3.3.0.tgz"
+        "url": "https://github.com/dake6767/huashu-design/releases/download/dsh-image-service-3.4.2/huashu-design-3.4.2.tgz"
       },
-      "runtimeDependencies": [],
+      "runtimeDependencies": [
+        "huashu-python"
+      ],
       "catalogDependencies": [
         "huashu-tools",
         "playwright-cache",
@@ -46,7 +75,6 @@
           "version": "1.0.0",
           "contentHash": "eeab5aa36bedf91f50b860c15ad68bc0ea6256ef2beade4604611daeb68cd57d",
           "commands": [
-            "python3",
             "ffmpeg",
             "ffprobe"
           ]
@@ -84,7 +112,63 @@
       "access": {
         "environment": [],
         "entriesYaml": ""
-      }
+      },
+      "serviceSlots": [
+        {
+          "id": "image",
+          "label": {
+            "en": "OpenAI-compatible image provider",
+            "zh-CN": "OpenAI 兼容生图上游"
+          },
+          "binding": {
+            "kind": "json-settings",
+            "file": "huashu-design-image.json",
+            "upstream": "openai-compatible",
+            "deferredUpstream": true,
+            "fields": [
+              {
+                "path": [
+                  "endpoint"
+                ],
+                "source": "gateway-url"
+              },
+              {
+                "path": [
+                  "model"
+                ],
+                "source": "model"
+              },
+              {
+                "path": [
+                  "token"
+                ],
+                "source": "service-token"
+              }
+            ]
+          },
+          "backends": [
+            {
+              "id": "openai",
+              "label": {
+                "en": "OpenAI-compatible image provider",
+                "zh-CN": "OpenAI 兼容生图上游"
+              },
+              "fields": [
+                {
+                  "name": "model",
+                  "required": true,
+                  "type": "text"
+                }
+              ],
+              "protocol": "openai-image",
+              "mode": "openai",
+              "upstream": {
+                "model": "model"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
