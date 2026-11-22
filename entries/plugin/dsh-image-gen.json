@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "dsh-image-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": {
     "en": "Image Generation",
     "zh-CN": "图像生成"
@@ -30,7 +30,7 @@
       "version": "0.11.4-phalanx.2",
       "integrity": "sha512-5keUGlCGWlZqyqi/NtHuOPoGkIxzI+eud4IBf2ZMK4rnReWHPpCDq7GWApbAUoU4jYfwBpv5VjZTfLncrwqf1w==",
       "archive": {
-        "url": "https://github.com/dake6767/dsh-phalanx-catalog/releases/download/0.1.39-image-gen-assets/dsh-image-gen-0.11.4-phalanx.2.tgz"
+        "url": "https://github.com/dake6767/dsh-image-gen/releases/download/v0.11.4-phalanx.2/dsh-image-gen-0.11.4-phalanx.2.tgz"
       },
       "runtimeDependencies": [],
       "catalogDependencies": [],
