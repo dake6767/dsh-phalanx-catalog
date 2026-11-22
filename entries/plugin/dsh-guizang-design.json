@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "dsh-guizang-design",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "platform": ">=0.1.39"
   },
@@ -26,10 +26,10 @@
     {
       "kind": "plugin",
       "packageName": "dsh-guizang-design",
-      "version": "0.1.5-phalanx.1",
-      "integrity": "sha512-slG/jE/EOq+kU3tfpjatzAtp2tBsbie1LxoSPZpNym0CZc0AonDnvHL0VDWZjnqh5dlPmovNwh2AIt89rYgmlA==",
+      "version": "0.1.5001",
+      "integrity": "sha512-0mAJnqSWNiw+stjyjngVh/ZlSN+9qwpWQv5nZFRIgSGHbDufwYMC2pyZT3Ng/aPJRp/Hst7OriEFzl2mkkPhfA==",
       "archive": {
-        "url": "https://github.com/dake6767/dsh-guizang-design/releases/download/v0.1.5-phalanx.1/dsh-guizang-design-0.1.5-phalanx.1.tgz"
+        "url": "https://github.com/dake6767/dsh-guizang-design/releases/download/v0.1.5001/dsh-guizang-design-0.1.5001.tgz"
       },
       "runtimeDependencies": [],
       "catalogDependencies": [

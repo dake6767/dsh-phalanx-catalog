@@ -1,7 +1,7 @@
 {
   "kind": "plugin",
   "id": "dsh-mnemon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "platform": ">=0.1.39"
   },
@@ -15,8 +15,8 @@
     "zh-CN": "管理会话记忆、项目文档与本地长期记忆，自动准备共享 Mnemon CLI。 已登录成员可在网页管理记忆。"
   },
   "source": {
-    "en": "dake6767/dsh-mnemon v0.5.50-phalanx.3; upstream Mnemon CLI 0.2.14",
-    "zh-CN": "dake6767/dsh-mnemon v0.5.50-phalanx.3；上游 Mnemon CLI 0.2.14"
+    "en": "dake6767/dsh-mnemon v0.5.5003; upstream Mnemon CLI 0.2.14",
+    "zh-CN": "dake6767/dsh-mnemon v0.5.5003；上游 Mnemon CLI 0.2.14"
   },
   "dependencies": [
     "mnemon-cli-0-2-14"
@@ -25,8 +25,8 @@
     {
       "kind": "plugin",
       "packageName": "dsh-mnemon",
-      "version": "0.5.50-phalanx.3",
-      "integrity": "sha512-ZBVpGv0Q4XIS6At1nqzc7YqRwygd+CMySxaLMMFIvFcMwC4aA/t693qkjjDXSvq1sSW/FY5gBivj1RnrQas5dA==",
+      "version": "0.5.5003",
+      "integrity": "sha512-1Mt6ZrYVCY4Xt7aeVvSSctubiNdh1s67dexlGZ4oxpkOH2tPPoagXYP2OyJh6cXqYgM/mdn3svq2ZjHq7lr8eg==",
       "runtimeDependencies": [],
       "catalogDependencies": [
         "mnemon-cli-0-2-14"
@@ -46,7 +46,7 @@
         "entriesYaml": ""
       },
       "archive": {
-        "url": "https://github.com/dake6767/dsh-mnemon/releases/download/v0.5.50-phalanx.3/dsh-mnemon-0.5.50-phalanx.3.tgz"
+        "url": "https://github.com/dake6767/dsh-mnemon/releases/download/v0.5.5003/dsh-mnemon-0.5.5003.tgz"
       },
       "installDefaults": {
         "mnemon": {
