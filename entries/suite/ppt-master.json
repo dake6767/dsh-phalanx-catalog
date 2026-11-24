@@ -1,7 +1,7 @@
 {
   "kind": "suite",
   "id": "ppt-master",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "platform": ">=0.1.35"
   },
@@ -11,12 +11,12 @@
     "zh-CN": "PPT Master"
   },
   "description": {
-    "en": "Create editable PPTX presentations with local document tools and optional platform image generation and cloud narration. Includes PyMuPDF (AGPL), downloaded from upstream at deployment. Install the PPT Master Confirmation plugin to use the browser confirmation page in DSH Web.",
-    "zh-CN": "生成可编辑PPTX，文档工具在成员实例运行，生图与云端旁白可选地由平台代执行。包含部署时从上游下载的PyMuPDF（AGPL）。 安装 PPT Master 确认页插件后，可在 DSH 网页侧栏确认。"
+    "en": "Create editable PPTX presentations with local document tools and optional platform image generation and cloud narration. Includes PyMuPDF (AGPL), downloaded from upstream at deployment. Install the PPT Master Confirmation plugin to open confirmation links in DSH Web conversations.",
+    "zh-CN": "生成可编辑PPTX，文档工具在成员实例运行，生图与云端旁白可选地由平台代执行。包含部署时从上游下载的PyMuPDF（AGPL）。 安装 PPT Master 确认页插件后，可从 DSH 网页对话直接打开确认页。"
   },
   "source": {
-    "en": "PPT Master 6.7.3 with DSH Web confirmation support, pinned fork commit c6517c0eb59c2f953cb8c6660309cc707f885845; exact Python lock; pandoc",
-    "zh-CN": "基于 PPT Master 6.7.3，支持 DSH 网页确认，固定 fork 提交 c6517c0eb59c2f953cb8c6660309cc707f885845；Python 精确版本锁；pandoc"
+    "en": "PPT Master 6.7.3 with DSH Web confirmation support, pinned fork commit 185bc84822cbe76893caaf3d4d3b2eb7abeaea70; exact Python lock; pandoc",
+    "zh-CN": "基于 PPT Master 6.7.3，支持 DSH 网页确认，固定 fork 提交 185bc84822cbe76893caaf3d4d3b2eb7abeaea70；Python 精确版本锁；pandoc"
   },
   "identity": {
     "en": "Documents, Edge narration and image search run in the member workspace. Optional images and cloud narration use platform-held provider credentials; keys never enter the member instance. Provider calls consume the team quota.",
@@ -147,7 +147,7 @@
       "source": {
         "type": "git",
         "url": "https://github.com/dake6767/ppt-master",
-        "commit": "c6517c0eb59c2f953cb8c6660309cc707f885845",
+        "commit": "185bc84822cbe76893caaf3d4d3b2eb7abeaea70",
         "path": "skills"
       },
       "names": [

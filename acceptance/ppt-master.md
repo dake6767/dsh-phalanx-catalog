@@ -52,3 +52,26 @@ recommendation reads, cross-origin rejection, shutdown, and the original
 standalone loopback path. The platform catalog checker was run against
 v0.1.41. This verification used isolated DSH and Linux fixtures. The full
 administrator import and existing-member upgrade were outside this run.
+
+## Confirmation links from the conversation
+
+PPT Master skill entry `1.0.4` pins
+[`185bc84822cbe76893caaf3d4d3b2eb7abeaea70`](https://github.com/dake6767/ppt-master/commit/185bc84822cbe76893caaf3d4d3b2eb7abeaea70).
+The companion entry `1.0.1` pins
+[`dsh-ppt-master-confirm@0.1.1`](https://github.com/dake6767/ppt-master/releases/tag/dsh-confirm-v0.1.1),
+SHA-256 `61c38a497652f68a5f302649981ef9b816b464e693d934ef2966ff076cb1229b`.
+The Web companion resolves confirmation links on click against the active DSH
+document base and removes its separate sidebar panel.
+
+The exact plugin was installed in native DSH 0.2.2-rc.5. Chromium clicked the
+link emitted by the actual confirmation server using a test transcript
+anchor. The click opened the correct page both at the native root and under
+a reverse-proxy mount. Both stages were submitted in the same page without
+refresh, both original waiter processes resumed, and the final receipt was
+confirmed. Unrelated links were left alone.
+
+An ARM64 Linux test verified the exact new plugin, the exact old 0.1.0
+plugin and the new skill. The old companion still got the code handoff, and
+standalone loopback remained usable. When upgrading separately, update the
+skill first. These checks used isolated runtime fixtures, without an
+administrator import or existing-member upgrade end to end.
