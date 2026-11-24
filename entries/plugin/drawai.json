@@ -1,9 +1,9 @@
 {
   "kind": "plugin",
   "id": "drawai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
-    "platform": ">=0.1.35"
+    "platform": ">=0.1.41"
   },
   "adapters": [],
   "title": {
@@ -11,12 +11,12 @@
     "zh-CN": "DrawAI"
   },
   "description": {
-    "en": "DrawAI",
-    "zh-CN": "DrawAI"
+    "en": "Create and edit diagrams with your agent, then preview and export motion-graphics projects.",
+    "zh-CN": "与模型协作绘制和编辑图表，预览动效工程并导出视频。"
   },
   "source": {
-    "en": "Checksum-verified Linux artifact",
-    "zh-CN": "Checksum-verified Linux artifact"
+    "en": "fourzkw/dsh-drawai 0.4.10 with Web base-path compatibility.",
+    "zh-CN": "基于 fourzkw/dsh-drawai 0.4.10，含 Web 子路径兼容修复。"
   },
   "dependencies": [
     "drawai-assets",
@@ -30,8 +30,8 @@
     {
       "kind": "plugin",
       "packageName": "dsh-drawai",
-      "version": "0.4.4",
-      "integrity": "sha512-wAJ5E0M6EDcxItZ3H5+wIgZpOksQ2FAsGx3sS3lBOFVqXcQoxo/ANLNQFZAUCvvValdOvLt/A/xfIqa+TXqmEA==",
+      "version": "0.4.10-web.1",
+      "integrity": "sha512-4Q9/M/1IX8JpoFSHlewql0b1mXTghkgqR6pKMWyH0McwWuPc4Z76r/Ewypzt9vE+NQbg87MIVTkqGCd86gkDkQ==",
       "runtimeDependencies": [],
       "catalogDependencies": [
         "drawai-assets",
@@ -119,6 +119,9 @@
       "access": {
         "environment": [],
         "entriesYaml": ""
+      },
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-drawai/releases/download/v0.4.10-web.1/dsh-drawai-0.4.10-web.1.tgz"
       }
     }
   ]

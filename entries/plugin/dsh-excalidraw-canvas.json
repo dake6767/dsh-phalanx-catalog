@@ -1,0 +1,39 @@
+{
+  "kind": "plugin",
+  "id": "dsh-excalidraw-canvas",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.41"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Excalidraw Canvas",
+    "zh-CN": "Excalidraw 画布"
+  },
+  "description": {
+    "en": "Sketch diagrams and whiteboards in the DSH sidebar. You and your agent edit the same workspace scene.",
+    "zh-CN": "在 DSH 侧栏绘制手绘风图表和白板，与模型编辑工作区中的同一份画布。"
+  },
+  "source": {
+    "en": "dake6767/dsh-excalidraw-canvas 0.1.0 on GitHub.",
+    "zh-CN": "GitHub 发布包 dake6767/dsh-excalidraw-canvas 0.1.0。"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-excalidraw-canvas",
+      "version": "0.1.0",
+      "integrity": "sha512-wfgXRrBD7GNgJpH5wJanfhvR2q9Ys11JzZaBioQSosaCtcJ8QHjWsPWHT5gyWMwY1enyinlwqQUcofQk67rlrw==",
+      "archive": {
+        "url": "https://github.com/dake6767/dsh-excalidraw-canvas/releases/download/v0.1.0/dsh-excalidraw-canvas-0.1.0.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
