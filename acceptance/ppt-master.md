@@ -27,3 +27,28 @@ The existing invocation limits stayed at 120 seconds, 512 MiB, one CPU and 64 PI
 | DNS restoration | `e26ce29053fbffcfdc7f04fb8adecd47ba3b6ee985aeb36d5d41e947cf09b0c6` |
 
 The actual v0.1.23 reader accepts the signed nine-entry document: all eight earlier entries remain usable and only PPT Master requires a platform upgrade. The v0.1.24 reader accepts all nine. Entry dependencies and execution templates are unchanged from 1.0.0; 1.0.1 updates the member narration instructions.
+
+## Confirmation in the DSH Web sidebar
+
+The PPT Master skill entry `1.0.3` pins the fork commit
+[`c6517c0eb59c2f953cb8c6660309cc707f885845`](https://github.com/dake6767/ppt-master/commit/c6517c0eb59c2f953cb8c6660309cc707f885845),
+based on the existing 6.7.3 pin. It adds the five exact Flask-related Python
+pins and retains the installed skill identity, pandoc, and the existing image
+and narration service configuration. The separate companion plugin entry
+`1.0.0` installs
+[`dsh-ppt-master-confirm@0.1.0`](https://github.com/dake6767/ppt-master/releases/tag/dsh-confirm-v0.1.0).
+The archive SHA-256 is `6ffa6bf0c02a8755ddf7b8a2d5af637aec874855dc973bbb9d5786d889aff701`.
+
+The package was installed through the native DSH 0.2.2-rc.5 Web profile.
+Its sidebar opened the confirmation code form. Through a subpath reverse
+proxy on the same DSH host, a Chromium browser submitted Stage 1 and the
+final Stage 2. The original wait commands resumed, the selection and final
+confirmed receipts were written, and the final browser action closed the
+service. Cross-origin confirmation and expired codes were rejected.
+
+On Linux ARM64 with Python 3.12.3, the exact skill and plugin artifacts and
+pinned Python wheels passed the attribution guard, subpath asset and
+recommendation reads, cross-origin rejection, shutdown, and the original
+standalone loopback path. The platform catalog checker was run against
+v0.1.41. This verification used isolated DSH and Linux fixtures. The full
+administrator import and existing-member upgrade were outside this run.

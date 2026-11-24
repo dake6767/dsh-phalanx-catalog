@@ -1,0 +1,39 @@
+{
+  "kind": "plugin",
+  "id": "dsh-ppt-master-confirm",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.41"
+  },
+  "adapters": [],
+  "title": {
+    "en": "PPT Master Confirmation",
+    "zh-CN": "PPT Master 确认页"
+  },
+  "description": {
+    "en": "Open PPT Master’s two-stage confirmation in the DSH Web sidebar. Requires the PPT Master skill.",
+    "zh-CN": "在 DSH 网页侧栏完成 PPT Master 的两阶段确认。搭配 PPT Master 技能使用。"
+  },
+  "source": {
+    "en": "PPT Master fork c6517c0eb59c2f953cb8c6660309cc707f885845.",
+    "zh-CN": "PPT Master fork c6517c0eb59c2f953cb8c6660309cc707f885845。"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-ppt-master-confirm",
+      "version": "0.1.0",
+      "integrity": "sha512-etmnPv0rbr9YIcclvVBqc6EwcM2rtwrkOEZEhZ0pBckOgFifxC9j6sJyoG2Djidz+elMBgYJ1QiijjXx6heHig==",
+      "archive": {
+        "url": "https://github.com/dake6767/ppt-master/releases/download/dsh-confirm-v0.1.0/dsh-ppt-master-confirm-0.1.0.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
