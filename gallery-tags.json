@@ -68,6 +68,13 @@
     },
     {
       "kind": "plugin",
+      "id": "dsh-excalidraw-canvas",
+      "tags": [
+        "visual-design"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "dsh-guizang-design",
       "tags": [
         "visual-design",
