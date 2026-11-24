@@ -181,6 +181,13 @@
       "tags": [
         "everyday-tools"
       ]
+    },
+    {
+      "kind": "plugin",
+      "id": "dsh-ppt-master-confirm",
+      "tags": [
+        "presentations"
+      ]
     }
   ]
 }
