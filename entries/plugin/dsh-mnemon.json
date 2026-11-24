@@ -3,7 +3,7 @@
   "id": "dsh-mnemon",
   "version": "1.0.5",
   "engines": {
-    "platform": ">=0.1.39"
+    "platform": ">=0.1.41"
   },
   "adapters": [],
   "title": {
@@ -49,6 +49,10 @@
         "mnemon": {
           "remoteAccess": "trusted-host"
         }
+      },
+      "replaces": {
+        "version": "0.5.5003",
+        "integrity": "sha512-1Mt6ZrYVCY4Xt7aeVvSSctubiNdh1s67dexlGZ4oxpkOH2tPPoagXYP2OyJh6cXqYgM/mdn3svq2ZjHq7lr8eg=="
       }
     }
   ]
