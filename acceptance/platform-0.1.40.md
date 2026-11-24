@@ -1,0 +1,7 @@
+# Platform 0.1.40 catalog entries
+
+- Media Desk catalog entry and package `2.7.2` use the official npm archive. Archive SHA-256 `937bbf3511b9459ed661279872c514442bc9347df791cabe7144a38a84a5e1a6`. The entry lets administrators defer image generation setup and requires platform `>=0.1.40`.
+- Qiaomu Cover Design entry `1.2.0` pins the author’s `qiaomu-cover-design-dsh@0.1.7` archive. Archive SHA-256 `ad9e2310d0b319261f5794dceae67f6472c4b06fd1f76ce1cb0204456ea01b5e`. The entry requires platform `>=0.1.40`.
+- The complete catalog passed platform validation. Both archive manifests and declared package integrity values were checked against the distributed packages. Existing published revisions remain in signed catalog history.
+- Installed ARM64 acceptance with the pinned packages covered the Media Desk configuration migration from 2.7.1, text-only installation, and image generation and workspace export. Qiaomu was verified through member upgrade and fresh introduction after uninstall, including real conversation, image generation and file readback. These checks used the pre-publication versions of the corresponding catalog entries.
+- The platform [candidate run](https://github.com/dake6767/dsh-phalanx/actions/runs/45289329555) passed both native Linux architectures, formal upgrade and the required clean-install acceptance. See the [formal platform release](https://github.com/dake6767/dsh-phalanx/releases/tag/v0.1.40) for the published platform version.

@@ -1,9 +1,9 @@
 {
   "kind": "plugin",
   "id": "qiaomu-cover-design",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
-    "platform": ">=0.1.35"
+    "platform": ">=0.1.40"
   },
   "adapters": [],
   "title": {
@@ -23,10 +23,10 @@
     {
       "kind": "plugin",
       "packageName": "qiaomu-cover-design-dsh",
-      "version": "0.1.5",
-      "integrity": "sha512-d3GQLq3Db0s+BwuHZO8lu/Q+7XQoKGfKnKcMoaJc9cVGdLaidxaXtYpFXWGsohOftOPeWpNLMedxbD+l9Nu8IA==",
+      "version": "0.1.7",
+      "integrity": "sha512-qMd7QAdYpDFYax0iGGmQ5OxTXF/KaTV+6fH9QhRgkYK/J4lK9j3/OFkXdSZubY+TRLF0JamZRLRCE8gXI8OpoA==",
       "archive": {
-        "url": "https://github.com/joeseesun/qiaomu-cover-design-dsh/releases/download/v0.1.5/qiaomu-cover-design-dsh-0.1.5.tgz"
+        "url": "https://github.com/joeseesun/qiaomu-cover-design-dsh/releases/download/v0.1.7/qiaomu-cover-design-dsh-0.1.7.tgz"
       },
       "runtimeDependencies": [],
       "catalogDependencies": [],

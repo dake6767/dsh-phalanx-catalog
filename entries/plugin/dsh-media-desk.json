@@ -1,9 +1,9 @@
 {
   "kind": "plugin",
   "id": "dsh-media-desk",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "engines": {
-    "platform": ">=0.1.36"
+    "platform": ">=0.1.40"
   },
   "adapters": [],
   "title": {
@@ -27,8 +27,8 @@
     {
       "kind": "plugin",
       "packageName": "dsh-media-desk",
-      "version": "2.7.1",
-      "integrity": "sha512-1OtskslKgbKjV9Pa0lJjs6Em1rDnT2yFjXXNJpnTYaDNsFRXfbK82Or91Bj1k8ueQVsHQtL7hex54OP5Z+rFPQ==",
+      "version": "2.7.2",
+      "integrity": "sha512-C0i6WLFriV03Kh8Zk6SiYZHpSwxHS0dsoIthHh2XxXersijA3W/vvnHfkIrb3ZkoVorxgYYVwt5MemuB/ugeEw==",
       "runtimeDependencies": [],
       "catalogDependencies": [],
       "access": {
@@ -84,7 +84,8 @@
                 ],
                 "source": "service-token"
               }
-            ]
+            ],
+            "deferredUpstream": true
           },
           "backends": [
             {
