@@ -27,7 +27,9 @@ MCP entries require platform `>=0.1.37`. Each entry declares one adapter,
 `mcp-remote-http` for HTTPS endpoints or `mcp-shared-node` for Node.js runners
 from pinned GitHub source archives. A remote entry may bind one administrator
 credential to a header or query parameter. Declare the binding and the
-`{credential}` placeholder without storing a credential. A shared entry declares
+`{credential}` placeholder without storing a credential. For an optional
+credential, set `credential.optional: true` and require platform 0.1.44 or later.
+A shared entry declares
 the repository, full Git commit, archive SHA-256 and relative entry point. The
 platform generates its preparation command.
 

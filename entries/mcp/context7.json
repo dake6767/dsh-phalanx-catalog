@@ -1,0 +1,39 @@
+{
+  "kind": "mcp",
+  "id": "context7",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.44"
+  },
+  "title": {
+    "en": "Context7",
+    "zh-CN": "Context7"
+  },
+  "description": {
+    "en": "Look up version-specific library documentation and code examples",
+    "zh-CN": "按版本查询开发库文档与代码示例"
+  },
+  "documentation": "https://context7.com/docs/resources/all-clients",
+  "adapters": [
+    {
+      "name": "mcp-remote-http",
+      "params": {
+        "url": "https://mcp.context7.com/mcp",
+        "credential": {
+          "label": {
+            "en": "Context7 API Key",
+            "zh-CN": "Context7 API Key"
+          },
+          "in": "headers",
+          "name": "Authorization",
+          "template": "Bearer {credential}",
+          "optional": true
+        }
+      }
+    }
+  ],
+  "source": {
+    "en": "Upstash",
+    "zh-CN": "Upstash"
+  }
+}
