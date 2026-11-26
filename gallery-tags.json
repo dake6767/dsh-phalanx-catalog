@@ -48,6 +48,27 @@
         "en": "Everyday Tools",
         "zh-CN": "生活工具"
       }
+    },
+    {
+      "id": "web-search",
+      "label": {
+        "en": "Web Search",
+        "zh-CN": "联网搜索"
+      }
+    },
+    {
+      "id": "developer-tools",
+      "label": {
+        "en": "Developer Tools",
+        "zh-CN": "开发工具"
+      }
+    },
+    {
+      "id": "ai-news",
+      "label": {
+        "en": "AI News",
+        "zh-CN": "AI 资讯"
+      }
     }
   ],
   "assignments": [
@@ -170,13 +191,6 @@
     },
     {
       "kind": "mcp",
-      "id": "12306",
-      "tags": [
-        "everyday-tools"
-      ]
-    },
-    {
-      "kind": "mcp",
       "id": "amap",
       "tags": [
         "everyday-tools"
@@ -187,6 +201,27 @@
       "id": "dsh-ppt-master-confirm",
       "tags": [
         "presentations"
+      ]
+    },
+    {
+      "kind": "mcp",
+      "id": "exa",
+      "tags": [
+        "web-search"
+      ]
+    },
+    {
+      "kind": "mcp",
+      "id": "deepwiki",
+      "tags": [
+        "developer-tools"
+      ]
+    },
+    {
+      "kind": "mcp",
+      "id": "aihot",
+      "tags": [
+        "ai-news"
       ]
     }
   ]

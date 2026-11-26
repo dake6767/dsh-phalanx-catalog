@@ -1,0 +1,29 @@
+{
+  "kind": "mcp",
+  "id": "aihot",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.37"
+  },
+  "title": {
+    "en": "AIHOT",
+    "zh-CN": "AIHOT"
+  },
+  "description": {
+    "en": "Read Chinese AI news, trending topics, and daily reports",
+    "zh-CN": "查看中文 AI 资讯、热点与日报"
+  },
+  "documentation": "https://aihot.news/agent?tab=mcp",
+  "adapters": [
+    {
+      "name": "mcp-remote-http",
+      "params": {
+        "url": "https://aihot.news/api/mcp"
+      }
+    }
+  ],
+  "source": {
+    "en": "AIHOT",
+    "zh-CN": "AIHOT"
+  }
+}
