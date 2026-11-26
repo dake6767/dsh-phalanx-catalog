@@ -223,6 +223,13 @@
       "tags": [
         "ai-news"
       ]
+    },
+    {
+      "kind": "mcp",
+      "id": "context7",
+      "tags": [
+        "developer-tools"
+      ]
     }
   ]
 }
