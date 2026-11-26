@@ -1,0 +1,39 @@
+{
+  "kind": "plugin",
+  "id": "dsh-market",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.44"
+  },
+  "adapters": [],
+  "title": {
+    "en": "DSH Market",
+    "zh-CN": "DSH 插件市场"
+  },
+  "description": {
+    "en": "Browse and search community plugins in DSH, and install them through DSH Market.",
+    "zh-CN": "在 DSH 中浏览和搜索社区插件，并通过 DSH Market 安装。"
+  },
+  "source": {
+    "en": "dsh-market/dsh-market v1.84.2 on GitHub.",
+    "zh-CN": "GitHub 发布包 dsh-market/dsh-market v1.84.2。"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dshmarket",
+      "version": "1.84.2",
+      "integrity": "sha512-3EKXhI11oZNDoqynfT0T+fyvJ4j9z9Hb6rWYx+eNUB0pG6o2c8Q+HXk+5KWHVxKS881yzXLglZ+Bin1HjDfyng==",
+      "archive": {
+        "url": "https://github.com/dsh-market/dsh-market/releases/download/v1.84.2/dshmarket-1.84.2.tgz"
+      },
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}

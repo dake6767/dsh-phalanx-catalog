@@ -112,6 +112,13 @@
     },
     {
       "kind": "plugin",
+      "id": "dsh-market",
+      "tags": [
+        "developer-tools"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "dsh-media-desk",
       "tags": [
         "writing",
