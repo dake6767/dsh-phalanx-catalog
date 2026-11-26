@@ -1,0 +1,29 @@
+{
+  "kind": "mcp",
+  "id": "exa",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.37"
+  },
+  "title": {
+    "en": "Exa Web Search",
+    "zh-CN": "Exa 联网搜索"
+  },
+  "description": {
+    "en": "Search the public web and read web pages",
+    "zh-CN": "搜索公开网页并读取正文"
+  },
+  "documentation": "https://exa.ai/mcp",
+  "adapters": [
+    {
+      "name": "mcp-remote-http",
+      "params": {
+        "url": "https://mcp.exa.ai/mcp"
+      }
+    }
+  ],
+  "source": {
+    "en": "Exa",
+    "zh-CN": "Exa"
+  }
+}
