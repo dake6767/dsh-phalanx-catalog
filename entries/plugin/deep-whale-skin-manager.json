@@ -1,0 +1,36 @@
+{
+  "kind": "plugin",
+  "id": "deep-whale-skin-manager",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.44"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Deep Whale Skin Manager",
+    "zh-CN": "Deep Whale 皮肤管理器"
+  },
+  "description": {
+    "en": "Switch between installed DSH skins and adjust their options in Settings. Skins are installed separately.",
+    "zh-CN": "在 DSH 设置中切换已安装的皮肤并调整各皮肤的选项。皮肤需单独安装。"
+  },
+  "source": {
+    "en": "npm package @smalltailqwq/dsh-client-ui-skin-deep-whale-manager 0.1.11.",
+    "zh-CN": "npm 发布包 @smalltailqwq/dsh-client-ui-skin-deep-whale-manager 0.1.11。"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "@smalltailqwq/dsh-client-ui-skin-deep-whale-manager",
+      "version": "0.1.11",
+      "integrity": "sha512-0z9aY+j8j0m2w8hZWVnFN3rT1MWHKQG2jHQXLTT1R4dCsHSWsoV2J9q6bC8BFiGP+dM27x0NscsUi4l4FM84pA==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
