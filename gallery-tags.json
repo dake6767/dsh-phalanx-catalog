@@ -88,6 +88,13 @@
     },
     {
       "kind": "plugin",
+      "id": "deep-whale-skin-manager",
+      "tags": [
+        "themes-appearance"
+      ]
+    },
+    {
+      "kind": "plugin",
       "id": "drawai",
       "tags": [
         "visual-design",
