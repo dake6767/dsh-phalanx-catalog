@@ -69,6 +69,13 @@
         "en": "AI News",
         "zh-CN": "AI 资讯"
       }
+    },
+    {
+      "id": "themes-appearance",
+      "label": {
+        "en": "Themes & Appearance",
+        "zh-CN": "主题外观"
+      }
     }
   ],
   "assignments": [
@@ -85,6 +92,13 @@
       "tags": [
         "visual-design",
         "audio-video"
+      ]
+    },
+    {
+      "kind": "plugin",
+      "id": "dsh-bloom-theme",
+      "tags": [
+        "themes-appearance"
       ]
     },
     {

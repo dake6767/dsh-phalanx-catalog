@@ -1,0 +1,36 @@
+{
+  "kind": "plugin",
+  "id": "dsh-bloom-theme",
+  "version": "1.0.0",
+  "engines": {
+    "platform": ">=0.1.44"
+  },
+  "adapters": [],
+  "title": {
+    "en": "Bloom Theme",
+    "zh-CN": "Bloom 莫兰迪主题"
+  },
+  "description": {
+    "en": "Customize DSH with 15 Morandi palettes, adaptive light and dark modes, and glass surfaces.",
+    "zh-CN": "为 DSH 换上 15 套莫兰迪配色、明暗自适应主题和玻璃面板。"
+  },
+  "source": {
+    "en": "npm package dsh-bloom-theme 0.30.1.",
+    "zh-CN": "npm 发布包 dsh-bloom-theme 0.30.1。"
+  },
+  "dependencies": [],
+  "items": [
+    {
+      "kind": "plugin",
+      "packageName": "dsh-bloom-theme",
+      "version": "0.30.1",
+      "integrity": "sha512-2A5igqkbLsMBD7beYkNSgWwWPb0wYgcGQiPISY9u26/xdv4oSRj037mPqNNc4HzjQv2K1V3rSrcCxrKjcT3rpA==",
+      "runtimeDependencies": [],
+      "catalogDependencies": [],
+      "access": {
+        "environment": [],
+        "entriesYaml": ""
+      }
+    }
+  ]
+}
